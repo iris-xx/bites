@@ -1,22 +1,16 @@
 
+#include <boost/shared_ptr.hpp>
 #include <fstream>
 #include <iostream>
 #include <string>
 
-#include "structs.pb.h"
 #include "vision.pb.h"
+#include "bites.h"
 
 using namespace std;
-
-void PrintImageInfo(man::vision::Image *image) {
-
-  cout << "Image" << endl;
-  cout << "  encoding: " << image->encoding() << endl;
-  cout << "  width: " << image->width() << endl;
-  cout << "  hieght: " << image->height() << endl;
-  cout << "  data:" << endl << image->data() << endl;
-
-}
+using namespace boost;
+using namespace man::vision;
+using namespace bites;
 
 // Main function: Reads a Vision image from a file and writes it back
 //
@@ -25,39 +19,37 @@ int main(int argc, char *const argv[]) {
   // compatible with the version of the header we compiiled against
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-  if (argc != 2) {
-    cerr << "Usage:  " << argv[0] << " IMAGE_FILE" << endl;
+
+  if (argc < 2 || argc > 5) {
+    cerr << "Usage:  " << argv[0]
+      << " HOME_DIRECTORY [STORE_PREFIX] [STORE_NAME] [STORE_SUFFIX]" << endl;
     return -1;
   }
 
-  man::vision::Image image;
-  
-  {
-    fstream input(argv[1], ios::in | ios::binary);
-    if (!input) {
-      cout << argv[1] << ": File not found.  Creating a new file." << endl;
-    } else if (!image.ParseFromIstream(&input)) {
-      cerr << "Failed to parse address book." << endl;
-      return -1;
-    } else {
-      PrintImageInfo(&image);
-    }
+  shared_ptr<DB_ENV> env(init_env(argv[1]));
+
+  shared_ptr<ProtoStore> store;
+  switch (argc) {
+    case 2:
+      store.reset(new ProtoStore(env));
+      break;
+    case 3:
+      store.reset(new ProtoStore(env, argv[1]));
+      break;
+    case 4:
+      store.reset(new ProtoStore(env, argv[1], argv[2]));
+      break;
+    case 5:
+      store.reset(new ProtoStore(env, argv[1], argv[2], argv[3]));
+      break;
   }
 
-  image.set_encoding(man::vision::Image::YUV422);
-  image.set_width(320);
-  image.set_height(240);
+  shared_ptr<Image> image(new Image());
+  image->set_encoding(man::vision::Image::YUV422);
+  image->set_width(320);
+  image->set_height(240);
+  image->set_data("hello world");
 
-  string data("hello world");
-  image.set_data(data);
-
-  {
-    fstream output(argv[1], ios::out | ios::binary);
-    if (!image.SerializeToOstream(&output)) {
-      cerr << "Failed to write address boook." << endl;
-      return -1;
-    }
-  }
-
+  store->put("foo", image);
   return 0;
 }
