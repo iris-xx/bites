@@ -4,13 +4,139 @@ package man.vision;
 
 public final class Vision {
   private Vision() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registry.add(man.vision.Vision.Line.fieldX2);
-    registry.add(man.vision.Vision.Line.fieldY2);
-    registry.add(man.vision.Vision.Corner.cornerType);
-    registry.add(man.vision.Vision.Corner.cornerLines);
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
   }
+  private static final com.google.protobuf.Descriptors.FileDescriptor
+      descriptor = buildDescriptor();
+  private static
+      com.google.protobuf.Descriptors.FileDescriptor
+      buildDescriptor() {
+    java.lang.String descriptorData =
+      "\n\014vision.proto\022\nman.vision\032\rstructs.prot" +
+      "o\"\237\001\n\005Image\0224\n\010encoding\030\001 \002(\0162\032.man.visi" +
+      "on.Image.Encoding:\006YUV422\022\r\n\005width\030\002 \002(\005" +
+      "\022\016\n\006height\030\003 \002(\005\022\014\n\004data\030\004 \002(\014\"3\n\010Encodi" +
+      "ng\022\t\n\005YCbCr\020\001\022\n\n\006YUV422\020\002\022\007\n\003RGB\020\003\022\007\n\003BM" +
+      "P\020\004\"\232\016\n\010Landmark\022#\n\002id\030\001 \002(\0162\027.man.visio" +
+      "n.Landmark.ID\022\017\n\007field_x\030\002 \002(\002\022\017\n\007field_" +
+      "y\030\003 \002(\002\0226\n\014id_certainty\030\004 \001(\0162 .man.visi" +
+      "on.Landmark.IDCertainty\022B\n\022distance_cert" +
+      "ainty\030\005 \001(\0162&.man.vision.Landmark.Distan" +
+      "ceCertainty\"\262\013\n\002ID\022\022\n\016L_INNER_CORNER\020\000\022\022" +
+      "\n\016L_OUTER_CORNER\020\001\022\014\n\010T_CORNER\020\002\022\021\n\rCENT" +
+      "ER_CIRCLE\020\003\022\017\n\013BLUE_GOAL_T\020\004\022\021\n\rYELLOW_G" +
+      "OAL_T\020\005\022+\n\'BLUE_GOAL_RIGHT_L_OR_YELLOW_G" +
+      "OAL_LEFT_L\020\006\022+\n\'BLUE_GOAL_LEFT_L_OR_YELL" +
+      "OW_GOAL_RIGHT_L\020\007\022/\n+BLUE_CORNER_TOP_L_O" +
+      "R_YELLOW_CORNER_BOTTOM_L\020\010\022/\n+BLUE_CORNE" +
+      "R_BOTTOM_L_OR_YELLOW_CORNER_TOP_L\020\t\022\022\n\016C" +
+      "ORNER_INNER_L\020\n\022\024\n\020GOAL_BOX_INNER_L\020\013\022\025\n" +
+      "\021BLUE_GOAL_OUTER_L\020\014\022\027\n\023YELLOW_GOAL_OUTE" +
+      "R_L\020\r\022\014\n\010CENTER_T\020\016\022\025\n\021BLUE_CORNER_TOP_L" +
+      "\020\017\022\030\n\024BLUE_CORNER_BOTTOM_L\020\020\022\024\n\020BLUE_GOA" +
+      "L_LEFT_T\020\021\022\025\n\021BLUE_GOAL_RIGHT_T\020\022\022\024\n\020BLU" +
+      "E_GOAL_LEFT_L\020\023\022\025\n\021BLUE_GOAL_RIGHT_L\020\024\022\023" +
+      "\n\017CENTER_BOTTOM_T\020\025\022\020\n\014CENTER_TOP_T\020\026\022\032\n" +
+      "\026YELLOW_CORNER_BOTTOM_L\020\027\022\027\n\023YELLOW_CORN" +
+      "ER_TOP_L\020\030\022\026\n\022YELLOW_GOAL_LEFT_T\020\031\022\027\n\023YE" +
+      "LLOW_GOAL_RIGHT_T\020\032\022\026\n\022YELLOW_GOAL_LEFT_" +
+      "L\020\033\022\027\n\023YELLOW_GOAL_RIGHT_L\020\034\022\025\n\021CORNER_N" +
+      "O_IDEA_ID\020\035\022\n\n\006TOP_CC\020\036\022\r\n\tBOTTOM_CC\020\037\022\027" +
+      "\n\023BLUE_GOAL_LEFT_POST\020(\022\030\n\024BLUE_GOAL_RIG" +
+      "HT_POST\020)\022\031\n\025YELLOW_GOAL_LEFT_POST\020*\022\032\n\026" +
+      "YELLOW_GOAL_RIGHT_POST\020+\022\022\n\016BLUE_GOAL_PO" +
+      "ST\020,\022\024\n\020YELLOW_GOAL_POST\020-\022\030\n\024UNKNOWN_FI" +
+      "ELD_OBJECT\020.\022\020\n\014UNKNOWN_LINE\0202\022\023\n\017SIDE_O" +
+      "R_ENDLINE\0203\022\021\n\rSIDELINE_LINE\0204\022\020\n\014ENDLIN" +
+      "E_LINE\0205\022\020\n\014GOALBOX_LINE\0206\022\025\n\021GOALBOX_SI" +
+      "DE_LINE\0207\022\024\n\020GOALBOX_TOP_LINE\0208\022\025\n\021BLUE_" +
+      "GOAL_ENDLINE\0209\022\027\n\023YELLOW_GOAL_ENDLINE\020:\022" +
+      "\030\n\024BLUE_YELLOW_SIDELINE\020;\022\030\n\024YELLOW_BLUE" +
+      "_SIDELINE\020<\022\025\n\021CENTER_FIELD_LINE\020=\022\031\n\025BL" +
+      "UE_GOALBOX_TOP_LINE\020>\022\032\n\026BLUE_GOALBOX_LE" +
+      "FT_LINE\020?\022\033\n\027BLUE_GOALBOX_RIGHT_LINE\020@\022\033" +
+      "\n\027YELLOW_GOALBOX_TOP_LINE\020A\022\034\n\030YELLOW_GO" +
+      "ALBOX_LEFT_LINE\020A\022\035\n\031YELLOW_GOALBOX_RIGH" +
+      "T_LINE\020B\022\023\n\017BLUE_GOAL_CROSS\020P\022\025\n\021YELLOW_" +
+      "GOAL_CROSS\020Q\022\022\n\016ABSTRACT_CROSS\020R\"6\n\013IDCe" +
+      "rtainty\022\014\n\010NOT_SURE\020\000\022\016\n\nMILDY_SURE\020\001\022\t\n" +
+      "\005_SURE\020\002\"X\n\021DistanceCertainty\022\017\n\013BOTH_UN" +
+      "SURE\020\000\022\020\n\014WIDTH_UNSURE\020\001\022\021\n\rHEIGHT_UNSUR" +
+      "E\020\002\022\r\n\tBOTH_SURE\020\003*\004\010\n\020e\"]\n\017DistanceBear" +
+      "ing\022\020\n\010distance\030\001 \002(\002\022\017\n\007bearing\030\002 \002(\002\022\023" +
+      "\n\013distance_sd\030\003 \002(\002\022\022\n\nbearing_sd\030\004 \002(\002\"" +
+      "\333\001\n\tDetection\022\t\n\001x\030\001 \002(\005\022\t\n\001y\030\002 \002(\005\022\r\n\005w" +
+      "idth\030\003 \002(\002\022\016\n\006height\030\004 \002(\002\022\020\n\010center_x\030\005" +
+      " \002(\005\022\020\n\010center_y\030\006 \002(\005\022\017\n\007angle_x\030\007 \002(\002\022" +
+      "\017\n\007angle_y\030\010 \002(\002\022\020\n\010foc_dist\030\t \002(\002\022\021\n\tel" +
+      "evation\030\n \002(\002\022\'\n\002db\030\013 \002(\0132\033.man.vision.D" +
+      "istanceBearing*\005\010\024\020\311\001\"\214\006\n\004Line\022\"\n\004self\030\001" +
+      " \002(\0132\024.man.vision.Landmark\022\'\n\tpossibles\030" +
+      "\002 \003(\0132\024.man.vision.Landmark\022*\n\006points\030\003 " +
+      "\003(\0132\032.man.vision.Line.LinePoint\022\r\n\005angle" +
+      "\030\004 \001(\002\022\t\n\001a\030\005 \001(\002\022\t\n\001b\030\006 \001(\002\022\016\n\006length\030\007" +
+      " \001(\002\022\032\n\022avg_vertical_width\030\010 \001(\002\022\034\n\024avg_" +
+      "horizontal_width\030\t \001(\002\0226\n\022thinnest_hor_p" +
+      "oint\030\n \001(\0132\032.man.vision.Line.LinePoint\0226" +
+      "\n\022thickest_hor_point\030\013 \001(\0132\032.man.vision." +
+      "Line.LinePoint\0227\n\023thinnest_vert_point\030\014 " +
+      "\001(\0132\032.man.vision.Line.LinePoint\0227\n\023thick" +
+      "est_vert_point\030\r \001(\0132\032.man.vision.Line.L" +
+      "inePoint\022\'\n\002db\030\016 \002(\0132\033.man.vision.Distan" +
+      "ceBearing\022\017\n\007cc_line\030\017 \002(\010\032\200\001\n\tLinePoint" +
+      "\022\t\n\001x\030\001 \002(\005\022\t\n\001y\030\002 \002(\005\022\022\n\nline_width\030\003 \002" +
+      "(\002\022\020\n\010distance\030\004 \002(\002\0227\n\017found_with_scan\030" +
+      "\005 \002(\0162\036.man.vision.Line.ScanDirection\"-\n" +
+      "\rScanDirection\022\016\n\nHORIZONTAL\020\000\022\014\n\010VERTIC" +
+      "AL\020\0012&\n\010field_x2\022\024.man.vision.Landmark\030\n" +
+      " \001(\0022&\n\010field_y2\022\024.man.vision.Landmark\030\013" +
+      " \001(\002\"\266\003\n\006Corner\022\"\n\004self\030\001 \002(\0132\024.man.visi" +
+      "on.Landmark\022%\n\006detect\030\002 \002(\0132\025.man.vision" +
+      ".Detection\022\'\n\tpossibles\030\003 \003(\0132\024.man.visi" +
+      "on.Landmark\022\037\n\005lines\030\004 \003(\0132\020.man.vision." +
+      "Line\022\r\n\005dists\030\005 \003(\002\022!\n\007t_lines\030\006 \003(\0132\020.m" +
+      "an.vision.Line\022\033\n\023angle_between_lines\030\007 " +
+      "\002(\002\"A\n\005Shape\022\013\n\007INNER_L\020\000\022\013\n\007OUTER_L\020\001\022\005" +
+      "\n\001T\020\002\022\n\n\006CIRCLE\020\003\022\013\n\007UNKNOWN\020\0042C\n\013corner" +
+      "_type\022\024.man.vision.Landmark\030\014 \001(\0162\030.man." +
+      "vision.Corner.Shape2@\n\014corner_lines\022\024.ma" +
+      "n.vision.Landmark\030\r \003(\0132\024.man.vision.Lan" +
+      "dmark\"\233\001\n\005Cross\022\"\n\004self\030\001 \002(\0132\024.man.visi" +
+      "on.Landmark\022%\n\006detect\030\002 \002(\0132\025.man.vision" +
+      ".Detection\022\'\n\tpossibles\030\003 \003(\0132\024.man.visi" +
+      "on.Landmark\022\036\n\006bounds\030\004 \002(\0132\016.man.Rectan" +
+      "gle\"Q\n\010CrossBar\022%\n\006detect\030\001 \002(\0132\025.man.vi" +
+      "sion.Detection\022\036\n\006bounds\030\002 \002(\0132\016.man.Rec" +
+      "tangle\"z\n\013FieldObject\022\"\n\004self\030\001 \002(\0132\024.ma" +
+      "n.vision.Landmark\022\'\n\tpossibles\030\002 \002(\0132\024.m" +
+      "an.vision.Landmark\022\036\n\006bounds\030\003 \002(\0132\016.man" +
+      ".Rectangle\"\207\001\n\005Robot\022%\n\006detect\030\001 \002(\0132\025.m" +
+      "an.vision.Detection\022\036\n\006bounds\030\002 \002(\0132\016.ma" +
+      "n.Rectangle\022\021\n\tback_left\030\003 \002(\005\022\022\n\nback_r" +
+      "ight\030\004 \002(\005\022\020\n\010back_dir\030\005 \002(\005\"Q\n\004Ball\022%\n\006" +
+      "detect\030\001 \002(\0132\025.man.vision.Detection\022\016\n\006r" +
+      "adius\030\002 \002(\002\022\022\n\nconfidence\030\003 \002(\005\"\335\001\n\005Fram" +
+      "e\022 \n\005image\030\001 \001(\0132\021.man.vision.Image\022\037\n\005b" +
+      "alls\030\002 \003(\0132\020.man.vision.Ball\022(\n\007objects\030" +
+      "\003 \003(\0132\027.man.vision.FieldObject\022\037\n\005lines\030" +
+      "\004 \003(\0132\020.man.vision.Line\022#\n\007corners\030\005 \003(\013" +
+      "2\022.man.vision.Corner\022!\n\006robots\030\006 \003(\0132\021.m" +
+      "an.vision.Robot";
+    try {
+      return com.google.protobuf.Descriptors.FileDescriptor
+        .internalBuildGeneratedFileFrom(descriptorData,
+          new com.google.protobuf.Descriptors.FileDescriptor[] {
+            man.Structs.getDescriptor(),
+          });
+    } catch (Exception e) {
+      throw new RuntimeException(
+        "Failed to parse protocol buffer descriptor for " +
+        "\"vision.proto\".", e);
+    }
+  }
+  
   public static final class Image extends
       com.google.protobuf.GeneratedMessage {
     // Use Image.newBuilder() to construct.
@@ -30,14 +156,12 @@ public final class Vision {
       return man.vision.Vision.internal_static_man_vision_Image_descriptor;
     }
     
-    @Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return man.vision.Vision.internal_static_man_vision_Image_fieldAccessorTable;
     }
     
-    public static enum Encoding
-        implements com.google.protobuf.ProtocolMessageEnum {
+    public static enum Encoding {
       YCbCr(0, 1),
       YUV422(1, 2),
       RGB(2, 3),
@@ -87,94 +211,31 @@ public final class Vision {
         this.index = index;
         this.value = value;
       }
-      
-      static {
-        man.vision.Vision.getDescriptor();
-      }
     }
     
     // required .man.vision.Image.Encoding encoding = 1 [default = YUV422];
-    public static final int ENCODING_FIELD_NUMBER = 1;
     private boolean hasEncoding;
     private man.vision.Vision.Image.Encoding encoding_ = man.vision.Vision.Image.Encoding.YUV422;
     public boolean hasEncoding() { return hasEncoding; }
     public man.vision.Vision.Image.Encoding getEncoding() { return encoding_; }
     
     // required int32 width = 2;
-    public static final int WIDTH_FIELD_NUMBER = 2;
     private boolean hasWidth;
     private int width_ = 0;
     public boolean hasWidth() { return hasWidth; }
     public int getWidth() { return width_; }
     
     // required int32 height = 3;
-    public static final int HEIGHT_FIELD_NUMBER = 3;
     private boolean hasHeight;
     private int height_ = 0;
     public boolean hasHeight() { return hasHeight; }
     public int getHeight() { return height_; }
     
     // required bytes data = 4;
-    public static final int DATA_FIELD_NUMBER = 4;
     private boolean hasData;
     private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
     public boolean hasData() { return hasData; }
     public com.google.protobuf.ByteString getData() { return data_; }
-    
-    @Override
-    public final boolean isInitialized() {
-      if (!hasEncoding) return false;
-      if (!hasWidth) return false;
-      if (!hasHeight) return false;
-      if (!hasData) return false;
-      return true;
-    }
-    
-    @Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (hasEncoding()) {
-        output.writeEnum(1, getEncoding().getNumber());
-      }
-      if (hasWidth()) {
-        output.writeInt32(2, getWidth());
-      }
-      if (hasHeight()) {
-        output.writeInt32(3, getHeight());
-      }
-      if (hasData()) {
-        output.writeBytes(4, getData());
-      }
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    @Override
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (hasEncoding()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, getEncoding().getNumber());
-      }
-      if (hasWidth()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, getWidth());
-      }
-      if (hasHeight()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, getHeight());
-      }
-      if (hasData()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, getData());
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
     
     public static man.vision.Vision.Image parseFrom(
         com.google.protobuf.ByteString data)
@@ -210,17 +271,6 @@ public final class Vision {
       return newBuilder().mergeFrom(input, extensionRegistry)
                .buildParsed();
     }
-    public static man.vision.Vision.Image parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeDelimitedFrom(input).buildParsed();
-    }
-    public static man.vision.Vision.Image parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistry extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeDelimitedFrom(input, extensionRegistry)
-               .buildParsed();
-    }
     public static man.vision.Vision.Image parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
@@ -239,7 +289,6 @@ public final class Vision {
     public static Builder newBuilder(man.vision.Vision.Image prototype) {
       return new Builder().mergeFrom(prototype);
     }
-    public Builder toBuilder() { return newBuilder(this); }
     
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> {
@@ -248,23 +297,19 @@ public final class Vision {
       
       man.vision.Vision.Image result = new man.vision.Vision.Image();
       
-      @Override
       protected man.vision.Vision.Image internalGetResult() {
         return result;
       }
       
-      @Override
       public Builder clear() {
         result = new man.vision.Vision.Image();
         return this;
       }
       
-      @Override
       public Builder clone() {
         return new Builder().mergeFrom(result);
       }
       
-      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return man.vision.Vision.Image.getDescriptor();
@@ -275,7 +320,7 @@ public final class Vision {
       }
       
       public man.vision.Vision.Image build() {
-        if (result != null && !isInitialized()) {
+        if (!isInitialized()) {
           throw new com.google.protobuf.UninitializedMessageException(
             result);
         }
@@ -292,96 +337,9 @@ public final class Vision {
       }
       
       public man.vision.Vision.Image buildPartial() {
-        if (result == null) {
-          throw new IllegalStateException(
-            "build() has already been called on this Builder.");  }
         man.vision.Vision.Image returnMe = result;
         result = null;
         return returnMe;
-      }
-      
-      @Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof man.vision.Vision.Image) {
-          return mergeFrom((man.vision.Vision.Image)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(man.vision.Vision.Image other) {
-        if (other == man.vision.Vision.Image.getDefaultInstance()) return this;
-        if (other.hasEncoding()) {
-          setEncoding(other.getEncoding());
-        }
-        if (other.hasWidth()) {
-          setWidth(other.getWidth());
-        }
-        if (other.hasHeight()) {
-          setHeight(other.getHeight());
-        }
-        if (other.hasData()) {
-          setData(other.getData());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return mergeFrom(input,
-          com.google.protobuf.ExtensionRegistry.getEmptyRegistry());
-      }
-      
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistry extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                return this;
-              }
-              break;
-            }
-            case 8: {
-              int rawValue = input.readEnum();
-              man.vision.Vision.Image.Encoding value = man.vision.Vision.Image.Encoding.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(1, rawValue);
-              } else {
-                setEncoding(value);
-              }
-              break;
-            }
-            case 16: {
-              setWidth(input.readInt32());
-              break;
-            }
-            case 24: {
-              setHeight(input.readInt32());
-              break;
-            }
-            case 34: {
-              setData(input.readBytes());
-              break;
-            }
-          }
-        }
       }
       
       
@@ -393,9 +351,6 @@ public final class Vision {
         return result.getEncoding();
       }
       public Builder setEncoding(man.vision.Vision.Image.Encoding value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.hasEncoding = true;
         result.encoding_ = value;
         return this;
@@ -450,10 +405,7 @@ public final class Vision {
         return result.getData();
       }
       public Builder setData(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  result.hasData = true;
+        result.hasData = true;
         result.data_ = value;
         return this;
       }
@@ -462,10 +414,6 @@ public final class Vision {
         result.data_ = com.google.protobuf.ByteString.EMPTY;
         return this;
       }
-    }
-    
-    static {
-      man.vision.Vision.getDescriptor();
     }
   }
   
@@ -489,14 +437,12 @@ public final class Vision {
       return man.vision.Vision.internal_static_man_vision_Landmark_descriptor;
     }
     
-    @Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return man.vision.Vision.internal_static_man_vision_Landmark_fieldAccessorTable;
     }
     
-    public static enum ID
-        implements com.google.protobuf.ProtocolMessageEnum {
+    public static enum ID {
       L_INNER_CORNER(0, 0),
       L_OUTER_CORNER(1, 1),
       T_CORNER(2, 2),
@@ -657,14 +603,9 @@ public final class Vision {
         this.index = index;
         this.value = value;
       }
-      
-      static {
-        man.vision.Vision.getDescriptor();
-      }
     }
     
-    public static enum IDCertainty
-        implements com.google.protobuf.ProtocolMessageEnum {
+    public static enum IDCertainty {
       NOT_SURE(0, 0),
       MILDY_SURE(1, 1),
       _SURE(2, 2),
@@ -712,14 +653,9 @@ public final class Vision {
         this.index = index;
         this.value = value;
       }
-      
-      static {
-        man.vision.Vision.getDescriptor();
-      }
     }
     
-    public static enum DistanceCertainty
-        implements com.google.protobuf.ProtocolMessageEnum {
+    public static enum DistanceCertainty {
       BOTH_UNSURE(0, 0),
       WIDTH_UNSURE(1, 1),
       HEIGHT_UNSURE(2, 2),
@@ -769,112 +705,37 @@ public final class Vision {
         this.index = index;
         this.value = value;
       }
-      
-      static {
-        man.vision.Vision.getDescriptor();
-      }
     }
     
     // required .man.vision.Landmark.ID id = 1;
-    public static final int ID_FIELD_NUMBER = 1;
     private boolean hasId;
     private man.vision.Vision.Landmark.ID id_ = man.vision.Vision.Landmark.ID.L_INNER_CORNER;
     public boolean hasId() { return hasId; }
     public man.vision.Vision.Landmark.ID getId() { return id_; }
     
     // required float field_x = 2;
-    public static final int FIELD_X_FIELD_NUMBER = 2;
     private boolean hasFieldX;
     private float fieldX_ = 0F;
     public boolean hasFieldX() { return hasFieldX; }
     public float getFieldX() { return fieldX_; }
     
     // required float field_y = 3;
-    public static final int FIELD_Y_FIELD_NUMBER = 3;
     private boolean hasFieldY;
     private float fieldY_ = 0F;
     public boolean hasFieldY() { return hasFieldY; }
     public float getFieldY() { return fieldY_; }
     
     // optional .man.vision.Landmark.IDCertainty id_certainty = 4;
-    public static final int ID_CERTAINTY_FIELD_NUMBER = 4;
     private boolean hasIdCertainty;
     private man.vision.Vision.Landmark.IDCertainty idCertainty_ = man.vision.Vision.Landmark.IDCertainty.NOT_SURE;
     public boolean hasIdCertainty() { return hasIdCertainty; }
     public man.vision.Vision.Landmark.IDCertainty getIdCertainty() { return idCertainty_; }
     
     // optional .man.vision.Landmark.DistanceCertainty distance_certainty = 5;
-    public static final int DISTANCE_CERTAINTY_FIELD_NUMBER = 5;
     private boolean hasDistanceCertainty;
     private man.vision.Vision.Landmark.DistanceCertainty distanceCertainty_ = man.vision.Vision.Landmark.DistanceCertainty.BOTH_UNSURE;
     public boolean hasDistanceCertainty() { return hasDistanceCertainty; }
     public man.vision.Vision.Landmark.DistanceCertainty getDistanceCertainty() { return distanceCertainty_; }
-    
-    @Override
-    public final boolean isInitialized() {
-      if (!hasId) return false;
-      if (!hasFieldX) return false;
-      if (!hasFieldY) return false;
-      if (!extensionsAreInitialized()) return false;
-      return true;
-    }
-    
-    @Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      com.google.protobuf.GeneratedMessage.ExtendableMessage
-        .ExtensionWriter extensionWriter = newExtensionWriter();
-      if (hasId()) {
-        output.writeEnum(1, getId().getNumber());
-      }
-      if (hasFieldX()) {
-        output.writeFloat(2, getFieldX());
-      }
-      if (hasFieldY()) {
-        output.writeFloat(3, getFieldY());
-      }
-      if (hasIdCertainty()) {
-        output.writeEnum(4, getIdCertainty().getNumber());
-      }
-      if (hasDistanceCertainty()) {
-        output.writeEnum(5, getDistanceCertainty().getNumber());
-      }
-      extensionWriter.writeUntil(101, output);
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    @Override
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (hasId()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, getId().getNumber());
-      }
-      if (hasFieldX()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(2, getFieldX());
-      }
-      if (hasFieldY()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(3, getFieldY());
-      }
-      if (hasIdCertainty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(4, getIdCertainty().getNumber());
-      }
-      if (hasDistanceCertainty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(5, getDistanceCertainty().getNumber());
-      }
-      size += extensionsSerializedSize();
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
     
     public static man.vision.Vision.Landmark parseFrom(
         com.google.protobuf.ByteString data)
@@ -910,17 +771,6 @@ public final class Vision {
       return newBuilder().mergeFrom(input, extensionRegistry)
                .buildParsed();
     }
-    public static man.vision.Vision.Landmark parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeDelimitedFrom(input).buildParsed();
-    }
-    public static man.vision.Vision.Landmark parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistry extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeDelimitedFrom(input, extensionRegistry)
-               .buildParsed();
-    }
     public static man.vision.Vision.Landmark parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
@@ -939,7 +789,6 @@ public final class Vision {
     public static Builder newBuilder(man.vision.Vision.Landmark prototype) {
       return new Builder().mergeFrom(prototype);
     }
-    public Builder toBuilder() { return newBuilder(this); }
     
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.ExtendableBuilder<
@@ -949,23 +798,19 @@ public final class Vision {
       
       man.vision.Vision.Landmark result = new man.vision.Vision.Landmark();
       
-      @Override
       protected man.vision.Vision.Landmark internalGetResult() {
         return result;
       }
       
-      @Override
       public Builder clear() {
         result = new man.vision.Vision.Landmark();
         return this;
       }
       
-      @Override
       public Builder clone() {
         return new Builder().mergeFrom(result);
       }
       
-      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return man.vision.Vision.Landmark.getDescriptor();
@@ -976,7 +821,7 @@ public final class Vision {
       }
       
       public man.vision.Vision.Landmark build() {
-        if (result != null && !isInitialized()) {
+        if (!isInitialized()) {
           throw new com.google.protobuf.UninitializedMessageException(
             result);
         }
@@ -993,116 +838,9 @@ public final class Vision {
       }
       
       public man.vision.Vision.Landmark buildPartial() {
-        if (result == null) {
-          throw new IllegalStateException(
-            "build() has already been called on this Builder.");  }
         man.vision.Vision.Landmark returnMe = result;
         result = null;
         return returnMe;
-      }
-      
-      @Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof man.vision.Vision.Landmark) {
-          return mergeFrom((man.vision.Vision.Landmark)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(man.vision.Vision.Landmark other) {
-        if (other == man.vision.Vision.Landmark.getDefaultInstance()) return this;
-        if (other.hasId()) {
-          setId(other.getId());
-        }
-        if (other.hasFieldX()) {
-          setFieldX(other.getFieldX());
-        }
-        if (other.hasFieldY()) {
-          setFieldY(other.getFieldY());
-        }
-        if (other.hasIdCertainty()) {
-          setIdCertainty(other.getIdCertainty());
-        }
-        if (other.hasDistanceCertainty()) {
-          setDistanceCertainty(other.getDistanceCertainty());
-        }
-        this.mergeExtensionFields(other);
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return mergeFrom(input,
-          com.google.protobuf.ExtensionRegistry.getEmptyRegistry());
-      }
-      
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistry extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                return this;
-              }
-              break;
-            }
-            case 8: {
-              int rawValue = input.readEnum();
-              man.vision.Vision.Landmark.ID value = man.vision.Vision.Landmark.ID.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(1, rawValue);
-              } else {
-                setId(value);
-              }
-              break;
-            }
-            case 21: {
-              setFieldX(input.readFloat());
-              break;
-            }
-            case 29: {
-              setFieldY(input.readFloat());
-              break;
-            }
-            case 32: {
-              int rawValue = input.readEnum();
-              man.vision.Vision.Landmark.IDCertainty value = man.vision.Vision.Landmark.IDCertainty.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(4, rawValue);
-              } else {
-                setIdCertainty(value);
-              }
-              break;
-            }
-            case 40: {
-              int rawValue = input.readEnum();
-              man.vision.Vision.Landmark.DistanceCertainty value = man.vision.Vision.Landmark.DistanceCertainty.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(5, rawValue);
-              } else {
-                setDistanceCertainty(value);
-              }
-              break;
-            }
-          }
-        }
       }
       
       
@@ -1114,9 +852,6 @@ public final class Vision {
         return result.getId();
       }
       public Builder setId(man.vision.Vision.Landmark.ID value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.hasId = true;
         result.id_ = value;
         return this;
@@ -1171,9 +906,6 @@ public final class Vision {
         return result.getIdCertainty();
       }
       public Builder setIdCertainty(man.vision.Vision.Landmark.IDCertainty value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.hasIdCertainty = true;
         result.idCertainty_ = value;
         return this;
@@ -1192,9 +924,6 @@ public final class Vision {
         return result.getDistanceCertainty();
       }
       public Builder setDistanceCertainty(man.vision.Vision.Landmark.DistanceCertainty value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.hasDistanceCertainty = true;
         result.distanceCertainty_ = value;
         return this;
@@ -1204,10 +933,6 @@ public final class Vision {
         result.distanceCertainty_ = man.vision.Vision.Landmark.DistanceCertainty.BOTH_UNSURE;
         return this;
       }
-    }
-    
-    static {
-      man.vision.Vision.getDescriptor();
     }
   }
   
@@ -1230,94 +955,34 @@ public final class Vision {
       return man.vision.Vision.internal_static_man_vision_DistanceBearing_descriptor;
     }
     
-    @Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return man.vision.Vision.internal_static_man_vision_DistanceBearing_fieldAccessorTable;
     }
     
     // required float distance = 1;
-    public static final int DISTANCE_FIELD_NUMBER = 1;
     private boolean hasDistance;
     private float distance_ = 0F;
     public boolean hasDistance() { return hasDistance; }
     public float getDistance() { return distance_; }
     
     // required float bearing = 2;
-    public static final int BEARING_FIELD_NUMBER = 2;
     private boolean hasBearing;
     private float bearing_ = 0F;
     public boolean hasBearing() { return hasBearing; }
     public float getBearing() { return bearing_; }
     
     // required float distance_sd = 3;
-    public static final int DISTANCE_SD_FIELD_NUMBER = 3;
     private boolean hasDistanceSd;
     private float distanceSd_ = 0F;
     public boolean hasDistanceSd() { return hasDistanceSd; }
     public float getDistanceSd() { return distanceSd_; }
     
     // required float bearing_sd = 4;
-    public static final int BEARING_SD_FIELD_NUMBER = 4;
     private boolean hasBearingSd;
     private float bearingSd_ = 0F;
     public boolean hasBearingSd() { return hasBearingSd; }
     public float getBearingSd() { return bearingSd_; }
-    
-    @Override
-    public final boolean isInitialized() {
-      if (!hasDistance) return false;
-      if (!hasBearing) return false;
-      if (!hasDistanceSd) return false;
-      if (!hasBearingSd) return false;
-      return true;
-    }
-    
-    @Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (hasDistance()) {
-        output.writeFloat(1, getDistance());
-      }
-      if (hasBearing()) {
-        output.writeFloat(2, getBearing());
-      }
-      if (hasDistanceSd()) {
-        output.writeFloat(3, getDistanceSd());
-      }
-      if (hasBearingSd()) {
-        output.writeFloat(4, getBearingSd());
-      }
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    @Override
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (hasDistance()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(1, getDistance());
-      }
-      if (hasBearing()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(2, getBearing());
-      }
-      if (hasDistanceSd()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(3, getDistanceSd());
-      }
-      if (hasBearingSd()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(4, getBearingSd());
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
     
     public static man.vision.Vision.DistanceBearing parseFrom(
         com.google.protobuf.ByteString data)
@@ -1353,17 +1018,6 @@ public final class Vision {
       return newBuilder().mergeFrom(input, extensionRegistry)
                .buildParsed();
     }
-    public static man.vision.Vision.DistanceBearing parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeDelimitedFrom(input).buildParsed();
-    }
-    public static man.vision.Vision.DistanceBearing parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistry extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeDelimitedFrom(input, extensionRegistry)
-               .buildParsed();
-    }
     public static man.vision.Vision.DistanceBearing parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
@@ -1382,7 +1036,6 @@ public final class Vision {
     public static Builder newBuilder(man.vision.Vision.DistanceBearing prototype) {
       return new Builder().mergeFrom(prototype);
     }
-    public Builder toBuilder() { return newBuilder(this); }
     
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> {
@@ -1391,23 +1044,19 @@ public final class Vision {
       
       man.vision.Vision.DistanceBearing result = new man.vision.Vision.DistanceBearing();
       
-      @Override
       protected man.vision.Vision.DistanceBearing internalGetResult() {
         return result;
       }
       
-      @Override
       public Builder clear() {
         result = new man.vision.Vision.DistanceBearing();
         return this;
       }
       
-      @Override
       public Builder clone() {
         return new Builder().mergeFrom(result);
       }
       
-      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return man.vision.Vision.DistanceBearing.getDescriptor();
@@ -1418,7 +1067,7 @@ public final class Vision {
       }
       
       public man.vision.Vision.DistanceBearing build() {
-        if (result != null && !isInitialized()) {
+        if (!isInitialized()) {
           throw new com.google.protobuf.UninitializedMessageException(
             result);
         }
@@ -1435,90 +1084,9 @@ public final class Vision {
       }
       
       public man.vision.Vision.DistanceBearing buildPartial() {
-        if (result == null) {
-          throw new IllegalStateException(
-            "build() has already been called on this Builder.");  }
         man.vision.Vision.DistanceBearing returnMe = result;
         result = null;
         return returnMe;
-      }
-      
-      @Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof man.vision.Vision.DistanceBearing) {
-          return mergeFrom((man.vision.Vision.DistanceBearing)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(man.vision.Vision.DistanceBearing other) {
-        if (other == man.vision.Vision.DistanceBearing.getDefaultInstance()) return this;
-        if (other.hasDistance()) {
-          setDistance(other.getDistance());
-        }
-        if (other.hasBearing()) {
-          setBearing(other.getBearing());
-        }
-        if (other.hasDistanceSd()) {
-          setDistanceSd(other.getDistanceSd());
-        }
-        if (other.hasBearingSd()) {
-          setBearingSd(other.getBearingSd());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return mergeFrom(input,
-          com.google.protobuf.ExtensionRegistry.getEmptyRegistry());
-      }
-      
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistry extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                return this;
-              }
-              break;
-            }
-            case 13: {
-              setDistance(input.readFloat());
-              break;
-            }
-            case 21: {
-              setBearing(input.readFloat());
-              break;
-            }
-            case 29: {
-              setDistanceSd(input.readFloat());
-              break;
-            }
-            case 37: {
-              setBearingSd(input.readFloat());
-              break;
-            }
-          }
-        }
       }
       
       
@@ -1594,10 +1162,6 @@ public final class Vision {
         return this;
       }
     }
-    
-    static {
-      man.vision.Vision.getDescriptor();
-    }
   }
   
   public static final class Detection extends
@@ -1620,205 +1184,76 @@ public final class Vision {
       return man.vision.Vision.internal_static_man_vision_Detection_descriptor;
     }
     
-    @Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return man.vision.Vision.internal_static_man_vision_Detection_fieldAccessorTable;
     }
     
     // required int32 x = 1;
-    public static final int X_FIELD_NUMBER = 1;
     private boolean hasX;
     private int x_ = 0;
     public boolean hasX() { return hasX; }
     public int getX() { return x_; }
     
     // required int32 y = 2;
-    public static final int Y_FIELD_NUMBER = 2;
     private boolean hasY;
     private int y_ = 0;
     public boolean hasY() { return hasY; }
     public int getY() { return y_; }
     
     // required float width = 3;
-    public static final int WIDTH_FIELD_NUMBER = 3;
     private boolean hasWidth;
     private float width_ = 0F;
     public boolean hasWidth() { return hasWidth; }
     public float getWidth() { return width_; }
     
     // required float height = 4;
-    public static final int HEIGHT_FIELD_NUMBER = 4;
     private boolean hasHeight;
     private float height_ = 0F;
     public boolean hasHeight() { return hasHeight; }
     public float getHeight() { return height_; }
     
     // required int32 center_x = 5;
-    public static final int CENTER_X_FIELD_NUMBER = 5;
     private boolean hasCenterX;
     private int centerX_ = 0;
     public boolean hasCenterX() { return hasCenterX; }
     public int getCenterX() { return centerX_; }
     
     // required int32 center_y = 6;
-    public static final int CENTER_Y_FIELD_NUMBER = 6;
     private boolean hasCenterY;
     private int centerY_ = 0;
     public boolean hasCenterY() { return hasCenterY; }
     public int getCenterY() { return centerY_; }
     
     // required float angle_x = 7;
-    public static final int ANGLE_X_FIELD_NUMBER = 7;
     private boolean hasAngleX;
     private float angleX_ = 0F;
     public boolean hasAngleX() { return hasAngleX; }
     public float getAngleX() { return angleX_; }
     
     // required float angle_y = 8;
-    public static final int ANGLE_Y_FIELD_NUMBER = 8;
     private boolean hasAngleY;
     private float angleY_ = 0F;
     public boolean hasAngleY() { return hasAngleY; }
     public float getAngleY() { return angleY_; }
     
     // required float foc_dist = 9;
-    public static final int FOC_DIST_FIELD_NUMBER = 9;
     private boolean hasFocDist;
     private float focDist_ = 0F;
     public boolean hasFocDist() { return hasFocDist; }
     public float getFocDist() { return focDist_; }
     
     // required float elevation = 10;
-    public static final int ELEVATION_FIELD_NUMBER = 10;
     private boolean hasElevation;
     private float elevation_ = 0F;
     public boolean hasElevation() { return hasElevation; }
     public float getElevation() { return elevation_; }
     
     // required .man.vision.DistanceBearing db = 11;
-    public static final int DB_FIELD_NUMBER = 11;
     private boolean hasDb;
     private man.vision.Vision.DistanceBearing db_ = man.vision.Vision.DistanceBearing.getDefaultInstance();
     public boolean hasDb() { return hasDb; }
     public man.vision.Vision.DistanceBearing getDb() { return db_; }
-    
-    @Override
-    public final boolean isInitialized() {
-      if (!hasX) return false;
-      if (!hasY) return false;
-      if (!hasWidth) return false;
-      if (!hasHeight) return false;
-      if (!hasCenterX) return false;
-      if (!hasCenterY) return false;
-      if (!hasAngleX) return false;
-      if (!hasAngleY) return false;
-      if (!hasFocDist) return false;
-      if (!hasElevation) return false;
-      if (!hasDb) return false;
-      if (!getDb().isInitialized()) return false;
-      if (!extensionsAreInitialized()) return false;
-      return true;
-    }
-    
-    @Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      com.google.protobuf.GeneratedMessage.ExtendableMessage
-        .ExtensionWriter extensionWriter = newExtensionWriter();
-      if (hasX()) {
-        output.writeInt32(1, getX());
-      }
-      if (hasY()) {
-        output.writeInt32(2, getY());
-      }
-      if (hasWidth()) {
-        output.writeFloat(3, getWidth());
-      }
-      if (hasHeight()) {
-        output.writeFloat(4, getHeight());
-      }
-      if (hasCenterX()) {
-        output.writeInt32(5, getCenterX());
-      }
-      if (hasCenterY()) {
-        output.writeInt32(6, getCenterY());
-      }
-      if (hasAngleX()) {
-        output.writeFloat(7, getAngleX());
-      }
-      if (hasAngleY()) {
-        output.writeFloat(8, getAngleY());
-      }
-      if (hasFocDist()) {
-        output.writeFloat(9, getFocDist());
-      }
-      if (hasElevation()) {
-        output.writeFloat(10, getElevation());
-      }
-      if (hasDb()) {
-        output.writeMessage(11, getDb());
-      }
-      extensionWriter.writeUntil(201, output);
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    @Override
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (hasX()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, getX());
-      }
-      if (hasY()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, getY());
-      }
-      if (hasWidth()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(3, getWidth());
-      }
-      if (hasHeight()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(4, getHeight());
-      }
-      if (hasCenterX()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, getCenterX());
-      }
-      if (hasCenterY()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, getCenterY());
-      }
-      if (hasAngleX()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(7, getAngleX());
-      }
-      if (hasAngleY()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(8, getAngleY());
-      }
-      if (hasFocDist()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(9, getFocDist());
-      }
-      if (hasElevation()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(10, getElevation());
-      }
-      if (hasDb()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, getDb());
-      }
-      size += extensionsSerializedSize();
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
     
     public static man.vision.Vision.Detection parseFrom(
         com.google.protobuf.ByteString data)
@@ -1854,17 +1289,6 @@ public final class Vision {
       return newBuilder().mergeFrom(input, extensionRegistry)
                .buildParsed();
     }
-    public static man.vision.Vision.Detection parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeDelimitedFrom(input).buildParsed();
-    }
-    public static man.vision.Vision.Detection parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistry extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeDelimitedFrom(input, extensionRegistry)
-               .buildParsed();
-    }
     public static man.vision.Vision.Detection parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
@@ -1883,7 +1307,6 @@ public final class Vision {
     public static Builder newBuilder(man.vision.Vision.Detection prototype) {
       return new Builder().mergeFrom(prototype);
     }
-    public Builder toBuilder() { return newBuilder(this); }
     
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.ExtendableBuilder<
@@ -1893,23 +1316,19 @@ public final class Vision {
       
       man.vision.Vision.Detection result = new man.vision.Vision.Detection();
       
-      @Override
       protected man.vision.Vision.Detection internalGetResult() {
         return result;
       }
       
-      @Override
       public Builder clear() {
         result = new man.vision.Vision.Detection();
         return this;
       }
       
-      @Override
       public Builder clone() {
         return new Builder().mergeFrom(result);
       }
       
-      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return man.vision.Vision.Detection.getDescriptor();
@@ -1920,7 +1339,7 @@ public final class Vision {
       }
       
       public man.vision.Vision.Detection build() {
-        if (result != null && !isInitialized()) {
+        if (!isInitialized()) {
           throw new com.google.protobuf.UninitializedMessageException(
             result);
         }
@@ -1937,145 +1356,9 @@ public final class Vision {
       }
       
       public man.vision.Vision.Detection buildPartial() {
-        if (result == null) {
-          throw new IllegalStateException(
-            "build() has already been called on this Builder.");  }
         man.vision.Vision.Detection returnMe = result;
         result = null;
         return returnMe;
-      }
-      
-      @Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof man.vision.Vision.Detection) {
-          return mergeFrom((man.vision.Vision.Detection)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(man.vision.Vision.Detection other) {
-        if (other == man.vision.Vision.Detection.getDefaultInstance()) return this;
-        if (other.hasX()) {
-          setX(other.getX());
-        }
-        if (other.hasY()) {
-          setY(other.getY());
-        }
-        if (other.hasWidth()) {
-          setWidth(other.getWidth());
-        }
-        if (other.hasHeight()) {
-          setHeight(other.getHeight());
-        }
-        if (other.hasCenterX()) {
-          setCenterX(other.getCenterX());
-        }
-        if (other.hasCenterY()) {
-          setCenterY(other.getCenterY());
-        }
-        if (other.hasAngleX()) {
-          setAngleX(other.getAngleX());
-        }
-        if (other.hasAngleY()) {
-          setAngleY(other.getAngleY());
-        }
-        if (other.hasFocDist()) {
-          setFocDist(other.getFocDist());
-        }
-        if (other.hasElevation()) {
-          setElevation(other.getElevation());
-        }
-        if (other.hasDb()) {
-          mergeDb(other.getDb());
-        }
-        this.mergeExtensionFields(other);
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return mergeFrom(input,
-          com.google.protobuf.ExtensionRegistry.getEmptyRegistry());
-      }
-      
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistry extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                return this;
-              }
-              break;
-            }
-            case 8: {
-              setX(input.readInt32());
-              break;
-            }
-            case 16: {
-              setY(input.readInt32());
-              break;
-            }
-            case 29: {
-              setWidth(input.readFloat());
-              break;
-            }
-            case 37: {
-              setHeight(input.readFloat());
-              break;
-            }
-            case 40: {
-              setCenterX(input.readInt32());
-              break;
-            }
-            case 48: {
-              setCenterY(input.readInt32());
-              break;
-            }
-            case 61: {
-              setAngleX(input.readFloat());
-              break;
-            }
-            case 69: {
-              setAngleY(input.readFloat());
-              break;
-            }
-            case 77: {
-              setFocDist(input.readFloat());
-              break;
-            }
-            case 85: {
-              setElevation(input.readFloat());
-              break;
-            }
-            case 90: {
-              man.vision.Vision.DistanceBearing.Builder subBuilder = man.vision.Vision.DistanceBearing.newBuilder();
-              if (hasDb()) {
-                subBuilder.mergeFrom(getDb());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setDb(subBuilder.buildPartial());
-              break;
-            }
-          }
-        }
       }
       
       
@@ -2267,9 +1550,6 @@ public final class Vision {
         return result.getDb();
       }
       public Builder setDb(man.vision.Vision.DistanceBearing value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.hasDb = true;
         result.db_ = value;
         return this;
@@ -2296,10 +1576,6 @@ public final class Vision {
         return this;
       }
     }
-    
-    static {
-      man.vision.Vision.getDescriptor();
-    }
   }
   
   public static final class Line extends
@@ -2321,14 +1597,12 @@ public final class Vision {
       return man.vision.Vision.internal_static_man_vision_Line_descriptor;
     }
     
-    @Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return man.vision.Vision.internal_static_man_vision_Line_fieldAccessorTable;
     }
     
-    public static enum ScanDirection
-        implements com.google.protobuf.ProtocolMessageEnum {
+    public static enum ScanDirection {
       HORIZONTAL(0, 0),
       VERTICAL(1, 1),
       ;
@@ -2374,10 +1648,6 @@ public final class Vision {
         this.index = index;
         this.value = value;
       }
-      
-      static {
-        man.vision.Vision.getDescriptor();
-      }
     }
     
     public static final class LinePoint extends
@@ -2399,109 +1669,40 @@ public final class Vision {
         return man.vision.Vision.internal_static_man_vision_Line_LinePoint_descriptor;
       }
       
-      @Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return man.vision.Vision.internal_static_man_vision_Line_LinePoint_fieldAccessorTable;
       }
       
       // required int32 x = 1;
-      public static final int X_FIELD_NUMBER = 1;
       private boolean hasX;
       private int x_ = 0;
       public boolean hasX() { return hasX; }
       public int getX() { return x_; }
       
       // required int32 y = 2;
-      public static final int Y_FIELD_NUMBER = 2;
       private boolean hasY;
       private int y_ = 0;
       public boolean hasY() { return hasY; }
       public int getY() { return y_; }
       
       // required float line_width = 3;
-      public static final int LINE_WIDTH_FIELD_NUMBER = 3;
       private boolean hasLineWidth;
       private float lineWidth_ = 0F;
       public boolean hasLineWidth() { return hasLineWidth; }
       public float getLineWidth() { return lineWidth_; }
       
       // required float distance = 4;
-      public static final int DISTANCE_FIELD_NUMBER = 4;
       private boolean hasDistance;
       private float distance_ = 0F;
       public boolean hasDistance() { return hasDistance; }
       public float getDistance() { return distance_; }
       
       // required .man.vision.Line.ScanDirection found_with_scan = 5;
-      public static final int FOUND_WITH_SCAN_FIELD_NUMBER = 5;
       private boolean hasFoundWithScan;
       private man.vision.Vision.Line.ScanDirection foundWithScan_ = man.vision.Vision.Line.ScanDirection.HORIZONTAL;
       public boolean hasFoundWithScan() { return hasFoundWithScan; }
       public man.vision.Vision.Line.ScanDirection getFoundWithScan() { return foundWithScan_; }
-      
-      @Override
-      public final boolean isInitialized() {
-        if (!hasX) return false;
-        if (!hasY) return false;
-        if (!hasLineWidth) return false;
-        if (!hasDistance) return false;
-        if (!hasFoundWithScan) return false;
-        return true;
-      }
-      
-      @Override
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        if (hasX()) {
-          output.writeInt32(1, getX());
-        }
-        if (hasY()) {
-          output.writeInt32(2, getY());
-        }
-        if (hasLineWidth()) {
-          output.writeFloat(3, getLineWidth());
-        }
-        if (hasDistance()) {
-          output.writeFloat(4, getDistance());
-        }
-        if (hasFoundWithScan()) {
-          output.writeEnum(5, getFoundWithScan().getNumber());
-        }
-        getUnknownFields().writeTo(output);
-      }
-      
-      private int memoizedSerializedSize = -1;
-      @Override
-      public int getSerializedSize() {
-        int size = memoizedSerializedSize;
-        if (size != -1) return size;
-      
-        size = 0;
-        if (hasX()) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeInt32Size(1, getX());
-        }
-        if (hasY()) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeInt32Size(2, getY());
-        }
-        if (hasLineWidth()) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeFloatSize(3, getLineWidth());
-        }
-        if (hasDistance()) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeFloatSize(4, getDistance());
-        }
-        if (hasFoundWithScan()) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeEnumSize(5, getFoundWithScan().getNumber());
-        }
-        size += getUnknownFields().getSerializedSize();
-        memoizedSerializedSize = size;
-        return size;
-      }
       
       public static man.vision.Vision.Line.LinePoint parseFrom(
           com.google.protobuf.ByteString data)
@@ -2537,17 +1738,6 @@ public final class Vision {
         return newBuilder().mergeFrom(input, extensionRegistry)
                  .buildParsed();
       }
-      public static man.vision.Vision.Line.LinePoint parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return newBuilder().mergeDelimitedFrom(input).buildParsed();
-      }
-      public static man.vision.Vision.Line.LinePoint parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistry extensionRegistry)
-          throws java.io.IOException {
-        return newBuilder().mergeDelimitedFrom(input, extensionRegistry)
-                 .buildParsed();
-      }
       public static man.vision.Vision.Line.LinePoint parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
@@ -2566,7 +1756,6 @@ public final class Vision {
       public static Builder newBuilder(man.vision.Vision.Line.LinePoint prototype) {
         return new Builder().mergeFrom(prototype);
       }
-      public Builder toBuilder() { return newBuilder(this); }
       
       public static final class Builder extends
           com.google.protobuf.GeneratedMessage.Builder<Builder> {
@@ -2575,23 +1764,19 @@ public final class Vision {
         
         man.vision.Vision.Line.LinePoint result = new man.vision.Vision.Line.LinePoint();
         
-        @Override
         protected man.vision.Vision.Line.LinePoint internalGetResult() {
           return result;
         }
         
-        @Override
         public Builder clear() {
           result = new man.vision.Vision.Line.LinePoint();
           return this;
         }
         
-        @Override
         public Builder clone() {
           return new Builder().mergeFrom(result);
         }
         
-        @Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
           return man.vision.Vision.Line.LinePoint.getDescriptor();
@@ -2602,7 +1787,7 @@ public final class Vision {
         }
         
         public man.vision.Vision.Line.LinePoint build() {
-          if (result != null && !isInitialized()) {
+          if (!isInitialized()) {
             throw new com.google.protobuf.UninitializedMessageException(
               result);
           }
@@ -2619,103 +1804,9 @@ public final class Vision {
         }
         
         public man.vision.Vision.Line.LinePoint buildPartial() {
-          if (result == null) {
-            throw new IllegalStateException(
-              "build() has already been called on this Builder.");  }
           man.vision.Vision.Line.LinePoint returnMe = result;
           result = null;
           return returnMe;
-        }
-        
-        @Override
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof man.vision.Vision.Line.LinePoint) {
-            return mergeFrom((man.vision.Vision.Line.LinePoint)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-        
-        public Builder mergeFrom(man.vision.Vision.Line.LinePoint other) {
-          if (other == man.vision.Vision.Line.LinePoint.getDefaultInstance()) return this;
-          if (other.hasX()) {
-            setX(other.getX());
-          }
-          if (other.hasY()) {
-            setY(other.getY());
-          }
-          if (other.hasLineWidth()) {
-            setLineWidth(other.getLineWidth());
-          }
-          if (other.hasDistance()) {
-            setDistance(other.getDistance());
-          }
-          if (other.hasFoundWithScan()) {
-            setFoundWithScan(other.getFoundWithScan());
-          }
-          this.mergeUnknownFields(other.getUnknownFields());
-          return this;
-        }
-        
-        @Override
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input)
-            throws java.io.IOException {
-          return mergeFrom(input,
-            com.google.protobuf.ExtensionRegistry.getEmptyRegistry());
-        }
-        
-        @Override
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistry extensionRegistry)
-            throws java.io.IOException {
-          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder(
-              this.getUnknownFields());
-          while (true) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                this.setUnknownFields(unknownFields.build());
-                return this;
-              default: {
-                if (!parseUnknownField(input, unknownFields,
-                                       extensionRegistry, tag)) {
-                  this.setUnknownFields(unknownFields.build());
-                  return this;
-                }
-                break;
-              }
-              case 8: {
-                setX(input.readInt32());
-                break;
-              }
-              case 16: {
-                setY(input.readInt32());
-                break;
-              }
-              case 29: {
-                setLineWidth(input.readFloat());
-                break;
-              }
-              case 37: {
-                setDistance(input.readFloat());
-                break;
-              }
-              case 40: {
-                int rawValue = input.readEnum();
-                man.vision.Vision.Line.ScanDirection value = man.vision.Vision.Line.ScanDirection.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(5, rawValue);
-                } else {
-                  setFoundWithScan(value);
-                }
-                break;
-              }
-            }
-          }
         }
         
         
@@ -2799,9 +1890,6 @@ public final class Vision {
           return result.getFoundWithScan();
         }
         public Builder setFoundWithScan(man.vision.Vision.Line.ScanDirection value) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
           result.hasFoundWithScan = true;
           result.foundWithScan_ = value;
           return this;
@@ -2812,31 +1900,29 @@ public final class Vision {
           return this;
         }
       }
-      
-      static {
-        man.vision.Vision.getDescriptor();
-      }
     }
     
-    public static final int FIELD_X2_FIELD_NUMBER = 10;
-    public static
+    public static final
       com.google.protobuf.GeneratedMessage.GeneratedExtension<
         man.vision.Vision.Landmark,
-        java.lang.Float> fieldX2;
-    public static final int FIELD_Y2_FIELD_NUMBER = 11;
-    public static
+        java.lang.Float> fieldX2 =
+          com.google.protobuf.GeneratedMessage.newGeneratedExtension(
+            getDescriptor().getExtensions().get(0),
+            java.lang.Float.class);
+    public static final
       com.google.protobuf.GeneratedMessage.GeneratedExtension<
         man.vision.Vision.Landmark,
-        java.lang.Float> fieldY2;
+        java.lang.Float> fieldY2 =
+          com.google.protobuf.GeneratedMessage.newGeneratedExtension(
+            getDescriptor().getExtensions().get(1),
+            java.lang.Float.class);
     // required .man.vision.Landmark self = 1;
-    public static final int SELF_FIELD_NUMBER = 1;
     private boolean hasSelf;
     private man.vision.Vision.Landmark self_ = man.vision.Vision.Landmark.getDefaultInstance();
     public boolean hasSelf() { return hasSelf; }
     public man.vision.Vision.Landmark getSelf() { return self_; }
     
     // repeated .man.vision.Landmark possibles = 2;
-    public static final int POSSIBLES_FIELD_NUMBER = 2;
     private java.util.List<man.vision.Vision.Landmark> possibles_ =
       java.util.Collections.emptyList();
     public java.util.List<man.vision.Vision.Landmark> getPossiblesList() {
@@ -2848,7 +1934,6 @@ public final class Vision {
     }
     
     // repeated .man.vision.Line.LinePoint points = 3;
-    public static final int POINTS_FIELD_NUMBER = 3;
     private java.util.List<man.vision.Vision.Line.LinePoint> points_ =
       java.util.Collections.emptyList();
     public java.util.List<man.vision.Vision.Line.LinePoint> getPointsList() {
@@ -2860,239 +1945,76 @@ public final class Vision {
     }
     
     // optional float angle = 4;
-    public static final int ANGLE_FIELD_NUMBER = 4;
     private boolean hasAngle;
     private float angle_ = 0F;
     public boolean hasAngle() { return hasAngle; }
     public float getAngle() { return angle_; }
     
     // optional float a = 5;
-    public static final int A_FIELD_NUMBER = 5;
     private boolean hasA;
     private float a_ = 0F;
     public boolean hasA() { return hasA; }
     public float getA() { return a_; }
     
     // optional float b = 6;
-    public static final int B_FIELD_NUMBER = 6;
     private boolean hasB;
     private float b_ = 0F;
     public boolean hasB() { return hasB; }
     public float getB() { return b_; }
     
     // optional float length = 7;
-    public static final int LENGTH_FIELD_NUMBER = 7;
     private boolean hasLength;
     private float length_ = 0F;
     public boolean hasLength() { return hasLength; }
     public float getLength() { return length_; }
     
     // optional float avg_vertical_width = 8;
-    public static final int AVG_VERTICAL_WIDTH_FIELD_NUMBER = 8;
     private boolean hasAvgVerticalWidth;
     private float avgVerticalWidth_ = 0F;
     public boolean hasAvgVerticalWidth() { return hasAvgVerticalWidth; }
     public float getAvgVerticalWidth() { return avgVerticalWidth_; }
     
     // optional float avg_horizontal_width = 9;
-    public static final int AVG_HORIZONTAL_WIDTH_FIELD_NUMBER = 9;
     private boolean hasAvgHorizontalWidth;
     private float avgHorizontalWidth_ = 0F;
     public boolean hasAvgHorizontalWidth() { return hasAvgHorizontalWidth; }
     public float getAvgHorizontalWidth() { return avgHorizontalWidth_; }
     
     // optional .man.vision.Line.LinePoint thinnest_hor_point = 10;
-    public static final int THINNEST_HOR_POINT_FIELD_NUMBER = 10;
     private boolean hasThinnestHorPoint;
     private man.vision.Vision.Line.LinePoint thinnestHorPoint_ = man.vision.Vision.Line.LinePoint.getDefaultInstance();
     public boolean hasThinnestHorPoint() { return hasThinnestHorPoint; }
     public man.vision.Vision.Line.LinePoint getThinnestHorPoint() { return thinnestHorPoint_; }
     
     // optional .man.vision.Line.LinePoint thickest_hor_point = 11;
-    public static final int THICKEST_HOR_POINT_FIELD_NUMBER = 11;
     private boolean hasThickestHorPoint;
     private man.vision.Vision.Line.LinePoint thickestHorPoint_ = man.vision.Vision.Line.LinePoint.getDefaultInstance();
     public boolean hasThickestHorPoint() { return hasThickestHorPoint; }
     public man.vision.Vision.Line.LinePoint getThickestHorPoint() { return thickestHorPoint_; }
     
     // optional .man.vision.Line.LinePoint thinnest_vert_point = 12;
-    public static final int THINNEST_VERT_POINT_FIELD_NUMBER = 12;
     private boolean hasThinnestVertPoint;
     private man.vision.Vision.Line.LinePoint thinnestVertPoint_ = man.vision.Vision.Line.LinePoint.getDefaultInstance();
     public boolean hasThinnestVertPoint() { return hasThinnestVertPoint; }
     public man.vision.Vision.Line.LinePoint getThinnestVertPoint() { return thinnestVertPoint_; }
     
     // optional .man.vision.Line.LinePoint thickest_vert_point = 13;
-    public static final int THICKEST_VERT_POINT_FIELD_NUMBER = 13;
     private boolean hasThickestVertPoint;
     private man.vision.Vision.Line.LinePoint thickestVertPoint_ = man.vision.Vision.Line.LinePoint.getDefaultInstance();
     public boolean hasThickestVertPoint() { return hasThickestVertPoint; }
     public man.vision.Vision.Line.LinePoint getThickestVertPoint() { return thickestVertPoint_; }
     
     // required .man.vision.DistanceBearing db = 14;
-    public static final int DB_FIELD_NUMBER = 14;
     private boolean hasDb;
     private man.vision.Vision.DistanceBearing db_ = man.vision.Vision.DistanceBearing.getDefaultInstance();
     public boolean hasDb() { return hasDb; }
     public man.vision.Vision.DistanceBearing getDb() { return db_; }
     
     // required bool cc_line = 15;
-    public static final int CC_LINE_FIELD_NUMBER = 15;
     private boolean hasCcLine;
     private boolean ccLine_ = false;
     public boolean hasCcLine() { return hasCcLine; }
     public boolean getCcLine() { return ccLine_; }
-    
-    @Override
-    public final boolean isInitialized() {
-      if (!hasSelf) return false;
-      if (!hasDb) return false;
-      if (!hasCcLine) return false;
-      if (!getSelf().isInitialized()) return false;
-      for (man.vision.Vision.Landmark element : getPossiblesList()) {
-        if (!element.isInitialized()) return false;
-      }
-      for (man.vision.Vision.Line.LinePoint element : getPointsList()) {
-        if (!element.isInitialized()) return false;
-      }
-      if (hasThinnestHorPoint()) {
-        if (!getThinnestHorPoint().isInitialized()) return false;
-      }
-      if (hasThickestHorPoint()) {
-        if (!getThickestHorPoint().isInitialized()) return false;
-      }
-      if (hasThinnestVertPoint()) {
-        if (!getThinnestVertPoint().isInitialized()) return false;
-      }
-      if (hasThickestVertPoint()) {
-        if (!getThickestVertPoint().isInitialized()) return false;
-      }
-      if (!getDb().isInitialized()) return false;
-      return true;
-    }
-    
-    @Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (hasSelf()) {
-        output.writeMessage(1, getSelf());
-      }
-      for (man.vision.Vision.Landmark element : getPossiblesList()) {
-        output.writeMessage(2, element);
-      }
-      for (man.vision.Vision.Line.LinePoint element : getPointsList()) {
-        output.writeMessage(3, element);
-      }
-      if (hasAngle()) {
-        output.writeFloat(4, getAngle());
-      }
-      if (hasA()) {
-        output.writeFloat(5, getA());
-      }
-      if (hasB()) {
-        output.writeFloat(6, getB());
-      }
-      if (hasLength()) {
-        output.writeFloat(7, getLength());
-      }
-      if (hasAvgVerticalWidth()) {
-        output.writeFloat(8, getAvgVerticalWidth());
-      }
-      if (hasAvgHorizontalWidth()) {
-        output.writeFloat(9, getAvgHorizontalWidth());
-      }
-      if (hasThinnestHorPoint()) {
-        output.writeMessage(10, getThinnestHorPoint());
-      }
-      if (hasThickestHorPoint()) {
-        output.writeMessage(11, getThickestHorPoint());
-      }
-      if (hasThinnestVertPoint()) {
-        output.writeMessage(12, getThinnestVertPoint());
-      }
-      if (hasThickestVertPoint()) {
-        output.writeMessage(13, getThickestVertPoint());
-      }
-      if (hasDb()) {
-        output.writeMessage(14, getDb());
-      }
-      if (hasCcLine()) {
-        output.writeBool(15, getCcLine());
-      }
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    @Override
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (hasSelf()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getSelf());
-      }
-      for (man.vision.Vision.Landmark element : getPossiblesList()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, element);
-      }
-      for (man.vision.Vision.Line.LinePoint element : getPointsList()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, element);
-      }
-      if (hasAngle()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(4, getAngle());
-      }
-      if (hasA()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(5, getA());
-      }
-      if (hasB()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(6, getB());
-      }
-      if (hasLength()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(7, getLength());
-      }
-      if (hasAvgVerticalWidth()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(8, getAvgVerticalWidth());
-      }
-      if (hasAvgHorizontalWidth()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(9, getAvgHorizontalWidth());
-      }
-      if (hasThinnestHorPoint()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getThinnestHorPoint());
-      }
-      if (hasThickestHorPoint()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, getThickestHorPoint());
-      }
-      if (hasThinnestVertPoint()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, getThinnestVertPoint());
-      }
-      if (hasThickestVertPoint()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, getThickestVertPoint());
-      }
-      if (hasDb()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, getDb());
-      }
-      if (hasCcLine()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, getCcLine());
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
     
     public static man.vision.Vision.Line parseFrom(
         com.google.protobuf.ByteString data)
@@ -3128,17 +2050,6 @@ public final class Vision {
       return newBuilder().mergeFrom(input, extensionRegistry)
                .buildParsed();
     }
-    public static man.vision.Vision.Line parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeDelimitedFrom(input).buildParsed();
-    }
-    public static man.vision.Vision.Line parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistry extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeDelimitedFrom(input, extensionRegistry)
-               .buildParsed();
-    }
     public static man.vision.Vision.Line parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
@@ -3157,7 +2068,6 @@ public final class Vision {
     public static Builder newBuilder(man.vision.Vision.Line prototype) {
       return new Builder().mergeFrom(prototype);
     }
-    public Builder toBuilder() { return newBuilder(this); }
     
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> {
@@ -3166,23 +2076,19 @@ public final class Vision {
       
       man.vision.Vision.Line result = new man.vision.Vision.Line();
       
-      @Override
       protected man.vision.Vision.Line internalGetResult() {
         return result;
       }
       
-      @Override
       public Builder clear() {
         result = new man.vision.Vision.Line();
         return this;
       }
       
-      @Override
       public Builder clone() {
         return new Builder().mergeFrom(result);
       }
       
-      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return man.vision.Vision.Line.getDescriptor();
@@ -3193,7 +2099,7 @@ public final class Vision {
       }
       
       public man.vision.Vision.Line build() {
-        if (result != null && !isInitialized()) {
+        if (!isInitialized()) {
           throw new com.google.protobuf.UninitializedMessageException(
             result);
         }
@@ -3210,9 +2116,6 @@ public final class Vision {
       }
       
       public man.vision.Vision.Line buildPartial() {
-        if (result == null) {
-          throw new IllegalStateException(
-            "build() has already been called on this Builder.");  }
         if (result.possibles_ != java.util.Collections.EMPTY_LIST) {
           result.possibles_ =
             java.util.Collections.unmodifiableList(result.possibles_);
@@ -3226,201 +2129,6 @@ public final class Vision {
         return returnMe;
       }
       
-      @Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof man.vision.Vision.Line) {
-          return mergeFrom((man.vision.Vision.Line)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(man.vision.Vision.Line other) {
-        if (other == man.vision.Vision.Line.getDefaultInstance()) return this;
-        if (other.hasSelf()) {
-          mergeSelf(other.getSelf());
-        }
-        if (!other.possibles_.isEmpty()) {
-          if (result.possibles_.isEmpty()) {
-            result.possibles_ = new java.util.ArrayList<man.vision.Vision.Landmark>();
-          }
-          result.possibles_.addAll(other.possibles_);
-        }
-        if (!other.points_.isEmpty()) {
-          if (result.points_.isEmpty()) {
-            result.points_ = new java.util.ArrayList<man.vision.Vision.Line.LinePoint>();
-          }
-          result.points_.addAll(other.points_);
-        }
-        if (other.hasAngle()) {
-          setAngle(other.getAngle());
-        }
-        if (other.hasA()) {
-          setA(other.getA());
-        }
-        if (other.hasB()) {
-          setB(other.getB());
-        }
-        if (other.hasLength()) {
-          setLength(other.getLength());
-        }
-        if (other.hasAvgVerticalWidth()) {
-          setAvgVerticalWidth(other.getAvgVerticalWidth());
-        }
-        if (other.hasAvgHorizontalWidth()) {
-          setAvgHorizontalWidth(other.getAvgHorizontalWidth());
-        }
-        if (other.hasThinnestHorPoint()) {
-          mergeThinnestHorPoint(other.getThinnestHorPoint());
-        }
-        if (other.hasThickestHorPoint()) {
-          mergeThickestHorPoint(other.getThickestHorPoint());
-        }
-        if (other.hasThinnestVertPoint()) {
-          mergeThinnestVertPoint(other.getThinnestVertPoint());
-        }
-        if (other.hasThickestVertPoint()) {
-          mergeThickestVertPoint(other.getThickestVertPoint());
-        }
-        if (other.hasDb()) {
-          mergeDb(other.getDb());
-        }
-        if (other.hasCcLine()) {
-          setCcLine(other.getCcLine());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return mergeFrom(input,
-          com.google.protobuf.ExtensionRegistry.getEmptyRegistry());
-      }
-      
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistry extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                return this;
-              }
-              break;
-            }
-            case 10: {
-              man.vision.Vision.Landmark.Builder subBuilder = man.vision.Vision.Landmark.newBuilder();
-              if (hasSelf()) {
-                subBuilder.mergeFrom(getSelf());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setSelf(subBuilder.buildPartial());
-              break;
-            }
-            case 18: {
-              man.vision.Vision.Landmark.Builder subBuilder = man.vision.Vision.Landmark.newBuilder();
-              input.readMessage(subBuilder, extensionRegistry);
-              addPossibles(subBuilder.buildPartial());
-              break;
-            }
-            case 26: {
-              man.vision.Vision.Line.LinePoint.Builder subBuilder = man.vision.Vision.Line.LinePoint.newBuilder();
-              input.readMessage(subBuilder, extensionRegistry);
-              addPoints(subBuilder.buildPartial());
-              break;
-            }
-            case 37: {
-              setAngle(input.readFloat());
-              break;
-            }
-            case 45: {
-              setA(input.readFloat());
-              break;
-            }
-            case 53: {
-              setB(input.readFloat());
-              break;
-            }
-            case 61: {
-              setLength(input.readFloat());
-              break;
-            }
-            case 69: {
-              setAvgVerticalWidth(input.readFloat());
-              break;
-            }
-            case 77: {
-              setAvgHorizontalWidth(input.readFloat());
-              break;
-            }
-            case 82: {
-              man.vision.Vision.Line.LinePoint.Builder subBuilder = man.vision.Vision.Line.LinePoint.newBuilder();
-              if (hasThinnestHorPoint()) {
-                subBuilder.mergeFrom(getThinnestHorPoint());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setThinnestHorPoint(subBuilder.buildPartial());
-              break;
-            }
-            case 90: {
-              man.vision.Vision.Line.LinePoint.Builder subBuilder = man.vision.Vision.Line.LinePoint.newBuilder();
-              if (hasThickestHorPoint()) {
-                subBuilder.mergeFrom(getThickestHorPoint());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setThickestHorPoint(subBuilder.buildPartial());
-              break;
-            }
-            case 98: {
-              man.vision.Vision.Line.LinePoint.Builder subBuilder = man.vision.Vision.Line.LinePoint.newBuilder();
-              if (hasThinnestVertPoint()) {
-                subBuilder.mergeFrom(getThinnestVertPoint());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setThinnestVertPoint(subBuilder.buildPartial());
-              break;
-            }
-            case 106: {
-              man.vision.Vision.Line.LinePoint.Builder subBuilder = man.vision.Vision.Line.LinePoint.newBuilder();
-              if (hasThickestVertPoint()) {
-                subBuilder.mergeFrom(getThickestVertPoint());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setThickestVertPoint(subBuilder.buildPartial());
-              break;
-            }
-            case 114: {
-              man.vision.Vision.DistanceBearing.Builder subBuilder = man.vision.Vision.DistanceBearing.newBuilder();
-              if (hasDb()) {
-                subBuilder.mergeFrom(getDb());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setDb(subBuilder.buildPartial());
-              break;
-            }
-            case 120: {
-              setCcLine(input.readBool());
-              break;
-            }
-          }
-        }
-      }
-      
       
       // required .man.vision.Landmark self = 1;
       public boolean hasSelf() {
@@ -3430,9 +2138,6 @@ public final class Vision {
         return result.getSelf();
       }
       public Builder setSelf(man.vision.Vision.Landmark value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.hasSelf = true;
         result.self_ = value;
         return this;
@@ -3470,9 +2175,6 @@ public final class Vision {
         return result.getPossibles(index);
       }
       public Builder setPossibles(int index, man.vision.Vision.Landmark value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.possibles_.set(index, value);
         return this;
       }
@@ -3481,9 +2183,6 @@ public final class Vision {
         return this;
       }
       public Builder addPossibles(man.vision.Vision.Landmark value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         if (result.possibles_.isEmpty()) {
           result.possibles_ = new java.util.ArrayList<man.vision.Vision.Landmark>();
         }
@@ -3521,9 +2220,6 @@ public final class Vision {
         return result.getPoints(index);
       }
       public Builder setPoints(int index, man.vision.Vision.Line.LinePoint value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.points_.set(index, value);
         return this;
       }
@@ -3532,9 +2228,6 @@ public final class Vision {
         return this;
       }
       public Builder addPoints(man.vision.Vision.Line.LinePoint value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         if (result.points_.isEmpty()) {
           result.points_ = new java.util.ArrayList<man.vision.Vision.Line.LinePoint>();
         }
@@ -3677,9 +2370,6 @@ public final class Vision {
         return result.getThinnestHorPoint();
       }
       public Builder setThinnestHorPoint(man.vision.Vision.Line.LinePoint value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.hasThinnestHorPoint = true;
         result.thinnestHorPoint_ = value;
         return this;
@@ -3714,9 +2404,6 @@ public final class Vision {
         return result.getThickestHorPoint();
       }
       public Builder setThickestHorPoint(man.vision.Vision.Line.LinePoint value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.hasThickestHorPoint = true;
         result.thickestHorPoint_ = value;
         return this;
@@ -3751,9 +2438,6 @@ public final class Vision {
         return result.getThinnestVertPoint();
       }
       public Builder setThinnestVertPoint(man.vision.Vision.Line.LinePoint value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.hasThinnestVertPoint = true;
         result.thinnestVertPoint_ = value;
         return this;
@@ -3788,9 +2472,6 @@ public final class Vision {
         return result.getThickestVertPoint();
       }
       public Builder setThickestVertPoint(man.vision.Vision.Line.LinePoint value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.hasThickestVertPoint = true;
         result.thickestVertPoint_ = value;
         return this;
@@ -3825,9 +2506,6 @@ public final class Vision {
         return result.getDb();
       }
       public Builder setDb(man.vision.Vision.DistanceBearing value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.hasDb = true;
         result.db_ = value;
         return this;
@@ -3872,10 +2550,6 @@ public final class Vision {
         return this;
       }
     }
-    
-    static {
-      man.vision.Vision.getDescriptor();
-    }
   }
   
   public static final class Corner extends
@@ -3897,14 +2571,12 @@ public final class Vision {
       return man.vision.Vision.internal_static_man_vision_Corner_descriptor;
     }
     
-    @Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return man.vision.Vision.internal_static_man_vision_Corner_fieldAccessorTable;
     }
     
-    public static enum Shape
-        implements com.google.protobuf.ProtocolMessageEnum {
+    public static enum Shape {
       INNER_L(0, 0),
       OUTER_L(1, 1),
       T(2, 2),
@@ -3956,38 +2628,36 @@ public final class Vision {
         this.index = index;
         this.value = value;
       }
-      
-      static {
-        man.vision.Vision.getDescriptor();
-      }
     }
     
-    public static final int CORNER_TYPE_FIELD_NUMBER = 12;
-    public static
+    public static final
       com.google.protobuf.GeneratedMessage.GeneratedExtension<
         man.vision.Vision.Landmark,
-        man.vision.Vision.Corner.Shape> cornerType;
-    public static final int CORNER_LINES_FIELD_NUMBER = 13;
-    public static
+        man.vision.Vision.Corner.Shape> cornerType =
+          com.google.protobuf.GeneratedMessage.newGeneratedExtension(
+            getDescriptor().getExtensions().get(0),
+            man.vision.Vision.Corner.Shape.class);
+    public static final
       com.google.protobuf.GeneratedMessage.GeneratedExtension<
         man.vision.Vision.Landmark,
-        java.util.List<man.vision.Vision.Landmark>> cornerLines;
+        java.util.List<man.vision.Vision.Landmark>> cornerLines =
+          com.google.protobuf.GeneratedMessage
+            .newRepeatedGeneratedExtension(
+              getDescriptor().getExtensions().get(1),
+              man.vision.Vision.Landmark.class);
     // required .man.vision.Landmark self = 1;
-    public static final int SELF_FIELD_NUMBER = 1;
     private boolean hasSelf;
     private man.vision.Vision.Landmark self_ = man.vision.Vision.Landmark.getDefaultInstance();
     public boolean hasSelf() { return hasSelf; }
     public man.vision.Vision.Landmark getSelf() { return self_; }
     
     // required .man.vision.Detection detect = 2;
-    public static final int DETECT_FIELD_NUMBER = 2;
     private boolean hasDetect;
     private man.vision.Vision.Detection detect_ = man.vision.Vision.Detection.getDefaultInstance();
     public boolean hasDetect() { return hasDetect; }
     public man.vision.Vision.Detection getDetect() { return detect_; }
     
     // repeated .man.vision.Landmark possibles = 3;
-    public static final int POSSIBLES_FIELD_NUMBER = 3;
     private java.util.List<man.vision.Vision.Landmark> possibles_ =
       java.util.Collections.emptyList();
     public java.util.List<man.vision.Vision.Landmark> getPossiblesList() {
@@ -3999,7 +2669,6 @@ public final class Vision {
     }
     
     // repeated .man.vision.Line lines = 4;
-    public static final int LINES_FIELD_NUMBER = 4;
     private java.util.List<man.vision.Vision.Line> lines_ =
       java.util.Collections.emptyList();
     public java.util.List<man.vision.Vision.Line> getLinesList() {
@@ -4011,7 +2680,6 @@ public final class Vision {
     }
     
     // repeated float dists = 5;
-    public static final int DISTS_FIELD_NUMBER = 5;
     private java.util.List<java.lang.Float> dists_ =
       java.util.Collections.emptyList();
     public java.util.List<java.lang.Float> getDistsList() {
@@ -4023,7 +2691,6 @@ public final class Vision {
     }
     
     // repeated .man.vision.Line t_lines = 6;
-    public static final int T_LINES_FIELD_NUMBER = 6;
     private java.util.List<man.vision.Vision.Line> tLines_ =
       java.util.Collections.emptyList();
     public java.util.List<man.vision.Vision.Line> getTLinesList() {
@@ -4035,99 +2702,10 @@ public final class Vision {
     }
     
     // required float angle_between_lines = 7;
-    public static final int ANGLE_BETWEEN_LINES_FIELD_NUMBER = 7;
     private boolean hasAngleBetweenLines;
     private float angleBetweenLines_ = 0F;
     public boolean hasAngleBetweenLines() { return hasAngleBetweenLines; }
     public float getAngleBetweenLines() { return angleBetweenLines_; }
-    
-    @Override
-    public final boolean isInitialized() {
-      if (!hasSelf) return false;
-      if (!hasDetect) return false;
-      if (!hasAngleBetweenLines) return false;
-      if (!getSelf().isInitialized()) return false;
-      if (!getDetect().isInitialized()) return false;
-      for (man.vision.Vision.Landmark element : getPossiblesList()) {
-        if (!element.isInitialized()) return false;
-      }
-      for (man.vision.Vision.Line element : getLinesList()) {
-        if (!element.isInitialized()) return false;
-      }
-      for (man.vision.Vision.Line element : getTLinesList()) {
-        if (!element.isInitialized()) return false;
-      }
-      return true;
-    }
-    
-    @Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (hasSelf()) {
-        output.writeMessage(1, getSelf());
-      }
-      if (hasDetect()) {
-        output.writeMessage(2, getDetect());
-      }
-      for (man.vision.Vision.Landmark element : getPossiblesList()) {
-        output.writeMessage(3, element);
-      }
-      for (man.vision.Vision.Line element : getLinesList()) {
-        output.writeMessage(4, element);
-      }
-      for (float element : getDistsList()) {
-        output.writeFloat(5, element);
-      }
-      for (man.vision.Vision.Line element : getTLinesList()) {
-        output.writeMessage(6, element);
-      }
-      if (hasAngleBetweenLines()) {
-        output.writeFloat(7, getAngleBetweenLines());
-      }
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    @Override
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (hasSelf()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getSelf());
-      }
-      if (hasDetect()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getDetect());
-      }
-      for (man.vision.Vision.Landmark element : getPossiblesList()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, element);
-      }
-      for (man.vision.Vision.Line element : getLinesList()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, element);
-      }
-      {
-        int dataSize = 0;
-        dataSize = 4 * getDistsList().size();
-        size += dataSize;
-        size += 1 * getDistsList().size();
-      }
-      for (man.vision.Vision.Line element : getTLinesList()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, element);
-      }
-      if (hasAngleBetweenLines()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(7, getAngleBetweenLines());
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
     
     public static man.vision.Vision.Corner parseFrom(
         com.google.protobuf.ByteString data)
@@ -4163,17 +2741,6 @@ public final class Vision {
       return newBuilder().mergeFrom(input, extensionRegistry)
                .buildParsed();
     }
-    public static man.vision.Vision.Corner parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeDelimitedFrom(input).buildParsed();
-    }
-    public static man.vision.Vision.Corner parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistry extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeDelimitedFrom(input, extensionRegistry)
-               .buildParsed();
-    }
     public static man.vision.Vision.Corner parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
@@ -4192,7 +2759,6 @@ public final class Vision {
     public static Builder newBuilder(man.vision.Vision.Corner prototype) {
       return new Builder().mergeFrom(prototype);
     }
-    public Builder toBuilder() { return newBuilder(this); }
     
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> {
@@ -4201,23 +2767,19 @@ public final class Vision {
       
       man.vision.Vision.Corner result = new man.vision.Vision.Corner();
       
-      @Override
       protected man.vision.Vision.Corner internalGetResult() {
         return result;
       }
       
-      @Override
       public Builder clear() {
         result = new man.vision.Vision.Corner();
         return this;
       }
       
-      @Override
       public Builder clone() {
         return new Builder().mergeFrom(result);
       }
       
-      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return man.vision.Vision.Corner.getDescriptor();
@@ -4228,7 +2790,7 @@ public final class Vision {
       }
       
       public man.vision.Vision.Corner build() {
-        if (result != null && !isInitialized()) {
+        if (!isInitialized()) {
           throw new com.google.protobuf.UninitializedMessageException(
             result);
         }
@@ -4245,9 +2807,6 @@ public final class Vision {
       }
       
       public man.vision.Vision.Corner buildPartial() {
-        if (result == null) {
-          throw new IllegalStateException(
-            "build() has already been called on this Builder.");  }
         if (result.possibles_ != java.util.Collections.EMPTY_LIST) {
           result.possibles_ =
             java.util.Collections.unmodifiableList(result.possibles_);
@@ -4269,133 +2828,6 @@ public final class Vision {
         return returnMe;
       }
       
-      @Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof man.vision.Vision.Corner) {
-          return mergeFrom((man.vision.Vision.Corner)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(man.vision.Vision.Corner other) {
-        if (other == man.vision.Vision.Corner.getDefaultInstance()) return this;
-        if (other.hasSelf()) {
-          mergeSelf(other.getSelf());
-        }
-        if (other.hasDetect()) {
-          mergeDetect(other.getDetect());
-        }
-        if (!other.possibles_.isEmpty()) {
-          if (result.possibles_.isEmpty()) {
-            result.possibles_ = new java.util.ArrayList<man.vision.Vision.Landmark>();
-          }
-          result.possibles_.addAll(other.possibles_);
-        }
-        if (!other.lines_.isEmpty()) {
-          if (result.lines_.isEmpty()) {
-            result.lines_ = new java.util.ArrayList<man.vision.Vision.Line>();
-          }
-          result.lines_.addAll(other.lines_);
-        }
-        if (!other.dists_.isEmpty()) {
-          if (result.dists_.isEmpty()) {
-            result.dists_ = new java.util.ArrayList<java.lang.Float>();
-          }
-          result.dists_.addAll(other.dists_);
-        }
-        if (!other.tLines_.isEmpty()) {
-          if (result.tLines_.isEmpty()) {
-            result.tLines_ = new java.util.ArrayList<man.vision.Vision.Line>();
-          }
-          result.tLines_.addAll(other.tLines_);
-        }
-        if (other.hasAngleBetweenLines()) {
-          setAngleBetweenLines(other.getAngleBetweenLines());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return mergeFrom(input,
-          com.google.protobuf.ExtensionRegistry.getEmptyRegistry());
-      }
-      
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistry extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                return this;
-              }
-              break;
-            }
-            case 10: {
-              man.vision.Vision.Landmark.Builder subBuilder = man.vision.Vision.Landmark.newBuilder();
-              if (hasSelf()) {
-                subBuilder.mergeFrom(getSelf());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setSelf(subBuilder.buildPartial());
-              break;
-            }
-            case 18: {
-              man.vision.Vision.Detection.Builder subBuilder = man.vision.Vision.Detection.newBuilder();
-              if (hasDetect()) {
-                subBuilder.mergeFrom(getDetect());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setDetect(subBuilder.buildPartial());
-              break;
-            }
-            case 26: {
-              man.vision.Vision.Landmark.Builder subBuilder = man.vision.Vision.Landmark.newBuilder();
-              input.readMessage(subBuilder, extensionRegistry);
-              addPossibles(subBuilder.buildPartial());
-              break;
-            }
-            case 34: {
-              man.vision.Vision.Line.Builder subBuilder = man.vision.Vision.Line.newBuilder();
-              input.readMessage(subBuilder, extensionRegistry);
-              addLines(subBuilder.buildPartial());
-              break;
-            }
-            case 45: {
-              addDists(input.readFloat());
-              break;
-            }
-            case 50: {
-              man.vision.Vision.Line.Builder subBuilder = man.vision.Vision.Line.newBuilder();
-              input.readMessage(subBuilder, extensionRegistry);
-              addTLines(subBuilder.buildPartial());
-              break;
-            }
-            case 61: {
-              setAngleBetweenLines(input.readFloat());
-              break;
-            }
-          }
-        }
-      }
-      
       
       // required .man.vision.Landmark self = 1;
       public boolean hasSelf() {
@@ -4405,9 +2837,6 @@ public final class Vision {
         return result.getSelf();
       }
       public Builder setSelf(man.vision.Vision.Landmark value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.hasSelf = true;
         result.self_ = value;
         return this;
@@ -4442,9 +2871,6 @@ public final class Vision {
         return result.getDetect();
       }
       public Builder setDetect(man.vision.Vision.Detection value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.hasDetect = true;
         result.detect_ = value;
         return this;
@@ -4482,9 +2908,6 @@ public final class Vision {
         return result.getPossibles(index);
       }
       public Builder setPossibles(int index, man.vision.Vision.Landmark value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.possibles_.set(index, value);
         return this;
       }
@@ -4493,9 +2916,6 @@ public final class Vision {
         return this;
       }
       public Builder addPossibles(man.vision.Vision.Landmark value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         if (result.possibles_.isEmpty()) {
           result.possibles_ = new java.util.ArrayList<man.vision.Vision.Landmark>();
         }
@@ -4533,9 +2953,6 @@ public final class Vision {
         return result.getLines(index);
       }
       public Builder setLines(int index, man.vision.Vision.Line value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.lines_.set(index, value);
         return this;
       }
@@ -4544,9 +2961,6 @@ public final class Vision {
         return this;
       }
       public Builder addLines(man.vision.Vision.Line value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         if (result.lines_.isEmpty()) {
           result.lines_ = new java.util.ArrayList<man.vision.Vision.Line>();
         }
@@ -4618,9 +3032,6 @@ public final class Vision {
         return result.getTLines(index);
       }
       public Builder setTLines(int index, man.vision.Vision.Line value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.tLines_.set(index, value);
         return this;
       }
@@ -4629,9 +3040,6 @@ public final class Vision {
         return this;
       }
       public Builder addTLines(man.vision.Vision.Line value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         if (result.tLines_.isEmpty()) {
           result.tLines_ = new java.util.ArrayList<man.vision.Vision.Line>();
         }
@@ -4676,10 +3084,6 @@ public final class Vision {
         return this;
       }
     }
-    
-    static {
-      man.vision.Vision.getDescriptor();
-    }
   }
   
   public static final class Cross extends
@@ -4701,28 +3105,24 @@ public final class Vision {
       return man.vision.Vision.internal_static_man_vision_Cross_descriptor;
     }
     
-    @Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return man.vision.Vision.internal_static_man_vision_Cross_fieldAccessorTable;
     }
     
     // required .man.vision.Landmark self = 1;
-    public static final int SELF_FIELD_NUMBER = 1;
     private boolean hasSelf;
     private man.vision.Vision.Landmark self_ = man.vision.Vision.Landmark.getDefaultInstance();
     public boolean hasSelf() { return hasSelf; }
     public man.vision.Vision.Landmark getSelf() { return self_; }
     
     // required .man.vision.Detection detect = 2;
-    public static final int DETECT_FIELD_NUMBER = 2;
     private boolean hasDetect;
     private man.vision.Vision.Detection detect_ = man.vision.Vision.Detection.getDefaultInstance();
     public boolean hasDetect() { return hasDetect; }
     public man.vision.Vision.Detection getDetect() { return detect_; }
     
     // repeated .man.vision.Landmark possibles = 3;
-    public static final int POSSIBLES_FIELD_NUMBER = 3;
     private java.util.List<man.vision.Vision.Landmark> possibles_ =
       java.util.Collections.emptyList();
     public java.util.List<man.vision.Vision.Landmark> getPossiblesList() {
@@ -4734,71 +3134,10 @@ public final class Vision {
     }
     
     // required .man.Rectangle bounds = 4;
-    public static final int BOUNDS_FIELD_NUMBER = 4;
     private boolean hasBounds;
     private man.Structs.Rectangle bounds_ = man.Structs.Rectangle.getDefaultInstance();
     public boolean hasBounds() { return hasBounds; }
     public man.Structs.Rectangle getBounds() { return bounds_; }
-    
-    @Override
-    public final boolean isInitialized() {
-      if (!hasSelf) return false;
-      if (!hasDetect) return false;
-      if (!hasBounds) return false;
-      if (!getSelf().isInitialized()) return false;
-      if (!getDetect().isInitialized()) return false;
-      for (man.vision.Vision.Landmark element : getPossiblesList()) {
-        if (!element.isInitialized()) return false;
-      }
-      if (!getBounds().isInitialized()) return false;
-      return true;
-    }
-    
-    @Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (hasSelf()) {
-        output.writeMessage(1, getSelf());
-      }
-      if (hasDetect()) {
-        output.writeMessage(2, getDetect());
-      }
-      for (man.vision.Vision.Landmark element : getPossiblesList()) {
-        output.writeMessage(3, element);
-      }
-      if (hasBounds()) {
-        output.writeMessage(4, getBounds());
-      }
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    @Override
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (hasSelf()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getSelf());
-      }
-      if (hasDetect()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getDetect());
-      }
-      for (man.vision.Vision.Landmark element : getPossiblesList()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, element);
-      }
-      if (hasBounds()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getBounds());
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
     
     public static man.vision.Vision.Cross parseFrom(
         com.google.protobuf.ByteString data)
@@ -4834,17 +3173,6 @@ public final class Vision {
       return newBuilder().mergeFrom(input, extensionRegistry)
                .buildParsed();
     }
-    public static man.vision.Vision.Cross parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeDelimitedFrom(input).buildParsed();
-    }
-    public static man.vision.Vision.Cross parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistry extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeDelimitedFrom(input, extensionRegistry)
-               .buildParsed();
-    }
     public static man.vision.Vision.Cross parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
@@ -4863,7 +3191,6 @@ public final class Vision {
     public static Builder newBuilder(man.vision.Vision.Cross prototype) {
       return new Builder().mergeFrom(prototype);
     }
-    public Builder toBuilder() { return newBuilder(this); }
     
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> {
@@ -4872,23 +3199,19 @@ public final class Vision {
       
       man.vision.Vision.Cross result = new man.vision.Vision.Cross();
       
-      @Override
       protected man.vision.Vision.Cross internalGetResult() {
         return result;
       }
       
-      @Override
       public Builder clear() {
         result = new man.vision.Vision.Cross();
         return this;
       }
       
-      @Override
       public Builder clone() {
         return new Builder().mergeFrom(result);
       }
       
-      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return man.vision.Vision.Cross.getDescriptor();
@@ -4899,7 +3222,7 @@ public final class Vision {
       }
       
       public man.vision.Vision.Cross build() {
-        if (result != null && !isInitialized()) {
+        if (!isInitialized()) {
           throw new com.google.protobuf.UninitializedMessageException(
             result);
         }
@@ -4916,9 +3239,6 @@ public final class Vision {
       }
       
       public man.vision.Vision.Cross buildPartial() {
-        if (result == null) {
-          throw new IllegalStateException(
-            "build() has already been called on this Builder.");  }
         if (result.possibles_ != java.util.Collections.EMPTY_LIST) {
           result.possibles_ =
             java.util.Collections.unmodifiableList(result.possibles_);
@@ -4926,104 +3246,6 @@ public final class Vision {
         man.vision.Vision.Cross returnMe = result;
         result = null;
         return returnMe;
-      }
-      
-      @Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof man.vision.Vision.Cross) {
-          return mergeFrom((man.vision.Vision.Cross)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(man.vision.Vision.Cross other) {
-        if (other == man.vision.Vision.Cross.getDefaultInstance()) return this;
-        if (other.hasSelf()) {
-          mergeSelf(other.getSelf());
-        }
-        if (other.hasDetect()) {
-          mergeDetect(other.getDetect());
-        }
-        if (!other.possibles_.isEmpty()) {
-          if (result.possibles_.isEmpty()) {
-            result.possibles_ = new java.util.ArrayList<man.vision.Vision.Landmark>();
-          }
-          result.possibles_.addAll(other.possibles_);
-        }
-        if (other.hasBounds()) {
-          mergeBounds(other.getBounds());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return mergeFrom(input,
-          com.google.protobuf.ExtensionRegistry.getEmptyRegistry());
-      }
-      
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistry extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                return this;
-              }
-              break;
-            }
-            case 10: {
-              man.vision.Vision.Landmark.Builder subBuilder = man.vision.Vision.Landmark.newBuilder();
-              if (hasSelf()) {
-                subBuilder.mergeFrom(getSelf());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setSelf(subBuilder.buildPartial());
-              break;
-            }
-            case 18: {
-              man.vision.Vision.Detection.Builder subBuilder = man.vision.Vision.Detection.newBuilder();
-              if (hasDetect()) {
-                subBuilder.mergeFrom(getDetect());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setDetect(subBuilder.buildPartial());
-              break;
-            }
-            case 26: {
-              man.vision.Vision.Landmark.Builder subBuilder = man.vision.Vision.Landmark.newBuilder();
-              input.readMessage(subBuilder, extensionRegistry);
-              addPossibles(subBuilder.buildPartial());
-              break;
-            }
-            case 34: {
-              man.Structs.Rectangle.Builder subBuilder = man.Structs.Rectangle.newBuilder();
-              if (hasBounds()) {
-                subBuilder.mergeFrom(getBounds());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setBounds(subBuilder.buildPartial());
-              break;
-            }
-          }
-        }
       }
       
       
@@ -5035,9 +3257,6 @@ public final class Vision {
         return result.getSelf();
       }
       public Builder setSelf(man.vision.Vision.Landmark value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.hasSelf = true;
         result.self_ = value;
         return this;
@@ -5072,9 +3291,6 @@ public final class Vision {
         return result.getDetect();
       }
       public Builder setDetect(man.vision.Vision.Detection value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.hasDetect = true;
         result.detect_ = value;
         return this;
@@ -5112,9 +3328,6 @@ public final class Vision {
         return result.getPossibles(index);
       }
       public Builder setPossibles(int index, man.vision.Vision.Landmark value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.possibles_.set(index, value);
         return this;
       }
@@ -5123,9 +3336,6 @@ public final class Vision {
         return this;
       }
       public Builder addPossibles(man.vision.Vision.Landmark value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         if (result.possibles_.isEmpty()) {
           result.possibles_ = new java.util.ArrayList<man.vision.Vision.Landmark>();
         }
@@ -5160,9 +3370,6 @@ public final class Vision {
         return result.getBounds();
       }
       public Builder setBounds(man.Structs.Rectangle value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.hasBounds = true;
         result.bounds_ = value;
         return this;
@@ -5189,10 +3396,6 @@ public final class Vision {
         return this;
       }
     }
-    
-    static {
-      man.vision.Vision.getDescriptor();
-    }
   }
   
   public static final class CrossBar extends
@@ -5214,66 +3417,22 @@ public final class Vision {
       return man.vision.Vision.internal_static_man_vision_CrossBar_descriptor;
     }
     
-    @Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return man.vision.Vision.internal_static_man_vision_CrossBar_fieldAccessorTable;
     }
     
     // required .man.vision.Detection detect = 1;
-    public static final int DETECT_FIELD_NUMBER = 1;
     private boolean hasDetect;
     private man.vision.Vision.Detection detect_ = man.vision.Vision.Detection.getDefaultInstance();
     public boolean hasDetect() { return hasDetect; }
     public man.vision.Vision.Detection getDetect() { return detect_; }
     
     // required .man.Rectangle bounds = 2;
-    public static final int BOUNDS_FIELD_NUMBER = 2;
     private boolean hasBounds;
     private man.Structs.Rectangle bounds_ = man.Structs.Rectangle.getDefaultInstance();
     public boolean hasBounds() { return hasBounds; }
     public man.Structs.Rectangle getBounds() { return bounds_; }
-    
-    @Override
-    public final boolean isInitialized() {
-      if (!hasDetect) return false;
-      if (!hasBounds) return false;
-      if (!getDetect().isInitialized()) return false;
-      if (!getBounds().isInitialized()) return false;
-      return true;
-    }
-    
-    @Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (hasDetect()) {
-        output.writeMessage(1, getDetect());
-      }
-      if (hasBounds()) {
-        output.writeMessage(2, getBounds());
-      }
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    @Override
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (hasDetect()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getDetect());
-      }
-      if (hasBounds()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getBounds());
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
     
     public static man.vision.Vision.CrossBar parseFrom(
         com.google.protobuf.ByteString data)
@@ -5309,17 +3468,6 @@ public final class Vision {
       return newBuilder().mergeFrom(input, extensionRegistry)
                .buildParsed();
     }
-    public static man.vision.Vision.CrossBar parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeDelimitedFrom(input).buildParsed();
-    }
-    public static man.vision.Vision.CrossBar parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistry extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeDelimitedFrom(input, extensionRegistry)
-               .buildParsed();
-    }
     public static man.vision.Vision.CrossBar parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
@@ -5338,7 +3486,6 @@ public final class Vision {
     public static Builder newBuilder(man.vision.Vision.CrossBar prototype) {
       return new Builder().mergeFrom(prototype);
     }
-    public Builder toBuilder() { return newBuilder(this); }
     
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> {
@@ -5347,23 +3494,19 @@ public final class Vision {
       
       man.vision.Vision.CrossBar result = new man.vision.Vision.CrossBar();
       
-      @Override
       protected man.vision.Vision.CrossBar internalGetResult() {
         return result;
       }
       
-      @Override
       public Builder clear() {
         result = new man.vision.Vision.CrossBar();
         return this;
       }
       
-      @Override
       public Builder clone() {
         return new Builder().mergeFrom(result);
       }
       
-      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return man.vision.Vision.CrossBar.getDescriptor();
@@ -5374,7 +3517,7 @@ public final class Vision {
       }
       
       public man.vision.Vision.CrossBar build() {
-        if (result != null && !isInitialized()) {
+        if (!isInitialized()) {
           throw new com.google.protobuf.UninitializedMessageException(
             result);
         }
@@ -5391,86 +3534,9 @@ public final class Vision {
       }
       
       public man.vision.Vision.CrossBar buildPartial() {
-        if (result == null) {
-          throw new IllegalStateException(
-            "build() has already been called on this Builder.");  }
         man.vision.Vision.CrossBar returnMe = result;
         result = null;
         return returnMe;
-      }
-      
-      @Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof man.vision.Vision.CrossBar) {
-          return mergeFrom((man.vision.Vision.CrossBar)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(man.vision.Vision.CrossBar other) {
-        if (other == man.vision.Vision.CrossBar.getDefaultInstance()) return this;
-        if (other.hasDetect()) {
-          mergeDetect(other.getDetect());
-        }
-        if (other.hasBounds()) {
-          mergeBounds(other.getBounds());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return mergeFrom(input,
-          com.google.protobuf.ExtensionRegistry.getEmptyRegistry());
-      }
-      
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistry extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                return this;
-              }
-              break;
-            }
-            case 10: {
-              man.vision.Vision.Detection.Builder subBuilder = man.vision.Vision.Detection.newBuilder();
-              if (hasDetect()) {
-                subBuilder.mergeFrom(getDetect());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setDetect(subBuilder.buildPartial());
-              break;
-            }
-            case 18: {
-              man.Structs.Rectangle.Builder subBuilder = man.Structs.Rectangle.newBuilder();
-              if (hasBounds()) {
-                subBuilder.mergeFrom(getBounds());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setBounds(subBuilder.buildPartial());
-              break;
-            }
-          }
-        }
       }
       
       
@@ -5482,9 +3548,6 @@ public final class Vision {
         return result.getDetect();
       }
       public Builder setDetect(man.vision.Vision.Detection value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.hasDetect = true;
         result.detect_ = value;
         return this;
@@ -5519,9 +3582,6 @@ public final class Vision {
         return result.getBounds();
       }
       public Builder setBounds(man.Structs.Rectangle value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.hasBounds = true;
         result.bounds_ = value;
         return this;
@@ -5548,10 +3608,6 @@ public final class Vision {
         return this;
       }
     }
-    
-    static {
-      man.vision.Vision.getDescriptor();
-    }
   }
   
   public static final class FieldObject extends
@@ -5573,82 +3629,28 @@ public final class Vision {
       return man.vision.Vision.internal_static_man_vision_FieldObject_descriptor;
     }
     
-    @Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return man.vision.Vision.internal_static_man_vision_FieldObject_fieldAccessorTable;
     }
     
     // required .man.vision.Landmark self = 1;
-    public static final int SELF_FIELD_NUMBER = 1;
     private boolean hasSelf;
     private man.vision.Vision.Landmark self_ = man.vision.Vision.Landmark.getDefaultInstance();
     public boolean hasSelf() { return hasSelf; }
     public man.vision.Vision.Landmark getSelf() { return self_; }
     
     // required .man.vision.Landmark possibles = 2;
-    public static final int POSSIBLES_FIELD_NUMBER = 2;
     private boolean hasPossibles;
     private man.vision.Vision.Landmark possibles_ = man.vision.Vision.Landmark.getDefaultInstance();
     public boolean hasPossibles() { return hasPossibles; }
     public man.vision.Vision.Landmark getPossibles() { return possibles_; }
     
     // required .man.Rectangle bounds = 3;
-    public static final int BOUNDS_FIELD_NUMBER = 3;
     private boolean hasBounds;
     private man.Structs.Rectangle bounds_ = man.Structs.Rectangle.getDefaultInstance();
     public boolean hasBounds() { return hasBounds; }
     public man.Structs.Rectangle getBounds() { return bounds_; }
-    
-    @Override
-    public final boolean isInitialized() {
-      if (!hasSelf) return false;
-      if (!hasPossibles) return false;
-      if (!hasBounds) return false;
-      if (!getSelf().isInitialized()) return false;
-      if (!getPossibles().isInitialized()) return false;
-      if (!getBounds().isInitialized()) return false;
-      return true;
-    }
-    
-    @Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (hasSelf()) {
-        output.writeMessage(1, getSelf());
-      }
-      if (hasPossibles()) {
-        output.writeMessage(2, getPossibles());
-      }
-      if (hasBounds()) {
-        output.writeMessage(3, getBounds());
-      }
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    @Override
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (hasSelf()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getSelf());
-      }
-      if (hasPossibles()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getPossibles());
-      }
-      if (hasBounds()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getBounds());
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
     
     public static man.vision.Vision.FieldObject parseFrom(
         com.google.protobuf.ByteString data)
@@ -5684,17 +3686,6 @@ public final class Vision {
       return newBuilder().mergeFrom(input, extensionRegistry)
                .buildParsed();
     }
-    public static man.vision.Vision.FieldObject parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeDelimitedFrom(input).buildParsed();
-    }
-    public static man.vision.Vision.FieldObject parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistry extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeDelimitedFrom(input, extensionRegistry)
-               .buildParsed();
-    }
     public static man.vision.Vision.FieldObject parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
@@ -5713,7 +3704,6 @@ public final class Vision {
     public static Builder newBuilder(man.vision.Vision.FieldObject prototype) {
       return new Builder().mergeFrom(prototype);
     }
-    public Builder toBuilder() { return newBuilder(this); }
     
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> {
@@ -5722,23 +3712,19 @@ public final class Vision {
       
       man.vision.Vision.FieldObject result = new man.vision.Vision.FieldObject();
       
-      @Override
       protected man.vision.Vision.FieldObject internalGetResult() {
         return result;
       }
       
-      @Override
       public Builder clear() {
         result = new man.vision.Vision.FieldObject();
         return this;
       }
       
-      @Override
       public Builder clone() {
         return new Builder().mergeFrom(result);
       }
       
-      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return man.vision.Vision.FieldObject.getDescriptor();
@@ -5749,7 +3735,7 @@ public final class Vision {
       }
       
       public man.vision.Vision.FieldObject build() {
-        if (result != null && !isInitialized()) {
+        if (!isInitialized()) {
           throw new com.google.protobuf.UninitializedMessageException(
             result);
         }
@@ -5766,98 +3752,9 @@ public final class Vision {
       }
       
       public man.vision.Vision.FieldObject buildPartial() {
-        if (result == null) {
-          throw new IllegalStateException(
-            "build() has already been called on this Builder.");  }
         man.vision.Vision.FieldObject returnMe = result;
         result = null;
         return returnMe;
-      }
-      
-      @Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof man.vision.Vision.FieldObject) {
-          return mergeFrom((man.vision.Vision.FieldObject)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(man.vision.Vision.FieldObject other) {
-        if (other == man.vision.Vision.FieldObject.getDefaultInstance()) return this;
-        if (other.hasSelf()) {
-          mergeSelf(other.getSelf());
-        }
-        if (other.hasPossibles()) {
-          mergePossibles(other.getPossibles());
-        }
-        if (other.hasBounds()) {
-          mergeBounds(other.getBounds());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return mergeFrom(input,
-          com.google.protobuf.ExtensionRegistry.getEmptyRegistry());
-      }
-      
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistry extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                return this;
-              }
-              break;
-            }
-            case 10: {
-              man.vision.Vision.Landmark.Builder subBuilder = man.vision.Vision.Landmark.newBuilder();
-              if (hasSelf()) {
-                subBuilder.mergeFrom(getSelf());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setSelf(subBuilder.buildPartial());
-              break;
-            }
-            case 18: {
-              man.vision.Vision.Landmark.Builder subBuilder = man.vision.Vision.Landmark.newBuilder();
-              if (hasPossibles()) {
-                subBuilder.mergeFrom(getPossibles());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setPossibles(subBuilder.buildPartial());
-              break;
-            }
-            case 26: {
-              man.Structs.Rectangle.Builder subBuilder = man.Structs.Rectangle.newBuilder();
-              if (hasBounds()) {
-                subBuilder.mergeFrom(getBounds());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setBounds(subBuilder.buildPartial());
-              break;
-            }
-          }
-        }
       }
       
       
@@ -5869,9 +3766,6 @@ public final class Vision {
         return result.getSelf();
       }
       public Builder setSelf(man.vision.Vision.Landmark value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.hasSelf = true;
         result.self_ = value;
         return this;
@@ -5906,9 +3800,6 @@ public final class Vision {
         return result.getPossibles();
       }
       public Builder setPossibles(man.vision.Vision.Landmark value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.hasPossibles = true;
         result.possibles_ = value;
         return this;
@@ -5943,9 +3834,6 @@ public final class Vision {
         return result.getBounds();
       }
       public Builder setBounds(man.Structs.Rectangle value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.hasBounds = true;
         result.bounds_ = value;
         return this;
@@ -5972,10 +3860,6 @@ public final class Vision {
         return this;
       }
     }
-    
-    static {
-      man.vision.Vision.getDescriptor();
-    }
   }
   
   public static final class Robot extends
@@ -5997,111 +3881,40 @@ public final class Vision {
       return man.vision.Vision.internal_static_man_vision_Robot_descriptor;
     }
     
-    @Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return man.vision.Vision.internal_static_man_vision_Robot_fieldAccessorTable;
     }
     
     // required .man.vision.Detection detect = 1;
-    public static final int DETECT_FIELD_NUMBER = 1;
     private boolean hasDetect;
     private man.vision.Vision.Detection detect_ = man.vision.Vision.Detection.getDefaultInstance();
     public boolean hasDetect() { return hasDetect; }
     public man.vision.Vision.Detection getDetect() { return detect_; }
     
     // required .man.Rectangle bounds = 2;
-    public static final int BOUNDS_FIELD_NUMBER = 2;
     private boolean hasBounds;
     private man.Structs.Rectangle bounds_ = man.Structs.Rectangle.getDefaultInstance();
     public boolean hasBounds() { return hasBounds; }
     public man.Structs.Rectangle getBounds() { return bounds_; }
     
     // required int32 back_left = 3;
-    public static final int BACK_LEFT_FIELD_NUMBER = 3;
     private boolean hasBackLeft;
     private int backLeft_ = 0;
     public boolean hasBackLeft() { return hasBackLeft; }
     public int getBackLeft() { return backLeft_; }
     
     // required int32 back_right = 4;
-    public static final int BACK_RIGHT_FIELD_NUMBER = 4;
     private boolean hasBackRight;
     private int backRight_ = 0;
     public boolean hasBackRight() { return hasBackRight; }
     public int getBackRight() { return backRight_; }
     
     // required int32 back_dir = 5;
-    public static final int BACK_DIR_FIELD_NUMBER = 5;
     private boolean hasBackDir;
     private int backDir_ = 0;
     public boolean hasBackDir() { return hasBackDir; }
     public int getBackDir() { return backDir_; }
-    
-    @Override
-    public final boolean isInitialized() {
-      if (!hasDetect) return false;
-      if (!hasBounds) return false;
-      if (!hasBackLeft) return false;
-      if (!hasBackRight) return false;
-      if (!hasBackDir) return false;
-      if (!getDetect().isInitialized()) return false;
-      if (!getBounds().isInitialized()) return false;
-      return true;
-    }
-    
-    @Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (hasDetect()) {
-        output.writeMessage(1, getDetect());
-      }
-      if (hasBounds()) {
-        output.writeMessage(2, getBounds());
-      }
-      if (hasBackLeft()) {
-        output.writeInt32(3, getBackLeft());
-      }
-      if (hasBackRight()) {
-        output.writeInt32(4, getBackRight());
-      }
-      if (hasBackDir()) {
-        output.writeInt32(5, getBackDir());
-      }
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    @Override
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (hasDetect()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getDetect());
-      }
-      if (hasBounds()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getBounds());
-      }
-      if (hasBackLeft()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, getBackLeft());
-      }
-      if (hasBackRight()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, getBackRight());
-      }
-      if (hasBackDir()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, getBackDir());
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
     
     public static man.vision.Vision.Robot parseFrom(
         com.google.protobuf.ByteString data)
@@ -6137,17 +3950,6 @@ public final class Vision {
       return newBuilder().mergeFrom(input, extensionRegistry)
                .buildParsed();
     }
-    public static man.vision.Vision.Robot parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeDelimitedFrom(input).buildParsed();
-    }
-    public static man.vision.Vision.Robot parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistry extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeDelimitedFrom(input, extensionRegistry)
-               .buildParsed();
-    }
     public static man.vision.Vision.Robot parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
@@ -6166,7 +3968,6 @@ public final class Vision {
     public static Builder newBuilder(man.vision.Vision.Robot prototype) {
       return new Builder().mergeFrom(prototype);
     }
-    public Builder toBuilder() { return newBuilder(this); }
     
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> {
@@ -6175,23 +3976,19 @@ public final class Vision {
       
       man.vision.Vision.Robot result = new man.vision.Vision.Robot();
       
-      @Override
       protected man.vision.Vision.Robot internalGetResult() {
         return result;
       }
       
-      @Override
       public Builder clear() {
         result = new man.vision.Vision.Robot();
         return this;
       }
       
-      @Override
       public Builder clone() {
         return new Builder().mergeFrom(result);
       }
       
-      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return man.vision.Vision.Robot.getDescriptor();
@@ -6202,7 +3999,7 @@ public final class Vision {
       }
       
       public man.vision.Vision.Robot build() {
-        if (result != null && !isInitialized()) {
+        if (!isInitialized()) {
           throw new com.google.protobuf.UninitializedMessageException(
             result);
         }
@@ -6219,107 +4016,9 @@ public final class Vision {
       }
       
       public man.vision.Vision.Robot buildPartial() {
-        if (result == null) {
-          throw new IllegalStateException(
-            "build() has already been called on this Builder.");  }
         man.vision.Vision.Robot returnMe = result;
         result = null;
         return returnMe;
-      }
-      
-      @Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof man.vision.Vision.Robot) {
-          return mergeFrom((man.vision.Vision.Robot)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(man.vision.Vision.Robot other) {
-        if (other == man.vision.Vision.Robot.getDefaultInstance()) return this;
-        if (other.hasDetect()) {
-          mergeDetect(other.getDetect());
-        }
-        if (other.hasBounds()) {
-          mergeBounds(other.getBounds());
-        }
-        if (other.hasBackLeft()) {
-          setBackLeft(other.getBackLeft());
-        }
-        if (other.hasBackRight()) {
-          setBackRight(other.getBackRight());
-        }
-        if (other.hasBackDir()) {
-          setBackDir(other.getBackDir());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return mergeFrom(input,
-          com.google.protobuf.ExtensionRegistry.getEmptyRegistry());
-      }
-      
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistry extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                return this;
-              }
-              break;
-            }
-            case 10: {
-              man.vision.Vision.Detection.Builder subBuilder = man.vision.Vision.Detection.newBuilder();
-              if (hasDetect()) {
-                subBuilder.mergeFrom(getDetect());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setDetect(subBuilder.buildPartial());
-              break;
-            }
-            case 18: {
-              man.Structs.Rectangle.Builder subBuilder = man.Structs.Rectangle.newBuilder();
-              if (hasBounds()) {
-                subBuilder.mergeFrom(getBounds());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setBounds(subBuilder.buildPartial());
-              break;
-            }
-            case 24: {
-              setBackLeft(input.readInt32());
-              break;
-            }
-            case 32: {
-              setBackRight(input.readInt32());
-              break;
-            }
-            case 40: {
-              setBackDir(input.readInt32());
-              break;
-            }
-          }
-        }
       }
       
       
@@ -6331,9 +4030,6 @@ public final class Vision {
         return result.getDetect();
       }
       public Builder setDetect(man.vision.Vision.Detection value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.hasDetect = true;
         result.detect_ = value;
         return this;
@@ -6368,9 +4064,6 @@ public final class Vision {
         return result.getBounds();
       }
       public Builder setBounds(man.Structs.Rectangle value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.hasBounds = true;
         result.bounds_ = value;
         return this;
@@ -6451,10 +4144,6 @@ public final class Vision {
         return this;
       }
     }
-    
-    static {
-      man.vision.Vision.getDescriptor();
-    }
   }
   
   public static final class Ball extends
@@ -6476,80 +4165,28 @@ public final class Vision {
       return man.vision.Vision.internal_static_man_vision_Ball_descriptor;
     }
     
-    @Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return man.vision.Vision.internal_static_man_vision_Ball_fieldAccessorTable;
     }
     
     // required .man.vision.Detection detect = 1;
-    public static final int DETECT_FIELD_NUMBER = 1;
     private boolean hasDetect;
     private man.vision.Vision.Detection detect_ = man.vision.Vision.Detection.getDefaultInstance();
     public boolean hasDetect() { return hasDetect; }
     public man.vision.Vision.Detection getDetect() { return detect_; }
     
     // required float radius = 2;
-    public static final int RADIUS_FIELD_NUMBER = 2;
     private boolean hasRadius;
     private float radius_ = 0F;
     public boolean hasRadius() { return hasRadius; }
     public float getRadius() { return radius_; }
     
     // required int32 confidence = 3;
-    public static final int CONFIDENCE_FIELD_NUMBER = 3;
     private boolean hasConfidence;
     private int confidence_ = 0;
     public boolean hasConfidence() { return hasConfidence; }
     public int getConfidence() { return confidence_; }
-    
-    @Override
-    public final boolean isInitialized() {
-      if (!hasDetect) return false;
-      if (!hasRadius) return false;
-      if (!hasConfidence) return false;
-      if (!getDetect().isInitialized()) return false;
-      return true;
-    }
-    
-    @Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (hasDetect()) {
-        output.writeMessage(1, getDetect());
-      }
-      if (hasRadius()) {
-        output.writeFloat(2, getRadius());
-      }
-      if (hasConfidence()) {
-        output.writeInt32(3, getConfidence());
-      }
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    @Override
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (hasDetect()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getDetect());
-      }
-      if (hasRadius()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(2, getRadius());
-      }
-      if (hasConfidence()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, getConfidence());
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
     
     public static man.vision.Vision.Ball parseFrom(
         com.google.protobuf.ByteString data)
@@ -6585,17 +4222,6 @@ public final class Vision {
       return newBuilder().mergeFrom(input, extensionRegistry)
                .buildParsed();
     }
-    public static man.vision.Vision.Ball parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeDelimitedFrom(input).buildParsed();
-    }
-    public static man.vision.Vision.Ball parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistry extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeDelimitedFrom(input, extensionRegistry)
-               .buildParsed();
-    }
     public static man.vision.Vision.Ball parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
@@ -6614,7 +4240,6 @@ public final class Vision {
     public static Builder newBuilder(man.vision.Vision.Ball prototype) {
       return new Builder().mergeFrom(prototype);
     }
-    public Builder toBuilder() { return newBuilder(this); }
     
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> {
@@ -6623,23 +4248,19 @@ public final class Vision {
       
       man.vision.Vision.Ball result = new man.vision.Vision.Ball();
       
-      @Override
       protected man.vision.Vision.Ball internalGetResult() {
         return result;
       }
       
-      @Override
       public Builder clear() {
         result = new man.vision.Vision.Ball();
         return this;
       }
       
-      @Override
       public Builder clone() {
         return new Builder().mergeFrom(result);
       }
       
-      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return man.vision.Vision.Ball.getDescriptor();
@@ -6650,7 +4271,7 @@ public final class Vision {
       }
       
       public man.vision.Vision.Ball build() {
-        if (result != null && !isInitialized()) {
+        if (!isInitialized()) {
           throw new com.google.protobuf.UninitializedMessageException(
             result);
         }
@@ -6667,88 +4288,9 @@ public final class Vision {
       }
       
       public man.vision.Vision.Ball buildPartial() {
-        if (result == null) {
-          throw new IllegalStateException(
-            "build() has already been called on this Builder.");  }
         man.vision.Vision.Ball returnMe = result;
         result = null;
         return returnMe;
-      }
-      
-      @Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof man.vision.Vision.Ball) {
-          return mergeFrom((man.vision.Vision.Ball)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(man.vision.Vision.Ball other) {
-        if (other == man.vision.Vision.Ball.getDefaultInstance()) return this;
-        if (other.hasDetect()) {
-          mergeDetect(other.getDetect());
-        }
-        if (other.hasRadius()) {
-          setRadius(other.getRadius());
-        }
-        if (other.hasConfidence()) {
-          setConfidence(other.getConfidence());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return mergeFrom(input,
-          com.google.protobuf.ExtensionRegistry.getEmptyRegistry());
-      }
-      
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistry extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                return this;
-              }
-              break;
-            }
-            case 10: {
-              man.vision.Vision.Detection.Builder subBuilder = man.vision.Vision.Detection.newBuilder();
-              if (hasDetect()) {
-                subBuilder.mergeFrom(getDetect());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setDetect(subBuilder.buildPartial());
-              break;
-            }
-            case 21: {
-              setRadius(input.readFloat());
-              break;
-            }
-            case 24: {
-              setConfidence(input.readInt32());
-              break;
-            }
-          }
-        }
       }
       
       
@@ -6760,9 +4302,6 @@ public final class Vision {
         return result.getDetect();
       }
       public Builder setDetect(man.vision.Vision.Detection value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.hasDetect = true;
         result.detect_ = value;
         return this;
@@ -6825,10 +4364,6 @@ public final class Vision {
         return this;
       }
     }
-    
-    static {
-      man.vision.Vision.getDescriptor();
-    }
   }
   
   public static final class Frame extends
@@ -6850,21 +4385,18 @@ public final class Vision {
       return man.vision.Vision.internal_static_man_vision_Frame_descriptor;
     }
     
-    @Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return man.vision.Vision.internal_static_man_vision_Frame_fieldAccessorTable;
     }
     
     // optional .man.vision.Image image = 1;
-    public static final int IMAGE_FIELD_NUMBER = 1;
     private boolean hasImage;
     private man.vision.Vision.Image image_ = man.vision.Vision.Image.getDefaultInstance();
     public boolean hasImage() { return hasImage; }
     public man.vision.Vision.Image getImage() { return image_; }
     
     // repeated .man.vision.Ball balls = 2;
-    public static final int BALLS_FIELD_NUMBER = 2;
     private java.util.List<man.vision.Vision.Ball> balls_ =
       java.util.Collections.emptyList();
     public java.util.List<man.vision.Vision.Ball> getBallsList() {
@@ -6876,7 +4408,6 @@ public final class Vision {
     }
     
     // repeated .man.vision.FieldObject objects = 3;
-    public static final int OBJECTS_FIELD_NUMBER = 3;
     private java.util.List<man.vision.Vision.FieldObject> objects_ =
       java.util.Collections.emptyList();
     public java.util.List<man.vision.Vision.FieldObject> getObjectsList() {
@@ -6888,7 +4419,6 @@ public final class Vision {
     }
     
     // repeated .man.vision.Line lines = 4;
-    public static final int LINES_FIELD_NUMBER = 4;
     private java.util.List<man.vision.Vision.Line> lines_ =
       java.util.Collections.emptyList();
     public java.util.List<man.vision.Vision.Line> getLinesList() {
@@ -6900,7 +4430,6 @@ public final class Vision {
     }
     
     // repeated .man.vision.Corner corners = 5;
-    public static final int CORNERS_FIELD_NUMBER = 5;
     private java.util.List<man.vision.Vision.Corner> corners_ =
       java.util.Collections.emptyList();
     public java.util.List<man.vision.Vision.Corner> getCornersList() {
@@ -6912,7 +4441,6 @@ public final class Vision {
     }
     
     // repeated .man.vision.Robot robots = 6;
-    public static final int ROBOTS_FIELD_NUMBER = 6;
     private java.util.List<man.vision.Vision.Robot> robots_ =
       java.util.Collections.emptyList();
     public java.util.List<man.vision.Vision.Robot> getRobotsList() {
@@ -6921,89 +4449,6 @@ public final class Vision {
     public int getRobotsCount() { return robots_.size(); }
     public man.vision.Vision.Robot getRobots(int index) {
       return robots_.get(index);
-    }
-    
-    @Override
-    public final boolean isInitialized() {
-      if (hasImage()) {
-        if (!getImage().isInitialized()) return false;
-      }
-      for (man.vision.Vision.Ball element : getBallsList()) {
-        if (!element.isInitialized()) return false;
-      }
-      for (man.vision.Vision.FieldObject element : getObjectsList()) {
-        if (!element.isInitialized()) return false;
-      }
-      for (man.vision.Vision.Line element : getLinesList()) {
-        if (!element.isInitialized()) return false;
-      }
-      for (man.vision.Vision.Corner element : getCornersList()) {
-        if (!element.isInitialized()) return false;
-      }
-      for (man.vision.Vision.Robot element : getRobotsList()) {
-        if (!element.isInitialized()) return false;
-      }
-      return true;
-    }
-    
-    @Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (hasImage()) {
-        output.writeMessage(1, getImage());
-      }
-      for (man.vision.Vision.Ball element : getBallsList()) {
-        output.writeMessage(2, element);
-      }
-      for (man.vision.Vision.FieldObject element : getObjectsList()) {
-        output.writeMessage(3, element);
-      }
-      for (man.vision.Vision.Line element : getLinesList()) {
-        output.writeMessage(4, element);
-      }
-      for (man.vision.Vision.Corner element : getCornersList()) {
-        output.writeMessage(5, element);
-      }
-      for (man.vision.Vision.Robot element : getRobotsList()) {
-        output.writeMessage(6, element);
-      }
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    @Override
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (hasImage()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getImage());
-      }
-      for (man.vision.Vision.Ball element : getBallsList()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, element);
-      }
-      for (man.vision.Vision.FieldObject element : getObjectsList()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, element);
-      }
-      for (man.vision.Vision.Line element : getLinesList()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, element);
-      }
-      for (man.vision.Vision.Corner element : getCornersList()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, element);
-      }
-      for (man.vision.Vision.Robot element : getRobotsList()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, element);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
     }
     
     public static man.vision.Vision.Frame parseFrom(
@@ -7040,17 +4485,6 @@ public final class Vision {
       return newBuilder().mergeFrom(input, extensionRegistry)
                .buildParsed();
     }
-    public static man.vision.Vision.Frame parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeDelimitedFrom(input).buildParsed();
-    }
-    public static man.vision.Vision.Frame parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistry extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeDelimitedFrom(input, extensionRegistry)
-               .buildParsed();
-    }
     public static man.vision.Vision.Frame parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
@@ -7069,7 +4503,6 @@ public final class Vision {
     public static Builder newBuilder(man.vision.Vision.Frame prototype) {
       return new Builder().mergeFrom(prototype);
     }
-    public Builder toBuilder() { return newBuilder(this); }
     
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> {
@@ -7078,23 +4511,19 @@ public final class Vision {
       
       man.vision.Vision.Frame result = new man.vision.Vision.Frame();
       
-      @Override
       protected man.vision.Vision.Frame internalGetResult() {
         return result;
       }
       
-      @Override
       public Builder clear() {
         result = new man.vision.Vision.Frame();
         return this;
       }
       
-      @Override
       public Builder clone() {
         return new Builder().mergeFrom(result);
       }
       
-      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return man.vision.Vision.Frame.getDescriptor();
@@ -7105,7 +4534,7 @@ public final class Vision {
       }
       
       public man.vision.Vision.Frame build() {
-        if (result != null && !isInitialized()) {
+        if (!isInitialized()) {
           throw new com.google.protobuf.UninitializedMessageException(
             result);
         }
@@ -7122,9 +4551,6 @@ public final class Vision {
       }
       
       public man.vision.Vision.Frame buildPartial() {
-        if (result == null) {
-          throw new IllegalStateException(
-            "build() has already been called on this Builder.");  }
         if (result.balls_ != java.util.Collections.EMPTY_LIST) {
           result.balls_ =
             java.util.Collections.unmodifiableList(result.balls_);
@@ -7150,128 +4576,6 @@ public final class Vision {
         return returnMe;
       }
       
-      @Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof man.vision.Vision.Frame) {
-          return mergeFrom((man.vision.Vision.Frame)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(man.vision.Vision.Frame other) {
-        if (other == man.vision.Vision.Frame.getDefaultInstance()) return this;
-        if (other.hasImage()) {
-          mergeImage(other.getImage());
-        }
-        if (!other.balls_.isEmpty()) {
-          if (result.balls_.isEmpty()) {
-            result.balls_ = new java.util.ArrayList<man.vision.Vision.Ball>();
-          }
-          result.balls_.addAll(other.balls_);
-        }
-        if (!other.objects_.isEmpty()) {
-          if (result.objects_.isEmpty()) {
-            result.objects_ = new java.util.ArrayList<man.vision.Vision.FieldObject>();
-          }
-          result.objects_.addAll(other.objects_);
-        }
-        if (!other.lines_.isEmpty()) {
-          if (result.lines_.isEmpty()) {
-            result.lines_ = new java.util.ArrayList<man.vision.Vision.Line>();
-          }
-          result.lines_.addAll(other.lines_);
-        }
-        if (!other.corners_.isEmpty()) {
-          if (result.corners_.isEmpty()) {
-            result.corners_ = new java.util.ArrayList<man.vision.Vision.Corner>();
-          }
-          result.corners_.addAll(other.corners_);
-        }
-        if (!other.robots_.isEmpty()) {
-          if (result.robots_.isEmpty()) {
-            result.robots_ = new java.util.ArrayList<man.vision.Vision.Robot>();
-          }
-          result.robots_.addAll(other.robots_);
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return mergeFrom(input,
-          com.google.protobuf.ExtensionRegistry.getEmptyRegistry());
-      }
-      
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistry extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                return this;
-              }
-              break;
-            }
-            case 10: {
-              man.vision.Vision.Image.Builder subBuilder = man.vision.Vision.Image.newBuilder();
-              if (hasImage()) {
-                subBuilder.mergeFrom(getImage());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setImage(subBuilder.buildPartial());
-              break;
-            }
-            case 18: {
-              man.vision.Vision.Ball.Builder subBuilder = man.vision.Vision.Ball.newBuilder();
-              input.readMessage(subBuilder, extensionRegistry);
-              addBalls(subBuilder.buildPartial());
-              break;
-            }
-            case 26: {
-              man.vision.Vision.FieldObject.Builder subBuilder = man.vision.Vision.FieldObject.newBuilder();
-              input.readMessage(subBuilder, extensionRegistry);
-              addObjects(subBuilder.buildPartial());
-              break;
-            }
-            case 34: {
-              man.vision.Vision.Line.Builder subBuilder = man.vision.Vision.Line.newBuilder();
-              input.readMessage(subBuilder, extensionRegistry);
-              addLines(subBuilder.buildPartial());
-              break;
-            }
-            case 42: {
-              man.vision.Vision.Corner.Builder subBuilder = man.vision.Vision.Corner.newBuilder();
-              input.readMessage(subBuilder, extensionRegistry);
-              addCorners(subBuilder.buildPartial());
-              break;
-            }
-            case 50: {
-              man.vision.Vision.Robot.Builder subBuilder = man.vision.Vision.Robot.newBuilder();
-              input.readMessage(subBuilder, extensionRegistry);
-              addRobots(subBuilder.buildPartial());
-              break;
-            }
-          }
-        }
-      }
-      
       
       // optional .man.vision.Image image = 1;
       public boolean hasImage() {
@@ -7281,9 +4585,6 @@ public final class Vision {
         return result.getImage();
       }
       public Builder setImage(man.vision.Vision.Image value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.hasImage = true;
         result.image_ = value;
         return this;
@@ -7321,9 +4622,6 @@ public final class Vision {
         return result.getBalls(index);
       }
       public Builder setBalls(int index, man.vision.Vision.Ball value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.balls_.set(index, value);
         return this;
       }
@@ -7332,9 +4630,6 @@ public final class Vision {
         return this;
       }
       public Builder addBalls(man.vision.Vision.Ball value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         if (result.balls_.isEmpty()) {
           result.balls_ = new java.util.ArrayList<man.vision.Vision.Ball>();
         }
@@ -7372,9 +4667,6 @@ public final class Vision {
         return result.getObjects(index);
       }
       public Builder setObjects(int index, man.vision.Vision.FieldObject value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.objects_.set(index, value);
         return this;
       }
@@ -7383,9 +4675,6 @@ public final class Vision {
         return this;
       }
       public Builder addObjects(man.vision.Vision.FieldObject value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         if (result.objects_.isEmpty()) {
           result.objects_ = new java.util.ArrayList<man.vision.Vision.FieldObject>();
         }
@@ -7423,9 +4712,6 @@ public final class Vision {
         return result.getLines(index);
       }
       public Builder setLines(int index, man.vision.Vision.Line value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.lines_.set(index, value);
         return this;
       }
@@ -7434,9 +4720,6 @@ public final class Vision {
         return this;
       }
       public Builder addLines(man.vision.Vision.Line value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         if (result.lines_.isEmpty()) {
           result.lines_ = new java.util.ArrayList<man.vision.Vision.Line>();
         }
@@ -7474,9 +4757,6 @@ public final class Vision {
         return result.getCorners(index);
       }
       public Builder setCorners(int index, man.vision.Vision.Corner value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.corners_.set(index, value);
         return this;
       }
@@ -7485,9 +4765,6 @@ public final class Vision {
         return this;
       }
       public Builder addCorners(man.vision.Vision.Corner value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         if (result.corners_.isEmpty()) {
           result.corners_ = new java.util.ArrayList<man.vision.Vision.Corner>();
         }
@@ -7525,9 +4802,6 @@ public final class Vision {
         return result.getRobots(index);
       }
       public Builder setRobots(int index, man.vision.Vision.Robot value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.robots_.set(index, value);
         return this;
       }
@@ -7536,9 +4810,6 @@ public final class Vision {
         return this;
       }
       public Builder addRobots(man.vision.Vision.Robot value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         if (result.robots_.isEmpty()) {
           result.robots_ = new java.util.ArrayList<man.vision.Vision.Robot>();
         }
@@ -7565,329 +4836,149 @@ public final class Vision {
         return this;
       }
     }
-    
-    static {
-      man.vision.Vision.getDescriptor();
-    }
   }
   
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_man_vision_Image_descriptor;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_man_vision_Image_descriptor =
+      getDescriptor().getMessageTypes().get(0);
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_man_vision_Image_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_man_vision_Landmark_descriptor;
+      internal_static_man_vision_Image_fieldAccessorTable = new
+        com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+          internal_static_man_vision_Image_descriptor,
+          new java.lang.String[] { "Encoding", "Width", "Height", "Data", },
+          man.vision.Vision.Image.class,
+          man.vision.Vision.Image.Builder.class);
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_man_vision_Landmark_descriptor =
+      getDescriptor().getMessageTypes().get(1);
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_man_vision_Landmark_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_man_vision_DistanceBearing_descriptor;
+      internal_static_man_vision_Landmark_fieldAccessorTable = new
+        com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+          internal_static_man_vision_Landmark_descriptor,
+          new java.lang.String[] { "Id", "FieldX", "FieldY", "IdCertainty", "DistanceCertainty", },
+          man.vision.Vision.Landmark.class,
+          man.vision.Vision.Landmark.Builder.class);
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_man_vision_DistanceBearing_descriptor =
+      getDescriptor().getMessageTypes().get(2);
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_man_vision_DistanceBearing_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_man_vision_Detection_descriptor;
+      internal_static_man_vision_DistanceBearing_fieldAccessorTable = new
+        com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+          internal_static_man_vision_DistanceBearing_descriptor,
+          new java.lang.String[] { "Distance", "Bearing", "DistanceSd", "BearingSd", },
+          man.vision.Vision.DistanceBearing.class,
+          man.vision.Vision.DistanceBearing.Builder.class);
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_man_vision_Detection_descriptor =
+      getDescriptor().getMessageTypes().get(3);
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_man_vision_Detection_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_man_vision_Line_descriptor;
+      internal_static_man_vision_Detection_fieldAccessorTable = new
+        com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+          internal_static_man_vision_Detection_descriptor,
+          new java.lang.String[] { "X", "Y", "Width", "Height", "CenterX", "CenterY", "AngleX", "AngleY", "FocDist", "Elevation", "Db", },
+          man.vision.Vision.Detection.class,
+          man.vision.Vision.Detection.Builder.class);
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_man_vision_Line_descriptor =
+      getDescriptor().getMessageTypes().get(4);
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_man_vision_Line_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_man_vision_Line_LinePoint_descriptor;
+      internal_static_man_vision_Line_fieldAccessorTable = new
+        com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+          internal_static_man_vision_Line_descriptor,
+          new java.lang.String[] { "Self", "Possibles", "Points", "Angle", "A", "B", "Length", "AvgVerticalWidth", "AvgHorizontalWidth", "ThinnestHorPoint", "ThickestHorPoint", "ThinnestVertPoint", "ThickestVertPoint", "Db", "CcLine", },
+          man.vision.Vision.Line.class,
+          man.vision.Vision.Line.Builder.class);
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_man_vision_Line_LinePoint_descriptor =
+      internal_static_man_vision_Line_descriptor.getNestedTypes().get(0);
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_man_vision_Line_LinePoint_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_man_vision_Corner_descriptor;
+      internal_static_man_vision_Line_LinePoint_fieldAccessorTable = new
+        com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+          internal_static_man_vision_Line_LinePoint_descriptor,
+          new java.lang.String[] { "X", "Y", "LineWidth", "Distance", "FoundWithScan", },
+          man.vision.Vision.Line.LinePoint.class,
+          man.vision.Vision.Line.LinePoint.Builder.class);
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_man_vision_Corner_descriptor =
+      getDescriptor().getMessageTypes().get(5);
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_man_vision_Corner_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_man_vision_Cross_descriptor;
+      internal_static_man_vision_Corner_fieldAccessorTable = new
+        com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+          internal_static_man_vision_Corner_descriptor,
+          new java.lang.String[] { "Self", "Detect", "Possibles", "Lines", "Dists", "TLines", "AngleBetweenLines", },
+          man.vision.Vision.Corner.class,
+          man.vision.Vision.Corner.Builder.class);
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_man_vision_Cross_descriptor =
+      getDescriptor().getMessageTypes().get(6);
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_man_vision_Cross_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_man_vision_CrossBar_descriptor;
+      internal_static_man_vision_Cross_fieldAccessorTable = new
+        com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+          internal_static_man_vision_Cross_descriptor,
+          new java.lang.String[] { "Self", "Detect", "Possibles", "Bounds", },
+          man.vision.Vision.Cross.class,
+          man.vision.Vision.Cross.Builder.class);
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_man_vision_CrossBar_descriptor =
+      getDescriptor().getMessageTypes().get(7);
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_man_vision_CrossBar_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_man_vision_FieldObject_descriptor;
+      internal_static_man_vision_CrossBar_fieldAccessorTable = new
+        com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+          internal_static_man_vision_CrossBar_descriptor,
+          new java.lang.String[] { "Detect", "Bounds", },
+          man.vision.Vision.CrossBar.class,
+          man.vision.Vision.CrossBar.Builder.class);
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_man_vision_FieldObject_descriptor =
+      getDescriptor().getMessageTypes().get(8);
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_man_vision_FieldObject_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_man_vision_Robot_descriptor;
+      internal_static_man_vision_FieldObject_fieldAccessorTable = new
+        com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+          internal_static_man_vision_FieldObject_descriptor,
+          new java.lang.String[] { "Self", "Possibles", "Bounds", },
+          man.vision.Vision.FieldObject.class,
+          man.vision.Vision.FieldObject.Builder.class);
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_man_vision_Robot_descriptor =
+      getDescriptor().getMessageTypes().get(9);
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_man_vision_Robot_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_man_vision_Ball_descriptor;
+      internal_static_man_vision_Robot_fieldAccessorTable = new
+        com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+          internal_static_man_vision_Robot_descriptor,
+          new java.lang.String[] { "Detect", "Bounds", "BackLeft", "BackRight", "BackDir", },
+          man.vision.Vision.Robot.class,
+          man.vision.Vision.Robot.Builder.class);
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_man_vision_Ball_descriptor =
+      getDescriptor().getMessageTypes().get(10);
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_man_vision_Ball_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_man_vision_Frame_descriptor;
+      internal_static_man_vision_Ball_fieldAccessorTable = new
+        com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+          internal_static_man_vision_Ball_descriptor,
+          new java.lang.String[] { "Detect", "Radius", "Confidence", },
+          man.vision.Vision.Ball.class,
+          man.vision.Vision.Ball.Builder.class);
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_man_vision_Frame_descriptor =
+      getDescriptor().getMessageTypes().get(11);
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_man_vision_Frame_fieldAccessorTable;
-  
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String descriptorData =
-      "\n\014vision.proto\022\nman.vision\032\rstructs.prot" +
-      "o\"\237\001\n\005Image\0224\n\010encoding\030\001 \002(\0162\032.man.visi" +
-      "on.Image.Encoding:\006YUV422\022\r\n\005width\030\002 \002(\005" +
-      "\022\016\n\006height\030\003 \002(\005\022\014\n\004data\030\004 \002(\014\"3\n\010Encodi" +
-      "ng\022\t\n\005YCbCr\020\001\022\n\n\006YUV422\020\002\022\007\n\003RGB\020\003\022\007\n\003BM" +
-      "P\020\004\"\232\016\n\010Landmark\022#\n\002id\030\001 \002(\0162\027.man.visio" +
-      "n.Landmark.ID\022\017\n\007field_x\030\002 \002(\002\022\017\n\007field_" +
-      "y\030\003 \002(\002\0226\n\014id_certainty\030\004 \001(\0162 .man.visi" +
-      "on.Landmark.IDCertainty\022B\n\022distance_cert" +
-      "ainty\030\005 \001(\0162&.man.vision.Landmark.Distan" +
-      "ceCertainty\"\262\013\n\002ID\022\022\n\016L_INNER_CORNER\020\000\022\022" +
-      "\n\016L_OUTER_CORNER\020\001\022\014\n\010T_CORNER\020\002\022\021\n\rCENT" +
-      "ER_CIRCLE\020\003\022\017\n\013BLUE_GOAL_T\020\004\022\021\n\rYELLOW_G" +
-      "OAL_T\020\005\022+\n\'BLUE_GOAL_RIGHT_L_OR_YELLOW_G" +
-      "OAL_LEFT_L\020\006\022+\n\'BLUE_GOAL_LEFT_L_OR_YELL" +
-      "OW_GOAL_RIGHT_L\020\007\022/\n+BLUE_CORNER_TOP_L_O" +
-      "R_YELLOW_CORNER_BOTTOM_L\020\010\022/\n+BLUE_CORNE" +
-      "R_BOTTOM_L_OR_YELLOW_CORNER_TOP_L\020\t\022\022\n\016C" +
-      "ORNER_INNER_L\020\n\022\024\n\020GOAL_BOX_INNER_L\020\013\022\025\n" +
-      "\021BLUE_GOAL_OUTER_L\020\014\022\027\n\023YELLOW_GOAL_OUTE" +
-      "R_L\020\r\022\014\n\010CENTER_T\020\016\022\025\n\021BLUE_CORNER_TOP_L" +
-      "\020\017\022\030\n\024BLUE_CORNER_BOTTOM_L\020\020\022\024\n\020BLUE_GOA" +
-      "L_LEFT_T\020\021\022\025\n\021BLUE_GOAL_RIGHT_T\020\022\022\024\n\020BLU" +
-      "E_GOAL_LEFT_L\020\023\022\025\n\021BLUE_GOAL_RIGHT_L\020\024\022\023" +
-      "\n\017CENTER_BOTTOM_T\020\025\022\020\n\014CENTER_TOP_T\020\026\022\032\n" +
-      "\026YELLOW_CORNER_BOTTOM_L\020\027\022\027\n\023YELLOW_CORN" +
-      "ER_TOP_L\020\030\022\026\n\022YELLOW_GOAL_LEFT_T\020\031\022\027\n\023YE" +
-      "LLOW_GOAL_RIGHT_T\020\032\022\026\n\022YELLOW_GOAL_LEFT_" +
-      "L\020\033\022\027\n\023YELLOW_GOAL_RIGHT_L\020\034\022\025\n\021CORNER_N" +
-      "O_IDEA_ID\020\035\022\n\n\006TOP_CC\020\036\022\r\n\tBOTTOM_CC\020\037\022\027" +
-      "\n\023BLUE_GOAL_LEFT_POST\020(\022\030\n\024BLUE_GOAL_RIG" +
-      "HT_POST\020)\022\031\n\025YELLOW_GOAL_LEFT_POST\020*\022\032\n\026" +
-      "YELLOW_GOAL_RIGHT_POST\020+\022\022\n\016BLUE_GOAL_PO" +
-      "ST\020,\022\024\n\020YELLOW_GOAL_POST\020-\022\030\n\024UNKNOWN_FI" +
-      "ELD_OBJECT\020.\022\020\n\014UNKNOWN_LINE\0202\022\023\n\017SIDE_O" +
-      "R_ENDLINE\0203\022\021\n\rSIDELINE_LINE\0204\022\020\n\014ENDLIN" +
-      "E_LINE\0205\022\020\n\014GOALBOX_LINE\0206\022\025\n\021GOALBOX_SI" +
-      "DE_LINE\0207\022\024\n\020GOALBOX_TOP_LINE\0208\022\025\n\021BLUE_" +
-      "GOAL_ENDLINE\0209\022\027\n\023YELLOW_GOAL_ENDLINE\020:\022" +
-      "\030\n\024BLUE_YELLOW_SIDELINE\020;\022\030\n\024YELLOW_BLUE" +
-      "_SIDELINE\020<\022\025\n\021CENTER_FIELD_LINE\020=\022\031\n\025BL" +
-      "UE_GOALBOX_TOP_LINE\020>\022\032\n\026BLUE_GOALBOX_LE" +
-      "FT_LINE\020?\022\033\n\027BLUE_GOALBOX_RIGHT_LINE\020@\022\033" +
-      "\n\027YELLOW_GOALBOX_TOP_LINE\020A\022\034\n\030YELLOW_GO" +
-      "ALBOX_LEFT_LINE\020A\022\035\n\031YELLOW_GOALBOX_RIGH" +
-      "T_LINE\020B\022\023\n\017BLUE_GOAL_CROSS\020P\022\025\n\021YELLOW_" +
-      "GOAL_CROSS\020Q\022\022\n\016ABSTRACT_CROSS\020R\"6\n\013IDCe" +
-      "rtainty\022\014\n\010NOT_SURE\020\000\022\016\n\nMILDY_SURE\020\001\022\t\n" +
-      "\005_SURE\020\002\"X\n\021DistanceCertainty\022\017\n\013BOTH_UN" +
-      "SURE\020\000\022\020\n\014WIDTH_UNSURE\020\001\022\021\n\rHEIGHT_UNSUR" +
-      "E\020\002\022\r\n\tBOTH_SURE\020\003*\004\010\n\020e\"]\n\017DistanceBear" +
-      "ing\022\020\n\010distance\030\001 \002(\002\022\017\n\007bearing\030\002 \002(\002\022\023" +
-      "\n\013distance_sd\030\003 \002(\002\022\022\n\nbearing_sd\030\004 \002(\002\"" +
-      "\333\001\n\tDetection\022\t\n\001x\030\001 \002(\005\022\t\n\001y\030\002 \002(\005\022\r\n\005w" +
-      "idth\030\003 \002(\002\022\016\n\006height\030\004 \002(\002\022\020\n\010center_x\030\005" +
-      " \002(\005\022\020\n\010center_y\030\006 \002(\005\022\017\n\007angle_x\030\007 \002(\002\022" +
-      "\017\n\007angle_y\030\010 \002(\002\022\020\n\010foc_dist\030\t \002(\002\022\021\n\tel" +
-      "evation\030\n \002(\002\022\'\n\002db\030\013 \002(\0132\033.man.vision.D" +
-      "istanceBearing*\005\010\024\020\311\001\"\214\006\n\004Line\022\"\n\004self\030\001" +
-      " \002(\0132\024.man.vision.Landmark\022\'\n\tpossibles\030" +
-      "\002 \003(\0132\024.man.vision.Landmark\022*\n\006points\030\003 " +
-      "\003(\0132\032.man.vision.Line.LinePoint\022\r\n\005angle" +
-      "\030\004 \001(\002\022\t\n\001a\030\005 \001(\002\022\t\n\001b\030\006 \001(\002\022\016\n\006length\030\007" +
-      " \001(\002\022\032\n\022avg_vertical_width\030\010 \001(\002\022\034\n\024avg_" +
-      "horizontal_width\030\t \001(\002\0226\n\022thinnest_hor_p" +
-      "oint\030\n \001(\0132\032.man.vision.Line.LinePoint\0226" +
-      "\n\022thickest_hor_point\030\013 \001(\0132\032.man.vision." +
-      "Line.LinePoint\0227\n\023thinnest_vert_point\030\014 " +
-      "\001(\0132\032.man.vision.Line.LinePoint\0227\n\023thick" +
-      "est_vert_point\030\r \001(\0132\032.man.vision.Line.L" +
-      "inePoint\022\'\n\002db\030\016 \002(\0132\033.man.vision.Distan" +
-      "ceBearing\022\017\n\007cc_line\030\017 \002(\010\032\200\001\n\tLinePoint" +
-      "\022\t\n\001x\030\001 \002(\005\022\t\n\001y\030\002 \002(\005\022\022\n\nline_width\030\003 \002" +
-      "(\002\022\020\n\010distance\030\004 \002(\002\0227\n\017found_with_scan\030" +
-      "\005 \002(\0162\036.man.vision.Line.ScanDirection\"-\n" +
-      "\rScanDirection\022\016\n\nHORIZONTAL\020\000\022\014\n\010VERTIC" +
-      "AL\020\0012&\n\010field_x2\022\024.man.vision.Landmark\030\n" +
-      " \001(\0022&\n\010field_y2\022\024.man.vision.Landmark\030\013" +
-      " \001(\002\"\266\003\n\006Corner\022\"\n\004self\030\001 \002(\0132\024.man.visi" +
-      "on.Landmark\022%\n\006detect\030\002 \002(\0132\025.man.vision" +
-      ".Detection\022\'\n\tpossibles\030\003 \003(\0132\024.man.visi" +
-      "on.Landmark\022\037\n\005lines\030\004 \003(\0132\020.man.vision." +
-      "Line\022\r\n\005dists\030\005 \003(\002\022!\n\007t_lines\030\006 \003(\0132\020.m" +
-      "an.vision.Line\022\033\n\023angle_between_lines\030\007 " +
-      "\002(\002\"A\n\005Shape\022\013\n\007INNER_L\020\000\022\013\n\007OUTER_L\020\001\022\005" +
-      "\n\001T\020\002\022\n\n\006CIRCLE\020\003\022\013\n\007UNKNOWN\020\0042C\n\013corner" +
-      "_type\022\024.man.vision.Landmark\030\014 \001(\0162\030.man." +
-      "vision.Corner.Shape2@\n\014corner_lines\022\024.ma" +
-      "n.vision.Landmark\030\r \003(\0132\024.man.vision.Lan" +
-      "dmark\"\233\001\n\005Cross\022\"\n\004self\030\001 \002(\0132\024.man.visi" +
-      "on.Landmark\022%\n\006detect\030\002 \002(\0132\025.man.vision" +
-      ".Detection\022\'\n\tpossibles\030\003 \003(\0132\024.man.visi" +
-      "on.Landmark\022\036\n\006bounds\030\004 \002(\0132\016.man.Rectan" +
-      "gle\"Q\n\010CrossBar\022%\n\006detect\030\001 \002(\0132\025.man.vi" +
-      "sion.Detection\022\036\n\006bounds\030\002 \002(\0132\016.man.Rec" +
-      "tangle\"z\n\013FieldObject\022\"\n\004self\030\001 \002(\0132\024.ma" +
-      "n.vision.Landmark\022\'\n\tpossibles\030\002 \002(\0132\024.m" +
-      "an.vision.Landmark\022\036\n\006bounds\030\003 \002(\0132\016.man" +
-      ".Rectangle\"\207\001\n\005Robot\022%\n\006detect\030\001 \002(\0132\025.m" +
-      "an.vision.Detection\022\036\n\006bounds\030\002 \002(\0132\016.ma" +
-      "n.Rectangle\022\021\n\tback_left\030\003 \002(\005\022\022\n\nback_r" +
-      "ight\030\004 \002(\005\022\020\n\010back_dir\030\005 \002(\005\"Q\n\004Ball\022%\n\006" +
-      "detect\030\001 \002(\0132\025.man.vision.Detection\022\016\n\006r" +
-      "adius\030\002 \002(\002\022\022\n\nconfidence\030\003 \002(\005\"\335\001\n\005Fram" +
-      "e\022 \n\005image\030\001 \001(\0132\021.man.vision.Image\022\037\n\005b" +
-      "alls\030\002 \003(\0132\020.man.vision.Ball\022(\n\007objects\030" +
-      "\003 \003(\0132\027.man.vision.FieldObject\022\037\n\005lines\030" +
-      "\004 \003(\0132\020.man.vision.Line\022#\n\007corners\030\005 \003(\013" +
-      "2\022.man.vision.Corner\022!\n\006robots\030\006 \003(\0132\021.m" +
-      "an.vision.Robot";
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-      new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-        public com.google.protobuf.ExtensionRegistry assignDescriptors(
-            com.google.protobuf.Descriptors.FileDescriptor root) {
-          descriptor = root;
-          internal_static_man_vision_Image_descriptor =
-            getDescriptor().getMessageTypes().get(0);
-          internal_static_man_vision_Image_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_man_vision_Image_descriptor,
-              new java.lang.String[] { "Encoding", "Width", "Height", "Data", },
-              man.vision.Vision.Image.class,
-              man.vision.Vision.Image.Builder.class);
-          internal_static_man_vision_Landmark_descriptor =
-            getDescriptor().getMessageTypes().get(1);
-          internal_static_man_vision_Landmark_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_man_vision_Landmark_descriptor,
-              new java.lang.String[] { "Id", "FieldX", "FieldY", "IdCertainty", "DistanceCertainty", },
-              man.vision.Vision.Landmark.class,
-              man.vision.Vision.Landmark.Builder.class);
-          internal_static_man_vision_DistanceBearing_descriptor =
-            getDescriptor().getMessageTypes().get(2);
-          internal_static_man_vision_DistanceBearing_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_man_vision_DistanceBearing_descriptor,
-              new java.lang.String[] { "Distance", "Bearing", "DistanceSd", "BearingSd", },
-              man.vision.Vision.DistanceBearing.class,
-              man.vision.Vision.DistanceBearing.Builder.class);
-          internal_static_man_vision_Detection_descriptor =
-            getDescriptor().getMessageTypes().get(3);
-          internal_static_man_vision_Detection_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_man_vision_Detection_descriptor,
-              new java.lang.String[] { "X", "Y", "Width", "Height", "CenterX", "CenterY", "AngleX", "AngleY", "FocDist", "Elevation", "Db", },
-              man.vision.Vision.Detection.class,
-              man.vision.Vision.Detection.Builder.class);
-          internal_static_man_vision_Line_descriptor =
-            getDescriptor().getMessageTypes().get(4);
-          internal_static_man_vision_Line_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_man_vision_Line_descriptor,
-              new java.lang.String[] { "Self", "Possibles", "Points", "Angle", "A", "B", "Length", "AvgVerticalWidth", "AvgHorizontalWidth", "ThinnestHorPoint", "ThickestHorPoint", "ThinnestVertPoint", "ThickestVertPoint", "Db", "CcLine", },
-              man.vision.Vision.Line.class,
-              man.vision.Vision.Line.Builder.class);
-          internal_static_man_vision_Line_LinePoint_descriptor =
-            internal_static_man_vision_Line_descriptor.getNestedTypes().get(0);
-          internal_static_man_vision_Line_LinePoint_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_man_vision_Line_LinePoint_descriptor,
-              new java.lang.String[] { "X", "Y", "LineWidth", "Distance", "FoundWithScan", },
-              man.vision.Vision.Line.LinePoint.class,
-              man.vision.Vision.Line.LinePoint.Builder.class);
-          man.vision.Vision.Line.fieldX2 =
-            com.google.protobuf.GeneratedMessage.newGeneratedExtension(
-              man.vision.Vision.Line.getDescriptor().getExtensions().get(0),
-              java.lang.Float.class);
-          man.vision.Vision.Line.fieldY2 =
-            com.google.protobuf.GeneratedMessage.newGeneratedExtension(
-              man.vision.Vision.Line.getDescriptor().getExtensions().get(1),
-              java.lang.Float.class);
-          internal_static_man_vision_Corner_descriptor =
-            getDescriptor().getMessageTypes().get(5);
-          internal_static_man_vision_Corner_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_man_vision_Corner_descriptor,
-              new java.lang.String[] { "Self", "Detect", "Possibles", "Lines", "Dists", "TLines", "AngleBetweenLines", },
-              man.vision.Vision.Corner.class,
-              man.vision.Vision.Corner.Builder.class);
-          man.vision.Vision.Corner.cornerType =
-            com.google.protobuf.GeneratedMessage.newGeneratedExtension(
-              man.vision.Vision.Corner.getDescriptor().getExtensions().get(0),
-              man.vision.Vision.Corner.Shape.class);
-          man.vision.Vision.Corner.cornerLines =
-            com.google.protobuf.GeneratedMessage
-              .newRepeatedGeneratedExtension(
-                man.vision.Vision.Corner.getDescriptor().getExtensions().get(1),
-                man.vision.Vision.Landmark.class);
-          internal_static_man_vision_Cross_descriptor =
-            getDescriptor().getMessageTypes().get(6);
-          internal_static_man_vision_Cross_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_man_vision_Cross_descriptor,
-              new java.lang.String[] { "Self", "Detect", "Possibles", "Bounds", },
-              man.vision.Vision.Cross.class,
-              man.vision.Vision.Cross.Builder.class);
-          internal_static_man_vision_CrossBar_descriptor =
-            getDescriptor().getMessageTypes().get(7);
-          internal_static_man_vision_CrossBar_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_man_vision_CrossBar_descriptor,
-              new java.lang.String[] { "Detect", "Bounds", },
-              man.vision.Vision.CrossBar.class,
-              man.vision.Vision.CrossBar.Builder.class);
-          internal_static_man_vision_FieldObject_descriptor =
-            getDescriptor().getMessageTypes().get(8);
-          internal_static_man_vision_FieldObject_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_man_vision_FieldObject_descriptor,
-              new java.lang.String[] { "Self", "Possibles", "Bounds", },
-              man.vision.Vision.FieldObject.class,
-              man.vision.Vision.FieldObject.Builder.class);
-          internal_static_man_vision_Robot_descriptor =
-            getDescriptor().getMessageTypes().get(9);
-          internal_static_man_vision_Robot_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_man_vision_Robot_descriptor,
-              new java.lang.String[] { "Detect", "Bounds", "BackLeft", "BackRight", "BackDir", },
-              man.vision.Vision.Robot.class,
-              man.vision.Vision.Robot.Builder.class);
-          internal_static_man_vision_Ball_descriptor =
-            getDescriptor().getMessageTypes().get(10);
-          internal_static_man_vision_Ball_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_man_vision_Ball_descriptor,
-              new java.lang.String[] { "Detect", "Radius", "Confidence", },
-              man.vision.Vision.Ball.class,
-              man.vision.Vision.Ball.Builder.class);
-          internal_static_man_vision_Frame_descriptor =
-            getDescriptor().getMessageTypes().get(11);
-          internal_static_man_vision_Frame_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_man_vision_Frame_descriptor,
-              new java.lang.String[] { "Image", "Balls", "Objects", "Lines", "Corners", "Robots", },
-              man.vision.Vision.Frame.class,
-              man.vision.Vision.Frame.Builder.class);
-          return null;
-        }
-      };
-    com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          man.Structs.getDescriptor(),
-        }, assigner);
-  }
+      internal_static_man_vision_Frame_fieldAccessorTable = new
+        com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+          internal_static_man_vision_Frame_descriptor,
+          new java.lang.String[] { "Image", "Balls", "Objects", "Lines", "Corners", "Robots", },
+          man.vision.Vision.Frame.class,
+          man.vision.Vision.Frame.Builder.class);
 }

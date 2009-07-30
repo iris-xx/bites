@@ -4,9 +4,33 @@ package man;
 
 public final class Structs {
   private Structs() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
   }
+  private static final com.google.protobuf.Descriptors.FileDescriptor
+      descriptor = buildDescriptor();
+  private static
+      com.google.protobuf.Descriptors.FileDescriptor
+      buildDescriptor() {
+    java.lang.String descriptorData =
+      "\n\rstructs.proto\022\003man\"\035\n\005Point\022\t\n\001x\030\001 \002(\005" +
+      "\022\t\n\001y\030\002 \002(\005\"\207\001\n\tRectangle\022\033\n\007leftTop\030\001 \002" +
+      "(\0132\n.man.Point\022\034\n\010rightTop\030\002 \002(\0132\n.man.P" +
+      "oint\022\036\n\nleftBottom\030\003 \002(\0132\n.man.Point\022\037\n\013" +
+      "rightBottom\030\004 \002(\0132\n.man.Point";
+    try {
+      return com.google.protobuf.Descriptors.FileDescriptor
+        .internalBuildGeneratedFileFrom(descriptorData,
+          new com.google.protobuf.Descriptors.FileDescriptor[] {
+          });
+    } catch (Exception e) {
+      throw new RuntimeException(
+        "Failed to parse protocol buffer descriptor for " +
+        "\"structs.proto\".", e);
+    }
+  }
+  
   public static final class Point extends
       com.google.protobuf.GeneratedMessage {
     // Use Point.newBuilder() to construct.
@@ -26,64 +50,22 @@ public final class Structs {
       return man.Structs.internal_static_man_Point_descriptor;
     }
     
-    @Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return man.Structs.internal_static_man_Point_fieldAccessorTable;
     }
     
     // required int32 x = 1;
-    public static final int X_FIELD_NUMBER = 1;
     private boolean hasX;
     private int x_ = 0;
     public boolean hasX() { return hasX; }
     public int getX() { return x_; }
     
     // required int32 y = 2;
-    public static final int Y_FIELD_NUMBER = 2;
     private boolean hasY;
     private int y_ = 0;
     public boolean hasY() { return hasY; }
     public int getY() { return y_; }
-    
-    @Override
-    public final boolean isInitialized() {
-      if (!hasX) return false;
-      if (!hasY) return false;
-      return true;
-    }
-    
-    @Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (hasX()) {
-        output.writeInt32(1, getX());
-      }
-      if (hasY()) {
-        output.writeInt32(2, getY());
-      }
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    @Override
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (hasX()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, getX());
-      }
-      if (hasY()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, getY());
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
     
     public static man.Structs.Point parseFrom(
         com.google.protobuf.ByteString data)
@@ -119,17 +101,6 @@ public final class Structs {
       return newBuilder().mergeFrom(input, extensionRegistry)
                .buildParsed();
     }
-    public static man.Structs.Point parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeDelimitedFrom(input).buildParsed();
-    }
-    public static man.Structs.Point parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistry extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeDelimitedFrom(input, extensionRegistry)
-               .buildParsed();
-    }
     public static man.Structs.Point parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
@@ -148,7 +119,6 @@ public final class Structs {
     public static Builder newBuilder(man.Structs.Point prototype) {
       return new Builder().mergeFrom(prototype);
     }
-    public Builder toBuilder() { return newBuilder(this); }
     
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> {
@@ -157,23 +127,19 @@ public final class Structs {
       
       man.Structs.Point result = new man.Structs.Point();
       
-      @Override
       protected man.Structs.Point internalGetResult() {
         return result;
       }
       
-      @Override
       public Builder clear() {
         result = new man.Structs.Point();
         return this;
       }
       
-      @Override
       public Builder clone() {
         return new Builder().mergeFrom(result);
       }
       
-      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return man.Structs.Point.getDescriptor();
@@ -184,7 +150,7 @@ public final class Structs {
       }
       
       public man.Structs.Point build() {
-        if (result != null && !isInitialized()) {
+        if (!isInitialized()) {
           throw new com.google.protobuf.UninitializedMessageException(
             result);
         }
@@ -201,76 +167,9 @@ public final class Structs {
       }
       
       public man.Structs.Point buildPartial() {
-        if (result == null) {
-          throw new IllegalStateException(
-            "build() has already been called on this Builder.");  }
         man.Structs.Point returnMe = result;
         result = null;
         return returnMe;
-      }
-      
-      @Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof man.Structs.Point) {
-          return mergeFrom((man.Structs.Point)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(man.Structs.Point other) {
-        if (other == man.Structs.Point.getDefaultInstance()) return this;
-        if (other.hasX()) {
-          setX(other.getX());
-        }
-        if (other.hasY()) {
-          setY(other.getY());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return mergeFrom(input,
-          com.google.protobuf.ExtensionRegistry.getEmptyRegistry());
-      }
-      
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistry extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                return this;
-              }
-              break;
-            }
-            case 8: {
-              setX(input.readInt32());
-              break;
-            }
-            case 16: {
-              setY(input.readInt32());
-              break;
-            }
-          }
-        }
       }
       
       
@@ -310,10 +209,6 @@ public final class Structs {
         return this;
       }
     }
-    
-    static {
-      man.Structs.getDescriptor();
-    }
   }
   
   public static final class Rectangle extends
@@ -335,98 +230,34 @@ public final class Structs {
       return man.Structs.internal_static_man_Rectangle_descriptor;
     }
     
-    @Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return man.Structs.internal_static_man_Rectangle_fieldAccessorTable;
     }
     
     // required .man.Point leftTop = 1;
-    public static final int LEFTTOP_FIELD_NUMBER = 1;
     private boolean hasLeftTop;
     private man.Structs.Point leftTop_ = man.Structs.Point.getDefaultInstance();
     public boolean hasLeftTop() { return hasLeftTop; }
     public man.Structs.Point getLeftTop() { return leftTop_; }
     
     // required .man.Point rightTop = 2;
-    public static final int RIGHTTOP_FIELD_NUMBER = 2;
     private boolean hasRightTop;
     private man.Structs.Point rightTop_ = man.Structs.Point.getDefaultInstance();
     public boolean hasRightTop() { return hasRightTop; }
     public man.Structs.Point getRightTop() { return rightTop_; }
     
     // required .man.Point leftBottom = 3;
-    public static final int LEFTBOTTOM_FIELD_NUMBER = 3;
     private boolean hasLeftBottom;
     private man.Structs.Point leftBottom_ = man.Structs.Point.getDefaultInstance();
     public boolean hasLeftBottom() { return hasLeftBottom; }
     public man.Structs.Point getLeftBottom() { return leftBottom_; }
     
     // required .man.Point rightBottom = 4;
-    public static final int RIGHTBOTTOM_FIELD_NUMBER = 4;
     private boolean hasRightBottom;
     private man.Structs.Point rightBottom_ = man.Structs.Point.getDefaultInstance();
     public boolean hasRightBottom() { return hasRightBottom; }
     public man.Structs.Point getRightBottom() { return rightBottom_; }
-    
-    @Override
-    public final boolean isInitialized() {
-      if (!hasLeftTop) return false;
-      if (!hasRightTop) return false;
-      if (!hasLeftBottom) return false;
-      if (!hasRightBottom) return false;
-      if (!getLeftTop().isInitialized()) return false;
-      if (!getRightTop().isInitialized()) return false;
-      if (!getLeftBottom().isInitialized()) return false;
-      if (!getRightBottom().isInitialized()) return false;
-      return true;
-    }
-    
-    @Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (hasLeftTop()) {
-        output.writeMessage(1, getLeftTop());
-      }
-      if (hasRightTop()) {
-        output.writeMessage(2, getRightTop());
-      }
-      if (hasLeftBottom()) {
-        output.writeMessage(3, getLeftBottom());
-      }
-      if (hasRightBottom()) {
-        output.writeMessage(4, getRightBottom());
-      }
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    @Override
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (hasLeftTop()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getLeftTop());
-      }
-      if (hasRightTop()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getRightTop());
-      }
-      if (hasLeftBottom()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getLeftBottom());
-      }
-      if (hasRightBottom()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getRightBottom());
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
     
     public static man.Structs.Rectangle parseFrom(
         com.google.protobuf.ByteString data)
@@ -462,17 +293,6 @@ public final class Structs {
       return newBuilder().mergeFrom(input, extensionRegistry)
                .buildParsed();
     }
-    public static man.Structs.Rectangle parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeDelimitedFrom(input).buildParsed();
-    }
-    public static man.Structs.Rectangle parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistry extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeDelimitedFrom(input, extensionRegistry)
-               .buildParsed();
-    }
     public static man.Structs.Rectangle parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
@@ -491,7 +311,6 @@ public final class Structs {
     public static Builder newBuilder(man.Structs.Rectangle prototype) {
       return new Builder().mergeFrom(prototype);
     }
-    public Builder toBuilder() { return newBuilder(this); }
     
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> {
@@ -500,23 +319,19 @@ public final class Structs {
       
       man.Structs.Rectangle result = new man.Structs.Rectangle();
       
-      @Override
       protected man.Structs.Rectangle internalGetResult() {
         return result;
       }
       
-      @Override
       public Builder clear() {
         result = new man.Structs.Rectangle();
         return this;
       }
       
-      @Override
       public Builder clone() {
         return new Builder().mergeFrom(result);
       }
       
-      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return man.Structs.Rectangle.getDescriptor();
@@ -527,7 +342,7 @@ public final class Structs {
       }
       
       public man.Structs.Rectangle build() {
-        if (result != null && !isInitialized()) {
+        if (!isInitialized()) {
           throw new com.google.protobuf.UninitializedMessageException(
             result);
         }
@@ -544,110 +359,9 @@ public final class Structs {
       }
       
       public man.Structs.Rectangle buildPartial() {
-        if (result == null) {
-          throw new IllegalStateException(
-            "build() has already been called on this Builder.");  }
         man.Structs.Rectangle returnMe = result;
         result = null;
         return returnMe;
-      }
-      
-      @Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof man.Structs.Rectangle) {
-          return mergeFrom((man.Structs.Rectangle)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(man.Structs.Rectangle other) {
-        if (other == man.Structs.Rectangle.getDefaultInstance()) return this;
-        if (other.hasLeftTop()) {
-          mergeLeftTop(other.getLeftTop());
-        }
-        if (other.hasRightTop()) {
-          mergeRightTop(other.getRightTop());
-        }
-        if (other.hasLeftBottom()) {
-          mergeLeftBottom(other.getLeftBottom());
-        }
-        if (other.hasRightBottom()) {
-          mergeRightBottom(other.getRightBottom());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return mergeFrom(input,
-          com.google.protobuf.ExtensionRegistry.getEmptyRegistry());
-      }
-      
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistry extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                return this;
-              }
-              break;
-            }
-            case 10: {
-              man.Structs.Point.Builder subBuilder = man.Structs.Point.newBuilder();
-              if (hasLeftTop()) {
-                subBuilder.mergeFrom(getLeftTop());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setLeftTop(subBuilder.buildPartial());
-              break;
-            }
-            case 18: {
-              man.Structs.Point.Builder subBuilder = man.Structs.Point.newBuilder();
-              if (hasRightTop()) {
-                subBuilder.mergeFrom(getRightTop());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setRightTop(subBuilder.buildPartial());
-              break;
-            }
-            case 26: {
-              man.Structs.Point.Builder subBuilder = man.Structs.Point.newBuilder();
-              if (hasLeftBottom()) {
-                subBuilder.mergeFrom(getLeftBottom());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setLeftBottom(subBuilder.buildPartial());
-              break;
-            }
-            case 34: {
-              man.Structs.Point.Builder subBuilder = man.Structs.Point.newBuilder();
-              if (hasRightBottom()) {
-                subBuilder.mergeFrom(getRightBottom());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setRightBottom(subBuilder.buildPartial());
-              break;
-            }
-          }
-        }
       }
       
       
@@ -659,9 +373,6 @@ public final class Structs {
         return result.getLeftTop();
       }
       public Builder setLeftTop(man.Structs.Point value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.hasLeftTop = true;
         result.leftTop_ = value;
         return this;
@@ -696,9 +407,6 @@ public final class Structs {
         return result.getRightTop();
       }
       public Builder setRightTop(man.Structs.Point value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.hasRightTop = true;
         result.rightTop_ = value;
         return this;
@@ -733,9 +441,6 @@ public final class Structs {
         return result.getLeftBottom();
       }
       public Builder setLeftBottom(man.Structs.Point value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.hasLeftBottom = true;
         result.leftBottom_ = value;
         return this;
@@ -770,9 +475,6 @@ public final class Structs {
         return result.getRightBottom();
       }
       public Builder setRightBottom(man.Structs.Point value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
         result.hasRightBottom = true;
         result.rightBottom_ = value;
         return this;
@@ -799,63 +501,28 @@ public final class Structs {
         return this;
       }
     }
-    
-    static {
-      man.Structs.getDescriptor();
-    }
   }
   
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_man_Point_descriptor;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_man_Point_descriptor =
+      getDescriptor().getMessageTypes().get(0);
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_man_Point_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_man_Rectangle_descriptor;
+      internal_static_man_Point_fieldAccessorTable = new
+        com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+          internal_static_man_Point_descriptor,
+          new java.lang.String[] { "X", "Y", },
+          man.Structs.Point.class,
+          man.Structs.Point.Builder.class);
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_man_Rectangle_descriptor =
+      getDescriptor().getMessageTypes().get(1);
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_man_Rectangle_fieldAccessorTable;
-  
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String descriptorData =
-      "\n\rstructs.proto\022\003man\"\035\n\005Point\022\t\n\001x\030\001 \002(\005" +
-      "\022\t\n\001y\030\002 \002(\005\"\207\001\n\tRectangle\022\033\n\007leftTop\030\001 \002" +
-      "(\0132\n.man.Point\022\034\n\010rightTop\030\002 \002(\0132\n.man.P" +
-      "oint\022\036\n\nleftBottom\030\003 \002(\0132\n.man.Point\022\037\n\013" +
-      "rightBottom\030\004 \002(\0132\n.man.Point";
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-      new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-        public com.google.protobuf.ExtensionRegistry assignDescriptors(
-            com.google.protobuf.Descriptors.FileDescriptor root) {
-          descriptor = root;
-          internal_static_man_Point_descriptor =
-            getDescriptor().getMessageTypes().get(0);
-          internal_static_man_Point_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_man_Point_descriptor,
-              new java.lang.String[] { "X", "Y", },
-              man.Structs.Point.class,
-              man.Structs.Point.Builder.class);
-          internal_static_man_Rectangle_descriptor =
-            getDescriptor().getMessageTypes().get(1);
-          internal_static_man_Rectangle_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_man_Rectangle_descriptor,
-              new java.lang.String[] { "LeftTop", "RightTop", "LeftBottom", "RightBottom", },
-              man.Structs.Rectangle.class,
-              man.Structs.Rectangle.Builder.class);
-          return null;
-        }
-      };
-    com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
-  }
+      internal_static_man_Rectangle_fieldAccessorTable = new
+        com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+          internal_static_man_Rectangle_descriptor,
+          new java.lang.String[] { "LeftTop", "RightTop", "LeftBottom", "RightBottom", },
+          man.Structs.Rectangle.class,
+          man.Structs.Rectangle.Builder.class);
 }
