@@ -1,0 +1,246 @@
+
+package man.vision;
+
+import "structs.proto";
+
+message Image {
+  enum Encoding {
+    YCbCr = 1;
+    YUV422 = 2;
+    RGB = 3;
+    BMP = 4;
+  }
+  required Encoding encoding = 1 [default = YUV422];
+
+  required int32 width = 2;
+  required int32 height = 3;
+  required bytes data = 4;
+}
+
+message Landmark {
+  enum ID {
+    // Corner IDs
+    L_INNER_CORNER = 0;
+    L_OUTER_CORNER = 1;
+    T_CORNER = 2;
+    CENTER_CIRCLE = 3;
+
+    // FUZZY/CLEAR CORNER IDS
+    BLUE_GOAL_T = 4;
+    YELLOW_GOAL_T = 5;
+    BLUE_GOAL_RIGHT_L_OR_YELLOW_GOAL_LEFT_L = 6;
+    BLUE_GOAL_LEFT_L_OR_YELLOW_GOAL_RIGHT_L = 7;
+    BLUE_CORNER_TOP_L_OR_YELLOW_CORNER_BOTTOM_L = 8;
+    BLUE_CORNER_BOTTOM_L_OR_YELLOW_CORNER_TOP_L = 9;
+    CORNER_INNER_L = 10;
+    GOAL_BOX_INNER_L = 11;
+
+    // FUZZY/CLEAR CORNER IDS
+    BLUE_GOAL_OUTER_L = 12;
+    YELLOW_GOAL_OUTER_L = 13;
+    CENTER_T = 14;
+
+    // SPECIFIC CORNER IDS
+    BLUE_CORNER_TOP_L = 15;
+    BLUE_CORNER_BOTTOM_L = 16;
+    BLUE_GOAL_LEFT_T = 17;
+    BLUE_GOAL_RIGHT_T = 18;
+    BLUE_GOAL_LEFT_L = 19;
+    BLUE_GOAL_RIGHT_L = 20;
+    CENTER_BOTTOM_T = 21;
+    CENTER_TOP_T = 22;
+    YELLOW_CORNER_BOTTOM_L = 23;
+    YELLOW_CORNER_TOP_L = 24;
+    YELLOW_GOAL_LEFT_T = 25;
+    YELLOW_GOAL_RIGHT_T = 26;
+    YELLOW_GOAL_LEFT_L = 27;
+    YELLOW_GOAL_RIGHT_L = 28;
+    CORNER_NO_IDEA_ID = 29;
+    TOP_CC = 30;
+    BOTTOM_CC = 31;
+
+    // FieldObject IDs
+    BLUE_GOAL_LEFT_POST = 40;
+    BLUE_GOAL_RIGHT_POST = 41;
+    YELLOW_GOAL_LEFT_POST = 42;
+    YELLOW_GOAL_RIGHT_POST = 43;
+    BLUE_GOAL_POST = 44;
+    YELLOW_GOAL_POST = 45;
+    UNKNOWN_FIELD_OBJECT = 46;
+
+    // Line IDs
+    // Ambiguous lines
+    UNKNOWN_LINE = 50;
+    SIDE_OR_ENDLINE = 51;
+    SIDELINE_LINE = 52;
+    ENDLINE_LINE = 53;
+    GOALBOX_LINE = 54;
+    GOALBOX_SIDE_LINE = 55;
+    GOALBOX_TOP_LINE = 56;
+
+    // Distinct lines
+    BLUE_GOAL_ENDLINE = 57;
+    YELLOW_GOAL_ENDLINE = 58;
+    // looking from center field out, left end is at the blue goal
+    BLUE_YELLOW_SIDELINE = 59;
+    YELLOW_BLUE_SIDELINE = 60;
+    CENTER_FIELD_LINE = 61;
+    BLUE_GOALBOX_TOP_LINE = 62;
+    BLUE_GOALBOX_LEFT_LINE = 63;
+    BLUE_GOALBOX_RIGHT_LINE = 64;
+    YELLOW_GOALBOX_TOP_LINE = 65;
+    YELLOW_GOALBOX_LEFT_LINE = 65;
+    YELLOW_GOALBOX_RIGHT_LINE = 66;
+
+    // Cross IDs
+    BLUE_GOAL_CROSS = 80;
+    YELLOW_GOAL_CROSS = 81;
+    ABSTRACT_CROSS = 82;
+  }
+  enum IDCertainty {
+    NOT_SURE = 0;
+    MILDY_SURE = 1;
+    _SURE = 2;
+  }
+  enum DistanceCertainty {
+    BOTH_UNSURE = 0;
+    WIDTH_UNSURE = 1;
+    HEIGHT_UNSURE = 2;
+    BOTH_SURE = 3;
+  }
+
+  required ID id = 1;
+  required float field_x = 2;
+  required float field_y = 3;
+  optional IDCertainty id_certainty = 4;
+  optional DistanceCertainty distance_certainty = 5;
+
+  extensions 10 to 100;
+}
+
+message DistanceBearing {
+  required float distance = 1;
+  required float bearing = 2;
+  // Standard deviations
+  required float distance_sd = 3;
+  required float bearing_sd = 4;
+}
+
+message Detection {
+  // Best-guessed values 
+  required int32 x = 1;
+  required int32 y = 2;
+  required float width = 3;
+  required float height = 4;
+  required int32 center_x = 5;
+  required int32 center_y = 6;
+  required float angle_x = 7;
+  required float angle_y = 8;
+  required float foc_dist = 9;
+  required float elevation = 10;
+  required DistanceBearing db = 11;
+
+  extensions 20 to 200;
+}
+
+message Line {
+  enum ScanDirection {
+    HORIZONTAL = 0;
+    VERTICAL = 1;
+  }
+  message LinePoint {
+    required int32 x = 1;
+    required int32 y = 2;
+    required float line_width = 3;
+    required float distance = 4;
+    required ScanDirection found_with_scan = 5;
+  }
+  extend Landmark {
+    optional float field_x2 = 10;
+    optional float field_y2 = 11;
+  }
+
+  required Landmark self = 1;
+  repeated Landmark possibles = 2;
+
+  repeated LinePoint points = 3;
+  optional float angle = 4;
+  optional float a = 5;
+  optional float b = 6;
+  optional float length = 7;
+
+  optional float avg_vertical_width = 8;
+  optional float avg_horizontal_width = 9;
+  optional LinePoint thinnest_hor_point = 10;
+  optional LinePoint thickest_hor_point = 11;
+  optional LinePoint thinnest_vert_point = 12;
+  optional LinePoint thickest_vert_point = 13;
+
+  required DistanceBearing db = 14;
+  required bool cc_line = 15;
+}
+
+message Corner {
+  enum Shape {
+    INNER_L = 0;
+    OUTER_L = 1;
+    T = 2;
+    CIRCLE = 3;
+    UNKNOWN = 4;
+  }
+  extend Landmark {
+    optional Shape corner_type = 12;
+    repeated Landmark corner_lines = 13;
+  }
+
+  required Landmark self = 1;
+  required Detection detect = 2;
+  repeated Landmark possibles = 3;
+
+  repeated Line lines = 4;
+  repeated float dists = 5;
+  repeated Line t_lines = 6;
+  required float angle_between_lines = 7;
+}
+
+message Cross {
+  required Landmark self = 1;
+  required Detection detect = 2;
+  repeated Landmark possibles = 3;
+  required man.Rectangle bounds = 4;
+}
+
+message CrossBar {
+  required Detection detect = 1;
+  required man.Rectangle bounds = 2;
+}
+
+message FieldObject {
+  required Landmark self = 1;
+  required Landmark possibles = 2;
+  required man.Rectangle bounds = 3;
+}
+
+message Robot {
+  required Detection detect = 1;
+  required man.Rectangle bounds = 2;
+
+  required int32 back_left = 3;
+  required int32 back_right = 4;
+  required int32 back_dir = 5;
+}
+
+message Ball {
+  required Detection detect = 1;
+  required float radius = 2;
+  required int32 confidence = 3;
+}
+
+message Frame {
+  optional Image image = 1;
+  repeated Ball balls = 2;
+  repeated FieldObject objects = 3;
+  repeated Line lines = 4;
+  repeated Corner corners = 5;
+  repeated Robot robots = 6;
+}

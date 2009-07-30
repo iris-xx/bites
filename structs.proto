@@ -1,0 +1,15 @@
+
+package man;
+
+message Point {
+  required int32 x = 1;
+  required int32 y = 2;
+}
+
+message Rectangle {
+  required Point leftTop = 1;
+  required Point rightTop = 2;
+  required Point leftBottom = 3;
+  required Point rightBottom = 4;
+}
+

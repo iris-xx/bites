@@ -1,0 +1,14 @@
+
+Bites Data Protocol - Version 0.1
+
+  Welcome to our data protocol repository.  The code here is designed for data
+  serialization and storage for the Northern Bites RoboCup team, using the
+  Google Protocol Buffers library.
+
+Contact:
+  Northern Bites RoboCup
+  Bowdoin College, Brunswick, ME 04011
+  http://robocup.bowdoin.edu
+  http://github.com/northern-bites
+
+
