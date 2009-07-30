@@ -1,5 +1,5 @@
 
-package man.vision;
+package bites.vision;
 
 import "structs.proto";
 
@@ -207,23 +207,23 @@ message Cross {
   required Landmark self = 1;
   required Detection detect = 2;
   repeated Landmark possibles = 3;
-  required man.Rectangle bounds = 4;
+  required bites.Rectangle bounds = 4;
 }
 
 message CrossBar {
   required Detection detect = 1;
-  required man.Rectangle bounds = 2;
+  required bites.Rectangle bounds = 2;
 }
 
 message FieldObject {
   required Landmark self = 1;
   required Landmark possibles = 2;
-  required man.Rectangle bounds = 3;
+  required bites.Rectangle bounds = 3;
 }
 
 message Robot {
   required Detection detect = 1;
-  required man.Rectangle bounds = 2;
+  required bites.Rectangle bounds = 2;
 
   required int32 back_left = 3;
   required int32 back_right = 4;

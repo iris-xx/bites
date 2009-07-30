@@ -1,5 +1,5 @@
 
-package man;
+package bites;
 
 message Point {
   required int32 x = 1;
