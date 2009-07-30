@@ -9,7 +9,7 @@
 
 using namespace std;
 using namespace boost;
-using namespace man::vision;
+using namespace bites::vision;
 using namespace bites;
 
 // Main function: Reads a Vision image from a file and writes it back
@@ -45,7 +45,7 @@ int main(int argc, char *const argv[]) {
   }
 
   shared_ptr<Image> image(new Image());
-  image->set_encoding(man::vision::Image::YUV422);
+  image->set_encoding(bites::vision::Image::YUV422);
   image->set_width(320);
   image->set_height(240);
   image->set_data("hello world");
