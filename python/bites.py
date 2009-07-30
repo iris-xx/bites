@@ -4,6 +4,9 @@ import datetime
 import hostname
 import sys
 
+from structs_pb2 import Point, Rectangle
+import vision_pb2 as vision
+
 def init_env(home):
     env = db.DBEnv()
     env.open(home, db.DB_INIT_CDB | db.DB_INIT_MPOOL | db.DB_CREATE)

@@ -1,5 +1,4 @@
 
-import vision_pb2
 import bites
 
 HOME = '../home'
@@ -29,10 +28,10 @@ if __name__ == '__main__':
 
     key = raw_input('key? ')
 
-    image = vision_pb2.Image()
+    image = bites.vision.Image()
 
     if action == ACTIONS[0]:
-        image.encoding = vision_pb2.Image.YUV422
+        image.encoding = bites.vision.Image.YUV422
         image.width = 320
         image.height = 240
         image.data = 'hello world'
