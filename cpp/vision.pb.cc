@@ -5,37 +5,366 @@
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/reflection_ops.h>
 #include <google/protobuf/wire_format_inl.h>
-namespace man { void proto_BuildDescriptors_structs_2eproto(); }
 
-namespace man {
+namespace bites {
 namespace vision {
 
 namespace {
 
 const ::google::protobuf::Descriptor* Image_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  Image_reflection_ = NULL;
 const ::google::protobuf::EnumDescriptor* Image_Encoding_descriptor_ = NULL;
 const ::google::protobuf::Descriptor* Landmark_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  Landmark_reflection_ = NULL;
 const ::google::protobuf::EnumDescriptor* Landmark_ID_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* Landmark_IDCertainty_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* Landmark_DistanceCertainty_descriptor_ = NULL;
 const ::google::protobuf::Descriptor* DistanceBearing_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  DistanceBearing_reflection_ = NULL;
 const ::google::protobuf::Descriptor* Detection_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  Detection_reflection_ = NULL;
 const ::google::protobuf::Descriptor* Line_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  Line_reflection_ = NULL;
 const ::google::protobuf::Descriptor* Line_LinePoint_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  Line_LinePoint_reflection_ = NULL;
 const ::google::protobuf::EnumDescriptor* Line_ScanDirection_descriptor_ = NULL;
 const ::google::protobuf::Descriptor* Corner_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  Corner_reflection_ = NULL;
 const ::google::protobuf::EnumDescriptor* Corner_Shape_descriptor_ = NULL;
 const ::google::protobuf::Descriptor* Cross_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  Cross_reflection_ = NULL;
 const ::google::protobuf::Descriptor* CrossBar_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CrossBar_reflection_ = NULL;
 const ::google::protobuf::Descriptor* FieldObject_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  FieldObject_reflection_ = NULL;
 const ::google::protobuf::Descriptor* Robot_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  Robot_reflection_ = NULL;
 const ::google::protobuf::Descriptor* Ball_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  Ball_reflection_ = NULL;
 const ::google::protobuf::Descriptor* Frame_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  Frame_reflection_ = NULL;
 
 }  // namespace
 
 
-void proto_BuildDescriptors_vision_2eproto() {
+void protobuf_BuildDesc_vision_2eproto_AssignGlobalDescriptors(const ::google::protobuf::FileDescriptor* file) {
+  Image_descriptor_ = file->message_type(0);
+  Image::default_instance_ = new Image();
+  static const int Image_offsets_[4] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Image, encoding_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Image, width_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Image, height_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Image, data_),
+  };
+  Image_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      Image_descriptor_,
+      Image::default_instance_,
+      Image_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Image, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Image, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      sizeof(Image));
+  Image_Encoding_descriptor_ = Image_descriptor_->enum_type(0);
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    Image_descriptor_, Image::default_instance_);
+  Landmark_descriptor_ = file->message_type(1);
+  Landmark::default_instance_ = new Landmark();
+  static const int Landmark_offsets_[5] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Landmark, id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Landmark, field_x_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Landmark, field_y_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Landmark, id_certainty_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Landmark, distance_certainty_),
+  };
+  Landmark_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      Landmark_descriptor_,
+      Landmark::default_instance_,
+      Landmark_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Landmark, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Landmark, _unknown_fields_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Landmark, _extensions_),
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      sizeof(Landmark));
+  Landmark_ID_descriptor_ = Landmark_descriptor_->enum_type(0);
+  Landmark_IDCertainty_descriptor_ = Landmark_descriptor_->enum_type(1);
+  Landmark_DistanceCertainty_descriptor_ = Landmark_descriptor_->enum_type(2);
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    Landmark_descriptor_, Landmark::default_instance_);
+  DistanceBearing_descriptor_ = file->message_type(2);
+  DistanceBearing::default_instance_ = new DistanceBearing();
+  static const int DistanceBearing_offsets_[4] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DistanceBearing, distance_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DistanceBearing, bearing_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DistanceBearing, distance_sd_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DistanceBearing, bearing_sd_),
+  };
+  DistanceBearing_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      DistanceBearing_descriptor_,
+      DistanceBearing::default_instance_,
+      DistanceBearing_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DistanceBearing, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DistanceBearing, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      sizeof(DistanceBearing));
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    DistanceBearing_descriptor_, DistanceBearing::default_instance_);
+  Detection_descriptor_ = file->message_type(3);
+  Detection::default_instance_ = new Detection();
+  static const int Detection_offsets_[11] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Detection, x_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Detection, y_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Detection, width_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Detection, height_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Detection, center_x_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Detection, center_y_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Detection, angle_x_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Detection, angle_y_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Detection, foc_dist_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Detection, elevation_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Detection, db_),
+  };
+  Detection_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      Detection_descriptor_,
+      Detection::default_instance_,
+      Detection_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Detection, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Detection, _unknown_fields_),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Detection, _extensions_),
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      sizeof(Detection));
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    Detection_descriptor_, Detection::default_instance_);
+  Line_descriptor_ = file->message_type(4);
+  Line::default_instance_ = new Line();
+  static const int Line_offsets_[15] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line, self_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line, possibles_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line, points_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line, angle_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line, a_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line, b_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line, length_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line, avg_vertical_width_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line, avg_horizontal_width_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line, thinnest_hor_point_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line, thickest_hor_point_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line, thinnest_vert_point_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line, thickest_vert_point_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line, db_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line, cc_line_),
+  };
+  Line_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      Line_descriptor_,
+      Line::default_instance_,
+      Line_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      sizeof(Line));
+  Line_LinePoint_descriptor_ = Line_descriptor_->nested_type(0);
+  Line_LinePoint::default_instance_ = new Line_LinePoint();
+  static const int Line_LinePoint_offsets_[5] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line_LinePoint, x_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line_LinePoint, y_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line_LinePoint, line_width_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line_LinePoint, distance_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line_LinePoint, found_with_scan_),
+  };
+  Line_LinePoint_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      Line_LinePoint_descriptor_,
+      Line_LinePoint::default_instance_,
+      Line_LinePoint_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line_LinePoint, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line_LinePoint, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      sizeof(Line_LinePoint));
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    Line_LinePoint_descriptor_, Line_LinePoint::default_instance_);
+  Line_ScanDirection_descriptor_ = Line_descriptor_->enum_type(0);
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    Line_descriptor_, Line::default_instance_);
+  Corner_descriptor_ = file->message_type(5);
+  Corner::default_instance_ = new Corner();
+  static const int Corner_offsets_[7] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Corner, self_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Corner, detect_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Corner, possibles_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Corner, lines_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Corner, dists_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Corner, t_lines_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Corner, angle_between_lines_),
+  };
+  Corner_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      Corner_descriptor_,
+      Corner::default_instance_,
+      Corner_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Corner, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Corner, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      sizeof(Corner));
+  Corner_Shape_descriptor_ = Corner_descriptor_->enum_type(0);
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    Corner_descriptor_, Corner::default_instance_);
+  Cross_descriptor_ = file->message_type(6);
+  Cross::default_instance_ = new Cross();
+  static const int Cross_offsets_[4] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Cross, self_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Cross, detect_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Cross, possibles_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Cross, bounds_),
+  };
+  Cross_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      Cross_descriptor_,
+      Cross::default_instance_,
+      Cross_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Cross, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Cross, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      sizeof(Cross));
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    Cross_descriptor_, Cross::default_instance_);
+  CrossBar_descriptor_ = file->message_type(7);
+  CrossBar::default_instance_ = new CrossBar();
+  static const int CrossBar_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CrossBar, detect_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CrossBar, bounds_),
+  };
+  CrossBar_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CrossBar_descriptor_,
+      CrossBar::default_instance_,
+      CrossBar_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CrossBar, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CrossBar, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      sizeof(CrossBar));
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CrossBar_descriptor_, CrossBar::default_instance_);
+  FieldObject_descriptor_ = file->message_type(8);
+  FieldObject::default_instance_ = new FieldObject();
+  static const int FieldObject_offsets_[3] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(FieldObject, self_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(FieldObject, possibles_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(FieldObject, bounds_),
+  };
+  FieldObject_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      FieldObject_descriptor_,
+      FieldObject::default_instance_,
+      FieldObject_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(FieldObject, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(FieldObject, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      sizeof(FieldObject));
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    FieldObject_descriptor_, FieldObject::default_instance_);
+  Robot_descriptor_ = file->message_type(9);
+  Robot::default_instance_ = new Robot();
+  static const int Robot_offsets_[5] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Robot, detect_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Robot, bounds_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Robot, back_left_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Robot, back_right_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Robot, back_dir_),
+  };
+  Robot_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      Robot_descriptor_,
+      Robot::default_instance_,
+      Robot_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Robot, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Robot, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      sizeof(Robot));
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    Robot_descriptor_, Robot::default_instance_);
+  Ball_descriptor_ = file->message_type(10);
+  Ball::default_instance_ = new Ball();
+  static const int Ball_offsets_[3] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Ball, detect_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Ball, radius_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Ball, confidence_),
+  };
+  Ball_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      Ball_descriptor_,
+      Ball::default_instance_,
+      Ball_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Ball, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Ball, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      sizeof(Ball));
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    Ball_descriptor_, Ball::default_instance_);
+  Frame_descriptor_ = file->message_type(11);
+  Frame::default_instance_ = new Frame();
+  static const int Frame_offsets_[6] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Frame, image_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Frame, balls_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Frame, objects_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Frame, lines_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Frame, corners_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Frame, robots_),
+  };
+  Frame_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      Frame_descriptor_,
+      Frame::default_instance_,
+      Frame_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Frame, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Frame, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      sizeof(Frame));
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    Frame_descriptor_, Frame::default_instance_);
+  Image::default_instance_->InitAsDefaultInstance();
+  Landmark::default_instance_->InitAsDefaultInstance();
+  DistanceBearing::default_instance_->InitAsDefaultInstance();
+  Detection::default_instance_->InitAsDefaultInstance();
+  Line::default_instance_->InitAsDefaultInstance();
+  Line_LinePoint::default_instance_->InitAsDefaultInstance();
+  Corner::default_instance_->InitAsDefaultInstance();
+  Cross::default_instance_->InitAsDefaultInstance();
+  CrossBar::default_instance_->InitAsDefaultInstance();
+  FieldObject::default_instance_->InitAsDefaultInstance();
+  Robot::default_instance_->InitAsDefaultInstance();
+  Ball::default_instance_->InitAsDefaultInstance();
+  Frame::default_instance_->InitAsDefaultInstance();
+}
+
+void protobuf_BuildDesc_vision_2eproto() {
   static bool already_here = false;
   if (already_here) return;
   already_here = true;
@@ -43,169 +372,127 @@ void proto_BuildDescriptors_vision_2eproto() {
   ::google::protobuf::DescriptorPool* pool =
     ::google::protobuf::DescriptorPool::internal_generated_pool();
 
-  ::man::proto_BuildDescriptors_structs_2eproto();
-  const ::google::protobuf::FileDescriptor* file = pool->InternalBuildGeneratedFile(
-    "\n\014vision.proto\022\nman.vision\032\rstructs.prot"
-    "o\"\237\001\n\005Image\0224\n\010encoding\030\001 \002(\0162\032.man.visi"
-    "on.Image.Encoding:\006YUV422\022\r\n\005width\030\002 \002(\005"
-    "\022\016\n\006height\030\003 \002(\005\022\014\n\004data\030\004 \002(\014\"3\n\010Encodi"
-    "ng\022\t\n\005YCbCr\020\001\022\n\n\006YUV422\020\002\022\007\n\003RGB\020\003\022\007\n\003BM"
-    "P\020\004\"\232\016\n\010Landmark\022#\n\002id\030\001 \002(\0162\027.man.visio"
-    "n.Landmark.ID\022\017\n\007field_x\030\002 \002(\002\022\017\n\007field_"
-    "y\030\003 \002(\002\0226\n\014id_certainty\030\004 \001(\0162 .man.visi"
-    "on.Landmark.IDCertainty\022B\n\022distance_cert"
-    "ainty\030\005 \001(\0162&.man.vision.Landmark.Distan"
-    "ceCertainty\"\262\013\n\002ID\022\022\n\016L_INNER_CORNER\020\000\022\022"
-    "\n\016L_OUTER_CORNER\020\001\022\014\n\010T_CORNER\020\002\022\021\n\rCENT"
-    "ER_CIRCLE\020\003\022\017\n\013BLUE_GOAL_T\020\004\022\021\n\rYELLOW_G"
-    "OAL_T\020\005\022+\n\'BLUE_GOAL_RIGHT_L_OR_YELLOW_G"
-    "OAL_LEFT_L\020\006\022+\n\'BLUE_GOAL_LEFT_L_OR_YELL"
-    "OW_GOAL_RIGHT_L\020\007\022/\n+BLUE_CORNER_TOP_L_O"
-    "R_YELLOW_CORNER_BOTTOM_L\020\010\022/\n+BLUE_CORNE"
-    "R_BOTTOM_L_OR_YELLOW_CORNER_TOP_L\020\t\022\022\n\016C"
-    "ORNER_INNER_L\020\n\022\024\n\020GOAL_BOX_INNER_L\020\013\022\025\n"
-    "\021BLUE_GOAL_OUTER_L\020\014\022\027\n\023YELLOW_GOAL_OUTE"
-    "R_L\020\r\022\014\n\010CENTER_T\020\016\022\025\n\021BLUE_CORNER_TOP_L"
-    "\020\017\022\030\n\024BLUE_CORNER_BOTTOM_L\020\020\022\024\n\020BLUE_GOA"
-    "L_LEFT_T\020\021\022\025\n\021BLUE_GOAL_RIGHT_T\020\022\022\024\n\020BLU"
-    "E_GOAL_LEFT_L\020\023\022\025\n\021BLUE_GOAL_RIGHT_L\020\024\022\023"
-    "\n\017CENTER_BOTTOM_T\020\025\022\020\n\014CENTER_TOP_T\020\026\022\032\n"
-    "\026YELLOW_CORNER_BOTTOM_L\020\027\022\027\n\023YELLOW_CORN"
-    "ER_TOP_L\020\030\022\026\n\022YELLOW_GOAL_LEFT_T\020\031\022\027\n\023YE"
-    "LLOW_GOAL_RIGHT_T\020\032\022\026\n\022YELLOW_GOAL_LEFT_"
-    "L\020\033\022\027\n\023YELLOW_GOAL_RIGHT_L\020\034\022\025\n\021CORNER_N"
-    "O_IDEA_ID\020\035\022\n\n\006TOP_CC\020\036\022\r\n\tBOTTOM_CC\020\037\022\027"
-    "\n\023BLUE_GOAL_LEFT_POST\020(\022\030\n\024BLUE_GOAL_RIG"
-    "HT_POST\020)\022\031\n\025YELLOW_GOAL_LEFT_POST\020*\022\032\n\026"
-    "YELLOW_GOAL_RIGHT_POST\020+\022\022\n\016BLUE_GOAL_PO"
-    "ST\020,\022\024\n\020YELLOW_GOAL_POST\020-\022\030\n\024UNKNOWN_FI"
-    "ELD_OBJECT\020.\022\020\n\014UNKNOWN_LINE\0202\022\023\n\017SIDE_O"
-    "R_ENDLINE\0203\022\021\n\rSIDELINE_LINE\0204\022\020\n\014ENDLIN"
-    "E_LINE\0205\022\020\n\014GOALBOX_LINE\0206\022\025\n\021GOALBOX_SI"
-    "DE_LINE\0207\022\024\n\020GOALBOX_TOP_LINE\0208\022\025\n\021BLUE_"
-    "GOAL_ENDLINE\0209\022\027\n\023YELLOW_GOAL_ENDLINE\020:\022"
-    "\030\n\024BLUE_YELLOW_SIDELINE\020;\022\030\n\024YELLOW_BLUE"
-    "_SIDELINE\020<\022\025\n\021CENTER_FIELD_LINE\020=\022\031\n\025BL"
-    "UE_GOALBOX_TOP_LINE\020>\022\032\n\026BLUE_GOALBOX_LE"
-    "FT_LINE\020?\022\033\n\027BLUE_GOALBOX_RIGHT_LINE\020@\022\033"
-    "\n\027YELLOW_GOALBOX_TOP_LINE\020A\022\034\n\030YELLOW_GO"
-    "ALBOX_LEFT_LINE\020A\022\035\n\031YELLOW_GOALBOX_RIGH"
-    "T_LINE\020B\022\023\n\017BLUE_GOAL_CROSS\020P\022\025\n\021YELLOW_"
-    "GOAL_CROSS\020Q\022\022\n\016ABSTRACT_CROSS\020R\"6\n\013IDCe"
-    "rtainty\022\014\n\010NOT_SURE\020\000\022\016\n\nMILDY_SURE\020\001\022\t\n"
-    "\005_SURE\020\002\"X\n\021DistanceCertainty\022\017\n\013BOTH_UN"
-    "SURE\020\000\022\020\n\014WIDTH_UNSURE\020\001\022\021\n\rHEIGHT_UNSUR"
-    "E\020\002\022\r\n\tBOTH_SURE\020\003*\004\010\n\020e\"]\n\017DistanceBear"
-    "ing\022\020\n\010distance\030\001 \002(\002\022\017\n\007bearing\030\002 \002(\002\022\023"
-    "\n\013distance_sd\030\003 \002(\002\022\022\n\nbearing_sd\030\004 \002(\002\""
-    "\333\001\n\tDetection\022\t\n\001x\030\001 \002(\005\022\t\n\001y\030\002 \002(\005\022\r\n\005w"
-    "idth\030\003 \002(\002\022\016\n\006height\030\004 \002(\002\022\020\n\010center_x\030\005"
-    " \002(\005\022\020\n\010center_y\030\006 \002(\005\022\017\n\007angle_x\030\007 \002(\002\022"
-    "\017\n\007angle_y\030\010 \002(\002\022\020\n\010foc_dist\030\t \002(\002\022\021\n\tel"
-    "evation\030\n \002(\002\022\'\n\002db\030\013 \002(\0132\033.man.vision.D"
-    "istanceBearing*\005\010\024\020\311\001\"\214\006\n\004Line\022\"\n\004self\030\001"
-    " \002(\0132\024.man.vision.Landmark\022\'\n\tpossibles\030"
-    "\002 \003(\0132\024.man.vision.Landmark\022*\n\006points\030\003 "
-    "\003(\0132\032.man.vision.Line.LinePoint\022\r\n\005angle"
-    "\030\004 \001(\002\022\t\n\001a\030\005 \001(\002\022\t\n\001b\030\006 \001(\002\022\016\n\006length\030\007"
-    " \001(\002\022\032\n\022avg_vertical_width\030\010 \001(\002\022\034\n\024avg_"
-    "horizontal_width\030\t \001(\002\0226\n\022thinnest_hor_p"
-    "oint\030\n \001(\0132\032.man.vision.Line.LinePoint\0226"
-    "\n\022thickest_hor_point\030\013 \001(\0132\032.man.vision."
-    "Line.LinePoint\0227\n\023thinnest_vert_point\030\014 "
-    "\001(\0132\032.man.vision.Line.LinePoint\0227\n\023thick"
-    "est_vert_point\030\r \001(\0132\032.man.vision.Line.L"
-    "inePoint\022\'\n\002db\030\016 \002(\0132\033.man.vision.Distan"
-    "ceBearing\022\017\n\007cc_line\030\017 \002(\010\032\200\001\n\tLinePoint"
-    "\022\t\n\001x\030\001 \002(\005\022\t\n\001y\030\002 \002(\005\022\022\n\nline_width\030\003 \002"
-    "(\002\022\020\n\010distance\030\004 \002(\002\0227\n\017found_with_scan\030"
-    "\005 \002(\0162\036.man.vision.Line.ScanDirection\"-\n"
-    "\rScanDirection\022\016\n\nHORIZONTAL\020\000\022\014\n\010VERTIC"
-    "AL\020\0012&\n\010field_x2\022\024.man.vision.Landmark\030\n"
-    " \001(\0022&\n\010field_y2\022\024.man.vision.Landmark\030\013"
-    " \001(\002\"\266\003\n\006Corner\022\"\n\004self\030\001 \002(\0132\024.man.visi"
-    "on.Landmark\022%\n\006detect\030\002 \002(\0132\025.man.vision"
-    ".Detection\022\'\n\tpossibles\030\003 \003(\0132\024.man.visi"
-    "on.Landmark\022\037\n\005lines\030\004 \003(\0132\020.man.vision."
-    "Line\022\r\n\005dists\030\005 \003(\002\022!\n\007t_lines\030\006 \003(\0132\020.m"
-    "an.vision.Line\022\033\n\023angle_between_lines\030\007 "
-    "\002(\002\"A\n\005Shape\022\013\n\007INNER_L\020\000\022\013\n\007OUTER_L\020\001\022\005"
-    "\n\001T\020\002\022\n\n\006CIRCLE\020\003\022\013\n\007UNKNOWN\020\0042C\n\013corner"
-    "_type\022\024.man.vision.Landmark\030\014 \001(\0162\030.man."
-    "vision.Corner.Shape2@\n\014corner_lines\022\024.ma"
-    "n.vision.Landmark\030\r \003(\0132\024.man.vision.Lan"
-    "dmark\"\233\001\n\005Cross\022\"\n\004self\030\001 \002(\0132\024.man.visi"
-    "on.Landmark\022%\n\006detect\030\002 \002(\0132\025.man.vision"
-    ".Detection\022\'\n\tpossibles\030\003 \003(\0132\024.man.visi"
-    "on.Landmark\022\036\n\006bounds\030\004 \002(\0132\016.man.Rectan"
-    "gle\"Q\n\010CrossBar\022%\n\006detect\030\001 \002(\0132\025.man.vi"
-    "sion.Detection\022\036\n\006bounds\030\002 \002(\0132\016.man.Rec"
-    "tangle\"z\n\013FieldObject\022\"\n\004self\030\001 \002(\0132\024.ma"
-    "n.vision.Landmark\022\'\n\tpossibles\030\002 \002(\0132\024.m"
-    "an.vision.Landmark\022\036\n\006bounds\030\003 \002(\0132\016.man"
-    ".Rectangle\"\207\001\n\005Robot\022%\n\006detect\030\001 \002(\0132\025.m"
-    "an.vision.Detection\022\036\n\006bounds\030\002 \002(\0132\016.ma"
-    "n.Rectangle\022\021\n\tback_left\030\003 \002(\005\022\022\n\nback_r"
-    "ight\030\004 \002(\005\022\020\n\010back_dir\030\005 \002(\005\"Q\n\004Ball\022%\n\006"
-    "detect\030\001 \002(\0132\025.man.vision.Detection\022\016\n\006r"
-    "adius\030\002 \002(\002\022\022\n\nconfidence\030\003 \002(\005\"\335\001\n\005Fram"
-    "e\022 \n\005image\030\001 \001(\0132\021.man.vision.Image\022\037\n\005b"
-    "alls\030\002 \003(\0132\020.man.vision.Ball\022(\n\007objects\030"
-    "\003 \003(\0132\027.man.vision.FieldObject\022\037\n\005lines\030"
-    "\004 \003(\0132\020.man.vision.Line\022#\n\007corners\030\005 \003(\013"
-    "2\022.man.vision.Corner\022!\n\006robots\030\006 \003(\0132\021.m"
-    "an.vision.Robot", 4375);
-  Image_descriptor_ = file->message_type(0);
-  Image_Encoding_descriptor_ = Image_descriptor_->enum_type(0);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Image_descriptor_, &Image::default_instance());
-  Landmark_descriptor_ = file->message_type(1);
-  Landmark_ID_descriptor_ = Landmark_descriptor_->enum_type(0);
-  Landmark_IDCertainty_descriptor_ = Landmark_descriptor_->enum_type(1);
-  Landmark_DistanceCertainty_descriptor_ = Landmark_descriptor_->enum_type(2);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Landmark_descriptor_, &Landmark::default_instance());
-  DistanceBearing_descriptor_ = file->message_type(2);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    DistanceBearing_descriptor_, &DistanceBearing::default_instance());
-  Detection_descriptor_ = file->message_type(3);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Detection_descriptor_, &Detection::default_instance());
-  Line_descriptor_ = file->message_type(4);
-  Line_LinePoint_descriptor_ = Line_descriptor_->nested_type(0);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Line_LinePoint_descriptor_, &Line_LinePoint::default_instance());
-  Line_ScanDirection_descriptor_ = Line_descriptor_->enum_type(0);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Line_descriptor_, &Line::default_instance());
-  Corner_descriptor_ = file->message_type(5);
-  Corner_Shape_descriptor_ = Corner_descriptor_->enum_type(0);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Corner_descriptor_, &Corner::default_instance());
-  Cross_descriptor_ = file->message_type(6);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Cross_descriptor_, &Cross::default_instance());
-  CrossBar_descriptor_ = file->message_type(7);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    CrossBar_descriptor_, &CrossBar::default_instance());
-  FieldObject_descriptor_ = file->message_type(8);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    FieldObject_descriptor_, &FieldObject::default_instance());
-  Robot_descriptor_ = file->message_type(9);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Robot_descriptor_, &Robot::default_instance());
-  Ball_descriptor_ = file->message_type(10);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Ball_descriptor_, &Ball::default_instance());
-  Frame_descriptor_ = file->message_type(11);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Frame_descriptor_, &Frame::default_instance());
+  ::bites::protobuf_BuildDesc_structs_2eproto();
+  pool->InternalBuildGeneratedFile(
+    "\n\014vision.proto\022\014bites.vision\032\rstructs.pr"
+    "oto\"\241\001\n\005Image\0226\n\010encoding\030\001 \002(\0162\034.bites."
+    "vision.Image.Encoding:\006YUV422\022\r\n\005width\030\002"
+    " \002(\005\022\016\n\006height\030\003 \002(\005\022\014\n\004data\030\004 \002(\014\"3\n\010En"
+    "coding\022\t\n\005YCbCr\020\001\022\n\n\006YUV422\020\002\022\007\n\003RGB\020\003\022\007"
+    "\n\003BMP\020\004\"\240\016\n\010Landmark\022%\n\002id\030\001 \002(\0162\031.bites"
+    ".vision.Landmark.ID\022\017\n\007field_x\030\002 \002(\002\022\017\n\007"
+    "field_y\030\003 \002(\002\0228\n\014id_certainty\030\004 \001(\0162\".bi"
+    "tes.vision.Landmark.IDCertainty\022D\n\022dista"
+    "nce_certainty\030\005 \001(\0162(.bites.vision.Landm"
+    "ark.DistanceCertainty\"\262\013\n\002ID\022\022\n\016L_INNER_"
+    "CORNER\020\000\022\022\n\016L_OUTER_CORNER\020\001\022\014\n\010T_CORNER"
+    "\020\002\022\021\n\rCENTER_CIRCLE\020\003\022\017\n\013BLUE_GOAL_T\020\004\022\021"
+    "\n\rYELLOW_GOAL_T\020\005\022+\n\'BLUE_GOAL_RIGHT_L_O"
+    "R_YELLOW_GOAL_LEFT_L\020\006\022+\n\'BLUE_GOAL_LEFT"
+    "_L_OR_YELLOW_GOAL_RIGHT_L\020\007\022/\n+BLUE_CORN"
+    "ER_TOP_L_OR_YELLOW_CORNER_BOTTOM_L\020\010\022/\n+"
+    "BLUE_CORNER_BOTTOM_L_OR_YELLOW_CORNER_TO"
+    "P_L\020\t\022\022\n\016CORNER_INNER_L\020\n\022\024\n\020GOAL_BOX_IN"
+    "NER_L\020\013\022\025\n\021BLUE_GOAL_OUTER_L\020\014\022\027\n\023YELLOW"
+    "_GOAL_OUTER_L\020\r\022\014\n\010CENTER_T\020\016\022\025\n\021BLUE_CO"
+    "RNER_TOP_L\020\017\022\030\n\024BLUE_CORNER_BOTTOM_L\020\020\022\024"
+    "\n\020BLUE_GOAL_LEFT_T\020\021\022\025\n\021BLUE_GOAL_RIGHT_"
+    "T\020\022\022\024\n\020BLUE_GOAL_LEFT_L\020\023\022\025\n\021BLUE_GOAL_R"
+    "IGHT_L\020\024\022\023\n\017CENTER_BOTTOM_T\020\025\022\020\n\014CENTER_"
+    "TOP_T\020\026\022\032\n\026YELLOW_CORNER_BOTTOM_L\020\027\022\027\n\023Y"
+    "ELLOW_CORNER_TOP_L\020\030\022\026\n\022YELLOW_GOAL_LEFT"
+    "_T\020\031\022\027\n\023YELLOW_GOAL_RIGHT_T\020\032\022\026\n\022YELLOW_"
+    "GOAL_LEFT_L\020\033\022\027\n\023YELLOW_GOAL_RIGHT_L\020\034\022\025"
+    "\n\021CORNER_NO_IDEA_ID\020\035\022\n\n\006TOP_CC\020\036\022\r\n\tBOT"
+    "TOM_CC\020\037\022\027\n\023BLUE_GOAL_LEFT_POST\020(\022\030\n\024BLU"
+    "E_GOAL_RIGHT_POST\020)\022\031\n\025YELLOW_GOAL_LEFT_"
+    "POST\020*\022\032\n\026YELLOW_GOAL_RIGHT_POST\020+\022\022\n\016BL"
+    "UE_GOAL_POST\020,\022\024\n\020YELLOW_GOAL_POST\020-\022\030\n\024"
+    "UNKNOWN_FIELD_OBJECT\020.\022\020\n\014UNKNOWN_LINE\0202"
+    "\022\023\n\017SIDE_OR_ENDLINE\0203\022\021\n\rSIDELINE_LINE\0204"
+    "\022\020\n\014ENDLINE_LINE\0205\022\020\n\014GOALBOX_LINE\0206\022\025\n\021"
+    "GOALBOX_SIDE_LINE\0207\022\024\n\020GOALBOX_TOP_LINE\020"
+    "8\022\025\n\021BLUE_GOAL_ENDLINE\0209\022\027\n\023YELLOW_GOAL_"
+    "ENDLINE\020:\022\030\n\024BLUE_YELLOW_SIDELINE\020;\022\030\n\024Y"
+    "ELLOW_BLUE_SIDELINE\020<\022\025\n\021CENTER_FIELD_LI"
+    "NE\020=\022\031\n\025BLUE_GOALBOX_TOP_LINE\020>\022\032\n\026BLUE_"
+    "GOALBOX_LEFT_LINE\020?\022\033\n\027BLUE_GOALBOX_RIGH"
+    "T_LINE\020@\022\033\n\027YELLOW_GOALBOX_TOP_LINE\020A\022\034\n"
+    "\030YELLOW_GOALBOX_LEFT_LINE\020A\022\035\n\031YELLOW_GO"
+    "ALBOX_RIGHT_LINE\020B\022\023\n\017BLUE_GOAL_CROSS\020P\022"
+    "\025\n\021YELLOW_GOAL_CROSS\020Q\022\022\n\016ABSTRACT_CROSS"
+    "\020R\"6\n\013IDCertainty\022\014\n\010NOT_SURE\020\000\022\016\n\nMILDY"
+    "_SURE\020\001\022\t\n\005_SURE\020\002\"X\n\021DistanceCertainty\022"
+    "\017\n\013BOTH_UNSURE\020\000\022\020\n\014WIDTH_UNSURE\020\001\022\021\n\rHE"
+    "IGHT_UNSURE\020\002\022\r\n\tBOTH_SURE\020\003*\004\010\n\020e\"]\n\017Di"
+    "stanceBearing\022\020\n\010distance\030\001 \002(\002\022\017\n\007beari"
+    "ng\030\002 \002(\002\022\023\n\013distance_sd\030\003 \002(\002\022\022\n\nbearing"
+    "_sd\030\004 \002(\002\"\335\001\n\tDetection\022\t\n\001x\030\001 \002(\005\022\t\n\001y\030"
+    "\002 \002(\005\022\r\n\005width\030\003 \002(\002\022\016\n\006height\030\004 \002(\002\022\020\n\010"
+    "center_x\030\005 \002(\005\022\020\n\010center_y\030\006 \002(\005\022\017\n\007angl"
+    "e_x\030\007 \002(\002\022\017\n\007angle_y\030\010 \002(\002\022\020\n\010foc_dist\030\t"
+    " \002(\002\022\021\n\televation\030\n \002(\002\022)\n\002db\030\013 \002(\0132\035.bi"
+    "tes.vision.DistanceBearing*\005\010\024\020\311\001\"\242\006\n\004Li"
+    "ne\022$\n\004self\030\001 \002(\0132\026.bites.vision.Landmark"
+    "\022)\n\tpossibles\030\002 \003(\0132\026.bites.vision.Landm"
+    "ark\022,\n\006points\030\003 \003(\0132\034.bites.vision.Line."
+    "LinePoint\022\r\n\005angle\030\004 \001(\002\022\t\n\001a\030\005 \001(\002\022\t\n\001b"
+    "\030\006 \001(\002\022\016\n\006length\030\007 \001(\002\022\032\n\022avg_vertical_w"
+    "idth\030\010 \001(\002\022\034\n\024avg_horizontal_width\030\t \001(\002"
+    "\0228\n\022thinnest_hor_point\030\n \001(\0132\034.bites.vis"
+    "ion.Line.LinePoint\0228\n\022thickest_hor_point"
+    "\030\013 \001(\0132\034.bites.vision.Line.LinePoint\0229\n\023"
+    "thinnest_vert_point\030\014 \001(\0132\034.bites.vision"
+    ".Line.LinePoint\0229\n\023thickest_vert_point\030\r"
+    " \001(\0132\034.bites.vision.Line.LinePoint\022)\n\002db"
+    "\030\016 \002(\0132\035.bites.vision.DistanceBearing\022\017\n"
+    "\007cc_line\030\017 \002(\010\032\202\001\n\tLinePoint\022\t\n\001x\030\001 \002(\005\022"
+    "\t\n\001y\030\002 \002(\005\022\022\n\nline_width\030\003 \002(\002\022\020\n\010distan"
+    "ce\030\004 \002(\002\0229\n\017found_with_scan\030\005 \002(\0162 .bite"
+    "s.vision.Line.ScanDirection\"-\n\rScanDirec"
+    "tion\022\016\n\nHORIZONTAL\020\000\022\014\n\010VERTICAL\020\0012(\n\010fi"
+    "eld_x2\022\026.bites.vision.Landmark\030\n \001(\0022(\n\010"
+    "field_y2\022\026.bites.vision.Landmark\030\013 \001(\002\"\310"
+    "\003\n\006Corner\022$\n\004self\030\001 \002(\0132\026.bites.vision.L"
+    "andmark\022\'\n\006detect\030\002 \002(\0132\027.bites.vision.D"
+    "etection\022)\n\tpossibles\030\003 \003(\0132\026.bites.visi"
+    "on.Landmark\022!\n\005lines\030\004 \003(\0132\022.bites.visio"
+    "n.Line\022\r\n\005dists\030\005 \003(\002\022#\n\007t_lines\030\006 \003(\0132\022"
+    ".bites.vision.Line\022\033\n\023angle_between_line"
+    "s\030\007 \002(\002\"A\n\005Shape\022\013\n\007INNER_L\020\000\022\013\n\007OUTER_L"
+    "\020\001\022\005\n\001T\020\002\022\n\n\006CIRCLE\020\003\022\013\n\007UNKNOWN\020\0042G\n\013co"
+    "rner_type\022\026.bites.vision.Landmark\030\014 \001(\0162"
+    "\032.bites.vision.Corner.Shape2D\n\014corner_li"
+    "nes\022\026.bites.vision.Landmark\030\r \003(\0132\026.bite"
+    "s.vision.Landmark\"\243\001\n\005Cross\022$\n\004self\030\001 \002("
+    "\0132\026.bites.vision.Landmark\022\'\n\006detect\030\002 \002("
+    "\0132\027.bites.vision.Detection\022)\n\tpossibles\030"
+    "\003 \003(\0132\026.bites.vision.Landmark\022 \n\006bounds\030"
+    "\004 \002(\0132\020.bites.Rectangle\"U\n\010CrossBar\022\'\n\006d"
+    "etect\030\001 \002(\0132\027.bites.vision.Detection\022 \n\006"
+    "bounds\030\002 \002(\0132\020.bites.Rectangle\"\200\001\n\013Field"
+    "Object\022$\n\004self\030\001 \002(\0132\026.bites.vision.Land"
+    "mark\022)\n\tpossibles\030\002 \002(\0132\026.bites.vision.L"
+    "andmark\022 \n\006bounds\030\003 \002(\0132\020.bites.Rectangl"
+    "e\"\213\001\n\005Robot\022\'\n\006detect\030\001 \002(\0132\027.bites.visi"
+    "on.Detection\022 \n\006bounds\030\002 \002(\0132\020.bites.Rec"
+    "tangle\022\021\n\tback_left\030\003 \002(\005\022\022\n\nback_right\030"
+    "\004 \002(\005\022\020\n\010back_dir\030\005 \002(\005\"S\n\004Ball\022\'\n\006detec"
+    "t\030\001 \002(\0132\027.bites.vision.Detection\022\016\n\006radi"
+    "us\030\002 \002(\002\022\022\n\nconfidence\030\003 \002(\005\"\351\001\n\005Frame\022\""
+    "\n\005image\030\001 \001(\0132\023.bites.vision.Image\022!\n\005ba"
+    "lls\030\002 \003(\0132\022.bites.vision.Ball\022*\n\007objects"
+    "\030\003 \003(\0132\031.bites.vision.FieldObject\022!\n\005lin"
+    "es\030\004 \003(\0132\022.bites.vision.Line\022%\n\007corners\030"
+    "\005 \003(\0132\024.bites.vision.Corner\022#\n\006robots\030\006 "
+    "\003(\0132\023.bites.vision.Robot", 4464,
+  &protobuf_BuildDesc_vision_2eproto_AssignGlobalDescriptors);
 }
 
 // Force BuildDescriptors() to be called at static initialization time.
 struct StaticDescriptorInitializer_vision_2eproto {
   StaticDescriptorInitializer_vision_2eproto() {
-    proto_BuildDescriptors_vision_2eproto();
+    protobuf_BuildDesc_vision_2eproto();
   }
 } static_descriptor_initializer_vision_2eproto_;
 
@@ -213,7 +500,7 @@ struct StaticDescriptorInitializer_vision_2eproto {
 // ===================================================================
 
 const ::google::protobuf::EnumDescriptor* Image_Encoding_descriptor() {
-  if (Image_Encoding_descriptor_ == NULL) proto_BuildDescriptors_vision_2eproto();
+  if (Image_Encoding_descriptor_ == NULL) protobuf_BuildDesc_vision_2eproto();
   return Image_Encoding_descriptor_;
 }
 bool Image_Encoding_IsValid(int value) {
@@ -236,37 +523,24 @@ const Image_Encoding Image::BMP;
 const Image_Encoding Image::Encoding_MIN;
 const Image_Encoding Image::Encoding_MAX;
 #endif  // _MSC_VER
-const Image Image::default_instance_;
-
 
 
 
 const ::std::string Image::_default_data_;
-const int Image::_offsets_[4] = {
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Image, encoding_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Image, width_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Image, height_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Image, data_),
-};
-
 Image::Image()
-  : _reflection_(descriptor(),
-                 this, &default_instance_,
-                 _offsets_, _has_bits_, NULL),
+  : ::google::protobuf::Message(),
     _cached_size_(0),
     encoding_(2),
     width_(0),
     height_(0),
     data_(const_cast< ::std::string*>(&_default_data_)) {
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (this == &default_instance_) {
-  }
 }
 
+void Image::InitAsDefaultInstance() {}
+
 Image::Image(const Image& from)
-  : _reflection_(descriptor(),
-                 this, &default_instance_,
-                 _offsets_, _has_bits_, NULL),
+  : ::google::protobuf::Message(),
     _cached_size_(0),
     encoding_(2),
     width_(0),
@@ -280,14 +554,21 @@ Image::~Image() {
   if (data_ != &_default_data_) {
     delete data_;
   }
-  if (this != &default_instance_) {
+  if (this != default_instance_) {
   }
 }
 
 const ::google::protobuf::Descriptor* Image::descriptor() {
-  if (Image_descriptor_ == NULL) proto_BuildDescriptors_vision_2eproto();
+  if (Image_descriptor_ == NULL) protobuf_BuildDesc_vision_2eproto();
   return Image_descriptor_;
 }
+
+const Image& Image::default_instance() {
+  if (default_instance_ == NULL) protobuf_BuildDesc_vision_2eproto();
+  return *default_instance_;
+}
+
+Image* Image::default_instance_ = NULL;
 
 Image* Image::New() const {
   return new Image;
@@ -297,19 +578,15 @@ const ::google::protobuf::Descriptor* Image::GetDescriptor() const {
   return descriptor();
 }
 
-const ::google::protobuf::Message::Reflection*
-Image::GetReflection() const {
-  return &_reflection_;
-}
-
-::google::protobuf::Message::Reflection* Image::GetReflection() {
-  return &_reflection_;
+const ::google::protobuf::Reflection* Image::GetReflection() const {
+  if (Image_reflection_ == NULL) protobuf_BuildDesc_vision_2eproto();
+  return Image_reflection_;
 }
 
 // ===================================================================
 
 const ::google::protobuf::EnumDescriptor* Landmark_ID_descriptor() {
-  if (Landmark_ID_descriptor_ == NULL) proto_BuildDescriptors_vision_2eproto();
+  if (Landmark_ID_descriptor_ == NULL) protobuf_BuildDesc_vision_2eproto();
   return Landmark_ID_descriptor_;
 }
 bool Landmark_ID_IsValid(int value) {
@@ -444,7 +721,7 @@ const Landmark_ID Landmark::ID_MIN;
 const Landmark_ID Landmark::ID_MAX;
 #endif  // _MSC_VER
 const ::google::protobuf::EnumDescriptor* Landmark_IDCertainty_descriptor() {
-  if (Landmark_IDCertainty_descriptor_ == NULL) proto_BuildDescriptors_vision_2eproto();
+  if (Landmark_IDCertainty_descriptor_ == NULL) protobuf_BuildDesc_vision_2eproto();
   return Landmark_IDCertainty_descriptor_;
 }
 bool Landmark_IDCertainty_IsValid(int value) {
@@ -466,7 +743,7 @@ const Landmark_IDCertainty Landmark::IDCertainty_MIN;
 const Landmark_IDCertainty Landmark::IDCertainty_MAX;
 #endif  // _MSC_VER
 const ::google::protobuf::EnumDescriptor* Landmark_DistanceCertainty_descriptor() {
-  if (Landmark_DistanceCertainty_descriptor_ == NULL) proto_BuildDescriptors_vision_2eproto();
+  if (Landmark_DistanceCertainty_descriptor_ == NULL) protobuf_BuildDesc_vision_2eproto();
   return Landmark_DistanceCertainty_descriptor_;
 }
 bool Landmark_DistanceCertainty_IsValid(int value) {
@@ -489,28 +766,16 @@ const Landmark_DistanceCertainty Landmark::BOTH_SURE;
 const Landmark_DistanceCertainty Landmark::DistanceCertainty_MIN;
 const Landmark_DistanceCertainty Landmark::DistanceCertainty_MAX;
 #endif  // _MSC_VER
-const Landmark Landmark::default_instance_;
 
 
 
 
-
-
-const int Landmark::_offsets_[5] = {
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Landmark, id_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Landmark, field_x_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Landmark, field_y_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Landmark, id_certainty_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Landmark, distance_certainty_),
-};
 
 Landmark::Landmark()
-  : _extensions_(descriptor(),
+  : ::google::protobuf::Message(),
+    _extensions_(&Landmark_descriptor_,
                  ::google::protobuf::DescriptorPool::generated_pool(),
                  ::google::protobuf::MessageFactory::generated_factory()),
-    _reflection_(descriptor(),
-                 this, &default_instance_,
-                 _offsets_, _has_bits_, &_extensions_),
     _cached_size_(0),
     id_(0),
     field_x_(0),
@@ -518,17 +783,15 @@ Landmark::Landmark()
     id_certainty_(0),
     distance_certainty_(0) {
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (this == &default_instance_) {
-  }
 }
 
+void Landmark::InitAsDefaultInstance() {}
+
 Landmark::Landmark(const Landmark& from)
-  : _extensions_(descriptor(),
+  : ::google::protobuf::Message(),
+    _extensions_(&Landmark_descriptor_,
                  ::google::protobuf::DescriptorPool::generated_pool(),
                  ::google::protobuf::MessageFactory::generated_factory()),
-    _reflection_(descriptor(),
-                 this, &default_instance_,
-                 _offsets_, _has_bits_, &_extensions_),
     _cached_size_(0),
     id_(0),
     field_x_(0),
@@ -540,14 +803,21 @@ Landmark::Landmark(const Landmark& from)
 }
 
 Landmark::~Landmark() {
-  if (this != &default_instance_) {
+  if (this != default_instance_) {
   }
 }
 
 const ::google::protobuf::Descriptor* Landmark::descriptor() {
-  if (Landmark_descriptor_ == NULL) proto_BuildDescriptors_vision_2eproto();
+  if (Landmark_descriptor_ == NULL) protobuf_BuildDesc_vision_2eproto();
   return Landmark_descriptor_;
 }
+
+const Landmark& Landmark::default_instance() {
+  if (default_instance_ == NULL) protobuf_BuildDesc_vision_2eproto();
+  return *default_instance_;
+}
+
+Landmark* Landmark::default_instance_ = NULL;
 
 Landmark* Landmark::New() const {
   return new Landmark;
@@ -557,48 +827,31 @@ const ::google::protobuf::Descriptor* Landmark::GetDescriptor() const {
   return descriptor();
 }
 
-const ::google::protobuf::Message::Reflection*
-Landmark::GetReflection() const {
-  return &_reflection_;
-}
-
-::google::protobuf::Message::Reflection* Landmark::GetReflection() {
-  return &_reflection_;
+const ::google::protobuf::Reflection* Landmark::GetReflection() const {
+  if (Landmark_reflection_ == NULL) protobuf_BuildDesc_vision_2eproto();
+  return Landmark_reflection_;
 }
 
 // ===================================================================
 
-const DistanceBearing DistanceBearing::default_instance_;
 
 
 
-
-
-const int DistanceBearing::_offsets_[4] = {
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DistanceBearing, distance_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DistanceBearing, bearing_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DistanceBearing, distance_sd_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DistanceBearing, bearing_sd_),
-};
 
 DistanceBearing::DistanceBearing()
-  : _reflection_(descriptor(),
-                 this, &default_instance_,
-                 _offsets_, _has_bits_, NULL),
+  : ::google::protobuf::Message(),
     _cached_size_(0),
     distance_(0),
     bearing_(0),
     distance_sd_(0),
     bearing_sd_(0) {
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (this == &default_instance_) {
-  }
 }
 
+void DistanceBearing::InitAsDefaultInstance() {}
+
 DistanceBearing::DistanceBearing(const DistanceBearing& from)
-  : _reflection_(descriptor(),
-                 this, &default_instance_,
-                 _offsets_, _has_bits_, NULL),
+  : ::google::protobuf::Message(),
     _cached_size_(0),
     distance_(0),
     bearing_(0),
@@ -609,14 +862,21 @@ DistanceBearing::DistanceBearing(const DistanceBearing& from)
 }
 
 DistanceBearing::~DistanceBearing() {
-  if (this != &default_instance_) {
+  if (this != default_instance_) {
   }
 }
 
 const ::google::protobuf::Descriptor* DistanceBearing::descriptor() {
-  if (DistanceBearing_descriptor_ == NULL) proto_BuildDescriptors_vision_2eproto();
+  if (DistanceBearing_descriptor_ == NULL) protobuf_BuildDesc_vision_2eproto();
   return DistanceBearing_descriptor_;
 }
+
+const DistanceBearing& DistanceBearing::default_instance() {
+  if (default_instance_ == NULL) protobuf_BuildDesc_vision_2eproto();
+  return *default_instance_;
+}
+
+DistanceBearing* DistanceBearing::default_instance_ = NULL;
 
 DistanceBearing* DistanceBearing::New() const {
   return new DistanceBearing;
@@ -626,18 +886,13 @@ const ::google::protobuf::Descriptor* DistanceBearing::GetDescriptor() const {
   return descriptor();
 }
 
-const ::google::protobuf::Message::Reflection*
-DistanceBearing::GetReflection() const {
-  return &_reflection_;
-}
-
-::google::protobuf::Message::Reflection* DistanceBearing::GetReflection() {
-  return &_reflection_;
+const ::google::protobuf::Reflection* DistanceBearing::GetReflection() const {
+  if (DistanceBearing_reflection_ == NULL) protobuf_BuildDesc_vision_2eproto();
+  return DistanceBearing_reflection_;
 }
 
 // ===================================================================
 
-const Detection Detection::default_instance_;
 
 
 
@@ -648,29 +903,12 @@ const Detection Detection::default_instance_;
 
 
 
-
-
-const int Detection::_offsets_[11] = {
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Detection, x_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Detection, y_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Detection, width_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Detection, height_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Detection, center_x_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Detection, center_y_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Detection, angle_x_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Detection, angle_y_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Detection, foc_dist_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Detection, elevation_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Detection, db_),
-};
 
 Detection::Detection()
-  : _extensions_(descriptor(),
+  : ::google::protobuf::Message(),
+    _extensions_(&Detection_descriptor_,
                  ::google::protobuf::DescriptorPool::generated_pool(),
                  ::google::protobuf::MessageFactory::generated_factory()),
-    _reflection_(descriptor(),
-                 this, &default_instance_,
-                 _offsets_, _has_bits_, &_extensions_),
     _cached_size_(0),
     x_(0),
     y_(0),
@@ -684,18 +922,16 @@ Detection::Detection()
     elevation_(0),
     db_(NULL) {
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (this == &default_instance_) {
-    db_ = const_cast< ::man::vision::DistanceBearing*>(&::man::vision::DistanceBearing::default_instance());
-  }
+}
+
+void Detection::InitAsDefaultInstance() {  db_ = const_cast< ::bites::vision::DistanceBearing*>(&::bites::vision::DistanceBearing::default_instance());
 }
 
 Detection::Detection(const Detection& from)
-  : _extensions_(descriptor(),
+  : ::google::protobuf::Message(),
+    _extensions_(&Detection_descriptor_,
                  ::google::protobuf::DescriptorPool::generated_pool(),
                  ::google::protobuf::MessageFactory::generated_factory()),
-    _reflection_(descriptor(),
-                 this, &default_instance_,
-                 _offsets_, _has_bits_, &_extensions_),
     _cached_size_(0),
     x_(0),
     y_(0),
@@ -713,15 +949,22 @@ Detection::Detection(const Detection& from)
 }
 
 Detection::~Detection() {
-  if (this != &default_instance_) {
+  if (this != default_instance_) {
     delete db_;
   }
 }
 
 const ::google::protobuf::Descriptor* Detection::descriptor() {
-  if (Detection_descriptor_ == NULL) proto_BuildDescriptors_vision_2eproto();
+  if (Detection_descriptor_ == NULL) protobuf_BuildDesc_vision_2eproto();
   return Detection_descriptor_;
 }
+
+const Detection& Detection::default_instance() {
+  if (default_instance_ == NULL) protobuf_BuildDesc_vision_2eproto();
+  return *default_instance_;
+}
+
+Detection* Detection::default_instance_ = NULL;
 
 Detection* Detection::New() const {
   return new Detection;
@@ -731,19 +974,15 @@ const ::google::protobuf::Descriptor* Detection::GetDescriptor() const {
   return descriptor();
 }
 
-const ::google::protobuf::Message::Reflection*
-Detection::GetReflection() const {
-  return &_reflection_;
-}
-
-::google::protobuf::Message::Reflection* Detection::GetReflection() {
-  return &_reflection_;
+const ::google::protobuf::Reflection* Detection::GetReflection() const {
+  if (Detection_reflection_ == NULL) protobuf_BuildDesc_vision_2eproto();
+  return Detection_reflection_;
 }
 
 // ===================================================================
 
 const ::google::protobuf::EnumDescriptor* Line_ScanDirection_descriptor() {
-  if (Line_ScanDirection_descriptor_ == NULL) proto_BuildDescriptors_vision_2eproto();
+  if (Line_ScanDirection_descriptor_ == NULL) protobuf_BuildDesc_vision_2eproto();
   return Line_ScanDirection_descriptor_;
 }
 bool Line_ScanDirection_IsValid(int value) {
@@ -762,25 +1001,13 @@ const Line_ScanDirection Line::VERTICAL;
 const Line_ScanDirection Line::ScanDirection_MIN;
 const Line_ScanDirection Line::ScanDirection_MAX;
 #endif  // _MSC_VER
-const Line_LinePoint Line_LinePoint::default_instance_;
 
 
 
 
-
-
-const int Line_LinePoint::_offsets_[5] = {
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line_LinePoint, x_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line_LinePoint, y_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line_LinePoint, line_width_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line_LinePoint, distance_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line_LinePoint, found_with_scan_),
-};
 
 Line_LinePoint::Line_LinePoint()
-  : _reflection_(descriptor(),
-                 this, &default_instance_,
-                 _offsets_, _has_bits_, NULL),
+  : ::google::protobuf::Message(),
     _cached_size_(0),
     x_(0),
     y_(0),
@@ -788,14 +1015,12 @@ Line_LinePoint::Line_LinePoint()
     distance_(0),
     found_with_scan_(0) {
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (this == &default_instance_) {
-  }
 }
 
+void Line_LinePoint::InitAsDefaultInstance() {}
+
 Line_LinePoint::Line_LinePoint(const Line_LinePoint& from)
-  : _reflection_(descriptor(),
-                 this, &default_instance_,
-                 _offsets_, _has_bits_, NULL),
+  : ::google::protobuf::Message(),
     _cached_size_(0),
     x_(0),
     y_(0),
@@ -807,14 +1032,21 @@ Line_LinePoint::Line_LinePoint(const Line_LinePoint& from)
 }
 
 Line_LinePoint::~Line_LinePoint() {
-  if (this != &default_instance_) {
+  if (this != default_instance_) {
   }
 }
 
 const ::google::protobuf::Descriptor* Line_LinePoint::descriptor() {
-  if (Line_LinePoint_descriptor_ == NULL) proto_BuildDescriptors_vision_2eproto();
+  if (Line_LinePoint_descriptor_ == NULL) protobuf_BuildDesc_vision_2eproto();
   return Line_LinePoint_descriptor_;
 }
+
+const Line_LinePoint& Line_LinePoint::default_instance() {
+  if (default_instance_ == NULL) protobuf_BuildDesc_vision_2eproto();
+  return *default_instance_;
+}
+
+Line_LinePoint* Line_LinePoint::default_instance_ = NULL;
 
 Line_LinePoint* Line_LinePoint::New() const {
   return new Line_LinePoint;
@@ -824,18 +1056,13 @@ const ::google::protobuf::Descriptor* Line_LinePoint::GetDescriptor() const {
   return descriptor();
 }
 
-const ::google::protobuf::Message::Reflection*
-Line_LinePoint::GetReflection() const {
-  return &_reflection_;
-}
-
-::google::protobuf::Message::Reflection* Line_LinePoint::GetReflection() {
-  return &_reflection_;
+const ::google::protobuf::Reflection* Line_LinePoint::GetReflection() const {
+  if (Line_LinePoint_reflection_ == NULL) protobuf_BuildDesc_vision_2eproto();
+  return Line_LinePoint_reflection_;
 }
 
 // -------------------------------------------------------------------
 
-const Line Line::default_instance_;
 
 
 
@@ -851,33 +1078,12 @@ const Line Line::default_instance_;
 
 
 
-
-::google::protobuf::internal::ExtensionIdentifier< ::man::vision::Landmark,
+::google::protobuf::internal::ExtensionIdentifier< ::bites::vision::Landmark,
   ::google::protobuf::internal::PrimitiveTypeTraits< float > > Line::field_x2(10);
-::google::protobuf::internal::ExtensionIdentifier< ::man::vision::Landmark,
+::google::protobuf::internal::ExtensionIdentifier< ::bites::vision::Landmark,
   ::google::protobuf::internal::PrimitiveTypeTraits< float > > Line::field_y2(11);
-const int Line::_offsets_[15] = {
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line, self_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line, possibles_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line, points_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line, angle_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line, a_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line, b_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line, length_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line, avg_vertical_width_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line, avg_horizontal_width_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line, thinnest_hor_point_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line, thickest_hor_point_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line, thinnest_vert_point_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line, thickest_vert_point_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line, db_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Line, cc_line_),
-};
-
 Line::Line()
-  : _reflection_(descriptor(),
-                 this, &default_instance_,
-                 _offsets_, _has_bits_, NULL),
+  : ::google::protobuf::Message(),
     _cached_size_(0),
     self_(NULL),
     angle_(0),
@@ -893,20 +1099,18 @@ Line::Line()
     db_(NULL),
     cc_line_(false) {
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (this == &default_instance_) {
-    self_ = const_cast< ::man::vision::Landmark*>(&::man::vision::Landmark::default_instance());
-    thinnest_hor_point_ = const_cast< ::man::vision::Line_LinePoint*>(&::man::vision::Line_LinePoint::default_instance());
-    thickest_hor_point_ = const_cast< ::man::vision::Line_LinePoint*>(&::man::vision::Line_LinePoint::default_instance());
-    thinnest_vert_point_ = const_cast< ::man::vision::Line_LinePoint*>(&::man::vision::Line_LinePoint::default_instance());
-    thickest_vert_point_ = const_cast< ::man::vision::Line_LinePoint*>(&::man::vision::Line_LinePoint::default_instance());
-    db_ = const_cast< ::man::vision::DistanceBearing*>(&::man::vision::DistanceBearing::default_instance());
-  }
+}
+
+void Line::InitAsDefaultInstance() {  self_ = const_cast< ::bites::vision::Landmark*>(&::bites::vision::Landmark::default_instance());
+  thinnest_hor_point_ = const_cast< ::bites::vision::Line_LinePoint*>(&::bites::vision::Line_LinePoint::default_instance());
+  thickest_hor_point_ = const_cast< ::bites::vision::Line_LinePoint*>(&::bites::vision::Line_LinePoint::default_instance());
+  thinnest_vert_point_ = const_cast< ::bites::vision::Line_LinePoint*>(&::bites::vision::Line_LinePoint::default_instance());
+  thickest_vert_point_ = const_cast< ::bites::vision::Line_LinePoint*>(&::bites::vision::Line_LinePoint::default_instance());
+  db_ = const_cast< ::bites::vision::DistanceBearing*>(&::bites::vision::DistanceBearing::default_instance());
 }
 
 Line::Line(const Line& from)
-  : _reflection_(descriptor(),
-                 this, &default_instance_,
-                 _offsets_, _has_bits_, NULL),
+  : ::google::protobuf::Message(),
     _cached_size_(0),
     self_(NULL),
     angle_(0),
@@ -926,7 +1130,7 @@ Line::Line(const Line& from)
 }
 
 Line::~Line() {
-  if (this != &default_instance_) {
+  if (this != default_instance_) {
     delete self_;
     delete thinnest_hor_point_;
     delete thickest_hor_point_;
@@ -937,9 +1141,16 @@ Line::~Line() {
 }
 
 const ::google::protobuf::Descriptor* Line::descriptor() {
-  if (Line_descriptor_ == NULL) proto_BuildDescriptors_vision_2eproto();
+  if (Line_descriptor_ == NULL) protobuf_BuildDesc_vision_2eproto();
   return Line_descriptor_;
 }
+
+const Line& Line::default_instance() {
+  if (default_instance_ == NULL) protobuf_BuildDesc_vision_2eproto();
+  return *default_instance_;
+}
+
+Line* Line::default_instance_ = NULL;
 
 Line* Line::New() const {
   return new Line;
@@ -949,19 +1160,15 @@ const ::google::protobuf::Descriptor* Line::GetDescriptor() const {
   return descriptor();
 }
 
-const ::google::protobuf::Message::Reflection*
-Line::GetReflection() const {
-  return &_reflection_;
-}
-
-::google::protobuf::Message::Reflection* Line::GetReflection() {
-  return &_reflection_;
+const ::google::protobuf::Reflection* Line::GetReflection() const {
+  if (Line_reflection_ == NULL) protobuf_BuildDesc_vision_2eproto();
+  return Line_reflection_;
 }
 
 // ===================================================================
 
 const ::google::protobuf::EnumDescriptor* Corner_Shape_descriptor() {
-  if (Corner_Shape_descriptor_ == NULL) proto_BuildDescriptors_vision_2eproto();
+  if (Corner_Shape_descriptor_ == NULL) protobuf_BuildDesc_vision_2eproto();
   return Corner_Shape_descriptor_;
 }
 bool Corner_Shape_IsValid(int value) {
@@ -986,7 +1193,6 @@ const Corner_Shape Corner::UNKNOWN;
 const Corner_Shape Corner::Shape_MIN;
 const Corner_Shape Corner::Shape_MAX;
 #endif  // _MSC_VER
-const Corner Corner::default_instance_;
 
 
 
@@ -994,40 +1200,25 @@ const Corner Corner::default_instance_;
 
 
 
-
-::google::protobuf::internal::ExtensionIdentifier< ::man::vision::Landmark,
-  ::google::protobuf::internal::EnumTypeTraits< ::man::vision::Corner_Shape > > Corner::corner_type(12);
-::google::protobuf::internal::ExtensionIdentifier< ::man::vision::Landmark,
-  ::google::protobuf::internal::RepeatedMessageTypeTraits< ::man::vision::Landmark > > Corner::corner_lines(13);
-const int Corner::_offsets_[7] = {
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Corner, self_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Corner, detect_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Corner, possibles_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Corner, lines_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Corner, dists_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Corner, t_lines_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Corner, angle_between_lines_),
-};
-
+::google::protobuf::internal::ExtensionIdentifier< ::bites::vision::Landmark,
+  ::google::protobuf::internal::EnumTypeTraits< ::bites::vision::Corner_Shape > > Corner::corner_type(12);
+::google::protobuf::internal::ExtensionIdentifier< ::bites::vision::Landmark,
+  ::google::protobuf::internal::RepeatedMessageTypeTraits< ::bites::vision::Landmark > > Corner::corner_lines(13);
 Corner::Corner()
-  : _reflection_(descriptor(),
-                 this, &default_instance_,
-                 _offsets_, _has_bits_, NULL),
+  : ::google::protobuf::Message(),
     _cached_size_(0),
     self_(NULL),
     detect_(NULL),
     angle_between_lines_(0) {
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (this == &default_instance_) {
-    self_ = const_cast< ::man::vision::Landmark*>(&::man::vision::Landmark::default_instance());
-    detect_ = const_cast< ::man::vision::Detection*>(&::man::vision::Detection::default_instance());
-  }
+}
+
+void Corner::InitAsDefaultInstance() {  self_ = const_cast< ::bites::vision::Landmark*>(&::bites::vision::Landmark::default_instance());
+  detect_ = const_cast< ::bites::vision::Detection*>(&::bites::vision::Detection::default_instance());
 }
 
 Corner::Corner(const Corner& from)
-  : _reflection_(descriptor(),
-                 this, &default_instance_,
-                 _offsets_, _has_bits_, NULL),
+  : ::google::protobuf::Message(),
     _cached_size_(0),
     self_(NULL),
     detect_(NULL),
@@ -1037,16 +1228,23 @@ Corner::Corner(const Corner& from)
 }
 
 Corner::~Corner() {
-  if (this != &default_instance_) {
+  if (this != default_instance_) {
     delete self_;
     delete detect_;
   }
 }
 
 const ::google::protobuf::Descriptor* Corner::descriptor() {
-  if (Corner_descriptor_ == NULL) proto_BuildDescriptors_vision_2eproto();
+  if (Corner_descriptor_ == NULL) protobuf_BuildDesc_vision_2eproto();
   return Corner_descriptor_;
 }
+
+const Corner& Corner::default_instance() {
+  if (default_instance_ == NULL) protobuf_BuildDesc_vision_2eproto();
+  return *default_instance_;
+}
+
+Corner* Corner::default_instance_ = NULL;
 
 Corner* Corner::New() const {
   return new Corner;
@@ -1056,50 +1254,33 @@ const ::google::protobuf::Descriptor* Corner::GetDescriptor() const {
   return descriptor();
 }
 
-const ::google::protobuf::Message::Reflection*
-Corner::GetReflection() const {
-  return &_reflection_;
-}
-
-::google::protobuf::Message::Reflection* Corner::GetReflection() {
-  return &_reflection_;
+const ::google::protobuf::Reflection* Corner::GetReflection() const {
+  if (Corner_reflection_ == NULL) protobuf_BuildDesc_vision_2eproto();
+  return Corner_reflection_;
 }
 
 // ===================================================================
 
-const Cross Cross::default_instance_;
 
 
 
-
-
-const int Cross::_offsets_[4] = {
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Cross, self_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Cross, detect_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Cross, possibles_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Cross, bounds_),
-};
 
 Cross::Cross()
-  : _reflection_(descriptor(),
-                 this, &default_instance_,
-                 _offsets_, _has_bits_, NULL),
+  : ::google::protobuf::Message(),
     _cached_size_(0),
     self_(NULL),
     detect_(NULL),
     bounds_(NULL) {
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (this == &default_instance_) {
-    self_ = const_cast< ::man::vision::Landmark*>(&::man::vision::Landmark::default_instance());
-    detect_ = const_cast< ::man::vision::Detection*>(&::man::vision::Detection::default_instance());
-    bounds_ = const_cast< ::man::Rectangle*>(&::man::Rectangle::default_instance());
-  }
+}
+
+void Cross::InitAsDefaultInstance() {  self_ = const_cast< ::bites::vision::Landmark*>(&::bites::vision::Landmark::default_instance());
+  detect_ = const_cast< ::bites::vision::Detection*>(&::bites::vision::Detection::default_instance());
+  bounds_ = const_cast< ::bites::Rectangle*>(&::bites::Rectangle::default_instance());
 }
 
 Cross::Cross(const Cross& from)
-  : _reflection_(descriptor(),
-                 this, &default_instance_,
-                 _offsets_, _has_bits_, NULL),
+  : ::google::protobuf::Message(),
     _cached_size_(0),
     self_(NULL),
     detect_(NULL),
@@ -1109,7 +1290,7 @@ Cross::Cross(const Cross& from)
 }
 
 Cross::~Cross() {
-  if (this != &default_instance_) {
+  if (this != default_instance_) {
     delete self_;
     delete detect_;
     delete bounds_;
@@ -1117,9 +1298,16 @@ Cross::~Cross() {
 }
 
 const ::google::protobuf::Descriptor* Cross::descriptor() {
-  if (Cross_descriptor_ == NULL) proto_BuildDescriptors_vision_2eproto();
+  if (Cross_descriptor_ == NULL) protobuf_BuildDesc_vision_2eproto();
   return Cross_descriptor_;
 }
+
+const Cross& Cross::default_instance() {
+  if (default_instance_ == NULL) protobuf_BuildDesc_vision_2eproto();
+  return *default_instance_;
+}
+
+Cross* Cross::default_instance_ = NULL;
 
 Cross* Cross::New() const {
   return new Cross;
@@ -1129,44 +1317,29 @@ const ::google::protobuf::Descriptor* Cross::GetDescriptor() const {
   return descriptor();
 }
 
-const ::google::protobuf::Message::Reflection*
-Cross::GetReflection() const {
-  return &_reflection_;
-}
-
-::google::protobuf::Message::Reflection* Cross::GetReflection() {
-  return &_reflection_;
+const ::google::protobuf::Reflection* Cross::GetReflection() const {
+  if (Cross_reflection_ == NULL) protobuf_BuildDesc_vision_2eproto();
+  return Cross_reflection_;
 }
 
 // ===================================================================
 
-const CrossBar CrossBar::default_instance_;
 
-
-
-const int CrossBar::_offsets_[2] = {
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CrossBar, detect_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CrossBar, bounds_),
-};
 
 CrossBar::CrossBar()
-  : _reflection_(descriptor(),
-                 this, &default_instance_,
-                 _offsets_, _has_bits_, NULL),
+  : ::google::protobuf::Message(),
     _cached_size_(0),
     detect_(NULL),
     bounds_(NULL) {
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (this == &default_instance_) {
-    detect_ = const_cast< ::man::vision::Detection*>(&::man::vision::Detection::default_instance());
-    bounds_ = const_cast< ::man::Rectangle*>(&::man::Rectangle::default_instance());
-  }
+}
+
+void CrossBar::InitAsDefaultInstance() {  detect_ = const_cast< ::bites::vision::Detection*>(&::bites::vision::Detection::default_instance());
+  bounds_ = const_cast< ::bites::Rectangle*>(&::bites::Rectangle::default_instance());
 }
 
 CrossBar::CrossBar(const CrossBar& from)
-  : _reflection_(descriptor(),
-                 this, &default_instance_,
-                 _offsets_, _has_bits_, NULL),
+  : ::google::protobuf::Message(),
     _cached_size_(0),
     detect_(NULL),
     bounds_(NULL) {
@@ -1175,16 +1348,23 @@ CrossBar::CrossBar(const CrossBar& from)
 }
 
 CrossBar::~CrossBar() {
-  if (this != &default_instance_) {
+  if (this != default_instance_) {
     delete detect_;
     delete bounds_;
   }
 }
 
 const ::google::protobuf::Descriptor* CrossBar::descriptor() {
-  if (CrossBar_descriptor_ == NULL) proto_BuildDescriptors_vision_2eproto();
+  if (CrossBar_descriptor_ == NULL) protobuf_BuildDesc_vision_2eproto();
   return CrossBar_descriptor_;
 }
+
+const CrossBar& CrossBar::default_instance() {
+  if (default_instance_ == NULL) protobuf_BuildDesc_vision_2eproto();
+  return *default_instance_;
+}
+
+CrossBar* CrossBar::default_instance_ = NULL;
 
 CrossBar* CrossBar::New() const {
   return new CrossBar;
@@ -1194,48 +1374,32 @@ const ::google::protobuf::Descriptor* CrossBar::GetDescriptor() const {
   return descriptor();
 }
 
-const ::google::protobuf::Message::Reflection*
-CrossBar::GetReflection() const {
-  return &_reflection_;
-}
-
-::google::protobuf::Message::Reflection* CrossBar::GetReflection() {
-  return &_reflection_;
+const ::google::protobuf::Reflection* CrossBar::GetReflection() const {
+  if (CrossBar_reflection_ == NULL) protobuf_BuildDesc_vision_2eproto();
+  return CrossBar_reflection_;
 }
 
 // ===================================================================
 
-const FieldObject FieldObject::default_instance_;
 
 
-
-
-const int FieldObject::_offsets_[3] = {
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(FieldObject, self_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(FieldObject, possibles_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(FieldObject, bounds_),
-};
 
 FieldObject::FieldObject()
-  : _reflection_(descriptor(),
-                 this, &default_instance_,
-                 _offsets_, _has_bits_, NULL),
+  : ::google::protobuf::Message(),
     _cached_size_(0),
     self_(NULL),
     possibles_(NULL),
     bounds_(NULL) {
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (this == &default_instance_) {
-    self_ = const_cast< ::man::vision::Landmark*>(&::man::vision::Landmark::default_instance());
-    possibles_ = const_cast< ::man::vision::Landmark*>(&::man::vision::Landmark::default_instance());
-    bounds_ = const_cast< ::man::Rectangle*>(&::man::Rectangle::default_instance());
-  }
+}
+
+void FieldObject::InitAsDefaultInstance() {  self_ = const_cast< ::bites::vision::Landmark*>(&::bites::vision::Landmark::default_instance());
+  possibles_ = const_cast< ::bites::vision::Landmark*>(&::bites::vision::Landmark::default_instance());
+  bounds_ = const_cast< ::bites::Rectangle*>(&::bites::Rectangle::default_instance());
 }
 
 FieldObject::FieldObject(const FieldObject& from)
-  : _reflection_(descriptor(),
-                 this, &default_instance_,
-                 _offsets_, _has_bits_, NULL),
+  : ::google::protobuf::Message(),
     _cached_size_(0),
     self_(NULL),
     possibles_(NULL),
@@ -1245,7 +1409,7 @@ FieldObject::FieldObject(const FieldObject& from)
 }
 
 FieldObject::~FieldObject() {
-  if (this != &default_instance_) {
+  if (this != default_instance_) {
     delete self_;
     delete possibles_;
     delete bounds_;
@@ -1253,9 +1417,16 @@ FieldObject::~FieldObject() {
 }
 
 const ::google::protobuf::Descriptor* FieldObject::descriptor() {
-  if (FieldObject_descriptor_ == NULL) proto_BuildDescriptors_vision_2eproto();
+  if (FieldObject_descriptor_ == NULL) protobuf_BuildDesc_vision_2eproto();
   return FieldObject_descriptor_;
 }
+
+const FieldObject& FieldObject::default_instance() {
+  if (default_instance_ == NULL) protobuf_BuildDesc_vision_2eproto();
+  return *default_instance_;
+}
+
+FieldObject* FieldObject::default_instance_ = NULL;
 
 FieldObject* FieldObject::New() const {
   return new FieldObject;
@@ -1265,36 +1436,20 @@ const ::google::protobuf::Descriptor* FieldObject::GetDescriptor() const {
   return descriptor();
 }
 
-const ::google::protobuf::Message::Reflection*
-FieldObject::GetReflection() const {
-  return &_reflection_;
-}
-
-::google::protobuf::Message::Reflection* FieldObject::GetReflection() {
-  return &_reflection_;
+const ::google::protobuf::Reflection* FieldObject::GetReflection() const {
+  if (FieldObject_reflection_ == NULL) protobuf_BuildDesc_vision_2eproto();
+  return FieldObject_reflection_;
 }
 
 // ===================================================================
 
-const Robot Robot::default_instance_;
 
 
 
 
-
-
-const int Robot::_offsets_[5] = {
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Robot, detect_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Robot, bounds_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Robot, back_left_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Robot, back_right_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Robot, back_dir_),
-};
 
 Robot::Robot()
-  : _reflection_(descriptor(),
-                 this, &default_instance_,
-                 _offsets_, _has_bits_, NULL),
+  : ::google::protobuf::Message(),
     _cached_size_(0),
     detect_(NULL),
     bounds_(NULL),
@@ -1302,16 +1457,14 @@ Robot::Robot()
     back_right_(0),
     back_dir_(0) {
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (this == &default_instance_) {
-    detect_ = const_cast< ::man::vision::Detection*>(&::man::vision::Detection::default_instance());
-    bounds_ = const_cast< ::man::Rectangle*>(&::man::Rectangle::default_instance());
-  }
+}
+
+void Robot::InitAsDefaultInstance() {  detect_ = const_cast< ::bites::vision::Detection*>(&::bites::vision::Detection::default_instance());
+  bounds_ = const_cast< ::bites::Rectangle*>(&::bites::Rectangle::default_instance());
 }
 
 Robot::Robot(const Robot& from)
-  : _reflection_(descriptor(),
-                 this, &default_instance_,
-                 _offsets_, _has_bits_, NULL),
+  : ::google::protobuf::Message(),
     _cached_size_(0),
     detect_(NULL),
     bounds_(NULL),
@@ -1323,16 +1476,23 @@ Robot::Robot(const Robot& from)
 }
 
 Robot::~Robot() {
-  if (this != &default_instance_) {
+  if (this != default_instance_) {
     delete detect_;
     delete bounds_;
   }
 }
 
 const ::google::protobuf::Descriptor* Robot::descriptor() {
-  if (Robot_descriptor_ == NULL) proto_BuildDescriptors_vision_2eproto();
+  if (Robot_descriptor_ == NULL) protobuf_BuildDesc_vision_2eproto();
   return Robot_descriptor_;
 }
+
+const Robot& Robot::default_instance() {
+  if (default_instance_ == NULL) protobuf_BuildDesc_vision_2eproto();
+  return *default_instance_;
+}
+
+Robot* Robot::default_instance_ = NULL;
 
 Robot* Robot::New() const {
   return new Robot;
@@ -1342,46 +1502,30 @@ const ::google::protobuf::Descriptor* Robot::GetDescriptor() const {
   return descriptor();
 }
 
-const ::google::protobuf::Message::Reflection*
-Robot::GetReflection() const {
-  return &_reflection_;
-}
-
-::google::protobuf::Message::Reflection* Robot::GetReflection() {
-  return &_reflection_;
+const ::google::protobuf::Reflection* Robot::GetReflection() const {
+  if (Robot_reflection_ == NULL) protobuf_BuildDesc_vision_2eproto();
+  return Robot_reflection_;
 }
 
 // ===================================================================
 
-const Ball Ball::default_instance_;
 
 
-
-
-const int Ball::_offsets_[3] = {
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Ball, detect_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Ball, radius_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Ball, confidence_),
-};
 
 Ball::Ball()
-  : _reflection_(descriptor(),
-                 this, &default_instance_,
-                 _offsets_, _has_bits_, NULL),
+  : ::google::protobuf::Message(),
     _cached_size_(0),
     detect_(NULL),
     radius_(0),
     confidence_(0) {
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (this == &default_instance_) {
-    detect_ = const_cast< ::man::vision::Detection*>(&::man::vision::Detection::default_instance());
-  }
+}
+
+void Ball::InitAsDefaultInstance() {  detect_ = const_cast< ::bites::vision::Detection*>(&::bites::vision::Detection::default_instance());
 }
 
 Ball::Ball(const Ball& from)
-  : _reflection_(descriptor(),
-                 this, &default_instance_,
-                 _offsets_, _has_bits_, NULL),
+  : ::google::protobuf::Message(),
     _cached_size_(0),
     detect_(NULL),
     radius_(0),
@@ -1391,15 +1535,22 @@ Ball::Ball(const Ball& from)
 }
 
 Ball::~Ball() {
-  if (this != &default_instance_) {
+  if (this != default_instance_) {
     delete detect_;
   }
 }
 
 const ::google::protobuf::Descriptor* Ball::descriptor() {
-  if (Ball_descriptor_ == NULL) proto_BuildDescriptors_vision_2eproto();
+  if (Ball_descriptor_ == NULL) protobuf_BuildDesc_vision_2eproto();
   return Ball_descriptor_;
 }
+
+const Ball& Ball::default_instance() {
+  if (default_instance_ == NULL) protobuf_BuildDesc_vision_2eproto();
+  return *default_instance_;
+}
+
+Ball* Ball::default_instance_ = NULL;
 
 Ball* Ball::New() const {
   return new Ball;
@@ -1409,50 +1560,31 @@ const ::google::protobuf::Descriptor* Ball::GetDescriptor() const {
   return descriptor();
 }
 
-const ::google::protobuf::Message::Reflection*
-Ball::GetReflection() const {
-  return &_reflection_;
-}
-
-::google::protobuf::Message::Reflection* Ball::GetReflection() {
-  return &_reflection_;
+const ::google::protobuf::Reflection* Ball::GetReflection() const {
+  if (Ball_reflection_ == NULL) protobuf_BuildDesc_vision_2eproto();
+  return Ball_reflection_;
 }
 
 // ===================================================================
 
-const Frame Frame::default_instance_;
 
 
 
 
 
-
-
-const int Frame::_offsets_[6] = {
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Frame, image_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Frame, balls_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Frame, objects_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Frame, lines_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Frame, corners_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Frame, robots_),
-};
 
 Frame::Frame()
-  : _reflection_(descriptor(),
-                 this, &default_instance_,
-                 _offsets_, _has_bits_, NULL),
+  : ::google::protobuf::Message(),
     _cached_size_(0),
     image_(NULL) {
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (this == &default_instance_) {
-    image_ = const_cast< ::man::vision::Image*>(&::man::vision::Image::default_instance());
-  }
+}
+
+void Frame::InitAsDefaultInstance() {  image_ = const_cast< ::bites::vision::Image*>(&::bites::vision::Image::default_instance());
 }
 
 Frame::Frame(const Frame& from)
-  : _reflection_(descriptor(),
-                 this, &default_instance_,
-                 _offsets_, _has_bits_, NULL),
+  : ::google::protobuf::Message(),
     _cached_size_(0),
     image_(NULL) {
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -1460,15 +1592,22 @@ Frame::Frame(const Frame& from)
 }
 
 Frame::~Frame() {
-  if (this != &default_instance_) {
+  if (this != default_instance_) {
     delete image_;
   }
 }
 
 const ::google::protobuf::Descriptor* Frame::descriptor() {
-  if (Frame_descriptor_ == NULL) proto_BuildDescriptors_vision_2eproto();
+  if (Frame_descriptor_ == NULL) protobuf_BuildDesc_vision_2eproto();
   return Frame_descriptor_;
 }
+
+const Frame& Frame::default_instance() {
+  if (default_instance_ == NULL) protobuf_BuildDesc_vision_2eproto();
+  return *default_instance_;
+}
+
+Frame* Frame::default_instance_ = NULL;
 
 Frame* Frame::New() const {
   return new Frame;
@@ -1478,14 +1617,10 @@ const ::google::protobuf::Descriptor* Frame::GetDescriptor() const {
   return descriptor();
 }
 
-const ::google::protobuf::Message::Reflection*
-Frame::GetReflection() const {
-  return &_reflection_;
-}
-
-::google::protobuf::Message::Reflection* Frame::GetReflection() {
-  return &_reflection_;
+const ::google::protobuf::Reflection* Frame::GetReflection() const {
+  if (Frame_reflection_ == NULL) protobuf_BuildDesc_vision_2eproto();
+  return Frame_reflection_;
 }
 
 }  // namespace vision
-}  // namespace man
+}  // namespace bites

@@ -6,17 +6,64 @@
 #include <google/protobuf/reflection_ops.h>
 #include <google/protobuf/wire_format_inl.h>
 
-namespace man {
+namespace bites {
 
 namespace {
 
 const ::google::protobuf::Descriptor* Point_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  Point_reflection_ = NULL;
 const ::google::protobuf::Descriptor* Rectangle_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  Rectangle_reflection_ = NULL;
 
 }  // namespace
 
 
-void proto_BuildDescriptors_structs_2eproto() {
+void protobuf_BuildDesc_structs_2eproto_AssignGlobalDescriptors(const ::google::protobuf::FileDescriptor* file) {
+  Point_descriptor_ = file->message_type(0);
+  Point::default_instance_ = new Point();
+  static const int Point_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Point, x_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Point, y_),
+  };
+  Point_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      Point_descriptor_,
+      Point::default_instance_,
+      Point_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Point, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Point, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      sizeof(Point));
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    Point_descriptor_, Point::default_instance_);
+  Rectangle_descriptor_ = file->message_type(1);
+  Rectangle::default_instance_ = new Rectangle();
+  static const int Rectangle_offsets_[4] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Rectangle, lefttop_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Rectangle, righttop_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Rectangle, leftbottom_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Rectangle, rightbottom_),
+  };
+  Rectangle_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      Rectangle_descriptor_,
+      Rectangle::default_instance_,
+      Rectangle_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Rectangle, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Rectangle, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      sizeof(Rectangle));
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    Rectangle_descriptor_, Rectangle::default_instance_);
+  Point::default_instance_->InitAsDefaultInstance();
+  Rectangle::default_instance_->InitAsDefaultInstance();
+}
+
+void protobuf_BuildDesc_structs_2eproto() {
   static bool already_here = false;
   if (already_here) return;
   already_here = true;
@@ -24,55 +71,39 @@ void proto_BuildDescriptors_structs_2eproto() {
   ::google::protobuf::DescriptorPool* pool =
     ::google::protobuf::DescriptorPool::internal_generated_pool();
 
-  const ::google::protobuf::FileDescriptor* file = pool->InternalBuildGeneratedFile(
-    "\n\rstructs.proto\022\003man\"\035\n\005Point\022\t\n\001x\030\001 \002(\005"
-    "\022\t\n\001y\030\002 \002(\005\"\207\001\n\tRectangle\022\033\n\007leftTop\030\001 \002"
-    "(\0132\n.man.Point\022\034\n\010rightTop\030\002 \002(\0132\n.man.P"
-    "oint\022\036\n\nleftBottom\030\003 \002(\0132\n.man.Point\022\037\n\013"
-    "rightBottom\030\004 \002(\0132\n.man.Point", 189);
-  Point_descriptor_ = file->message_type(0);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Point_descriptor_, &Point::default_instance());
-  Rectangle_descriptor_ = file->message_type(1);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    Rectangle_descriptor_, &Rectangle::default_instance());
+  pool->InternalBuildGeneratedFile(
+    "\n\rstructs.proto\022\005bites\"\035\n\005Point\022\t\n\001x\030\001 \002"
+    "(\005\022\t\n\001y\030\002 \002(\005\"\217\001\n\tRectangle\022\035\n\007leftTop\030\001"
+    " \002(\0132\014.bites.Point\022\036\n\010rightTop\030\002 \002(\0132\014.b"
+    "ites.Point\022 \n\nleftBottom\030\003 \002(\0132\014.bites.P"
+    "oint\022!\n\013rightBottom\030\004 \002(\0132\014.bites.Point", 199,
+  &protobuf_BuildDesc_structs_2eproto_AssignGlobalDescriptors);
 }
 
 // Force BuildDescriptors() to be called at static initialization time.
 struct StaticDescriptorInitializer_structs_2eproto {
   StaticDescriptorInitializer_structs_2eproto() {
-    proto_BuildDescriptors_structs_2eproto();
+    protobuf_BuildDesc_structs_2eproto();
   }
 } static_descriptor_initializer_structs_2eproto_;
 
 
 // ===================================================================
 
-const Point Point::default_instance_;
 
-
-
-const int Point::_offsets_[2] = {
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Point, x_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Point, y_),
-};
 
 Point::Point()
-  : _reflection_(descriptor(),
-                 this, &default_instance_,
-                 _offsets_, _has_bits_, NULL),
+  : ::google::protobuf::Message(),
     _cached_size_(0),
     x_(0),
     y_(0) {
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (this == &default_instance_) {
-  }
 }
 
+void Point::InitAsDefaultInstance() {}
+
 Point::Point(const Point& from)
-  : _reflection_(descriptor(),
-                 this, &default_instance_,
-                 _offsets_, _has_bits_, NULL),
+  : ::google::protobuf::Message(),
     _cached_size_(0),
     x_(0),
     y_(0) {
@@ -81,14 +112,21 @@ Point::Point(const Point& from)
 }
 
 Point::~Point() {
-  if (this != &default_instance_) {
+  if (this != default_instance_) {
   }
 }
 
 const ::google::protobuf::Descriptor* Point::descriptor() {
-  if (Point_descriptor_ == NULL) proto_BuildDescriptors_structs_2eproto();
+  if (Point_descriptor_ == NULL) protobuf_BuildDesc_structs_2eproto();
   return Point_descriptor_;
 }
+
+const Point& Point::default_instance() {
+  if (default_instance_ == NULL) protobuf_BuildDesc_structs_2eproto();
+  return *default_instance_;
+}
+
+Point* Point::default_instance_ = NULL;
 
 Point* Point::New() const {
   return new Point;
@@ -98,52 +136,35 @@ const ::google::protobuf::Descriptor* Point::GetDescriptor() const {
   return descriptor();
 }
 
-const ::google::protobuf::Message::Reflection*
-Point::GetReflection() const {
-  return &_reflection_;
-}
-
-::google::protobuf::Message::Reflection* Point::GetReflection() {
-  return &_reflection_;
+const ::google::protobuf::Reflection* Point::GetReflection() const {
+  if (Point_reflection_ == NULL) protobuf_BuildDesc_structs_2eproto();
+  return Point_reflection_;
 }
 
 // ===================================================================
 
-const Rectangle Rectangle::default_instance_;
 
 
 
-
-
-const int Rectangle::_offsets_[4] = {
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Rectangle, lefttop_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Rectangle, righttop_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Rectangle, leftbottom_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Rectangle, rightbottom_),
-};
 
 Rectangle::Rectangle()
-  : _reflection_(descriptor(),
-                 this, &default_instance_,
-                 _offsets_, _has_bits_, NULL),
+  : ::google::protobuf::Message(),
     _cached_size_(0),
     lefttop_(NULL),
     righttop_(NULL),
     leftbottom_(NULL),
     rightbottom_(NULL) {
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (this == &default_instance_) {
-    lefttop_ = const_cast< ::man::Point*>(&::man::Point::default_instance());
-    righttop_ = const_cast< ::man::Point*>(&::man::Point::default_instance());
-    leftbottom_ = const_cast< ::man::Point*>(&::man::Point::default_instance());
-    rightbottom_ = const_cast< ::man::Point*>(&::man::Point::default_instance());
-  }
+}
+
+void Rectangle::InitAsDefaultInstance() {  lefttop_ = const_cast< ::bites::Point*>(&::bites::Point::default_instance());
+  righttop_ = const_cast< ::bites::Point*>(&::bites::Point::default_instance());
+  leftbottom_ = const_cast< ::bites::Point*>(&::bites::Point::default_instance());
+  rightbottom_ = const_cast< ::bites::Point*>(&::bites::Point::default_instance());
 }
 
 Rectangle::Rectangle(const Rectangle& from)
-  : _reflection_(descriptor(),
-                 this, &default_instance_,
-                 _offsets_, _has_bits_, NULL),
+  : ::google::protobuf::Message(),
     _cached_size_(0),
     lefttop_(NULL),
     righttop_(NULL),
@@ -154,7 +175,7 @@ Rectangle::Rectangle(const Rectangle& from)
 }
 
 Rectangle::~Rectangle() {
-  if (this != &default_instance_) {
+  if (this != default_instance_) {
     delete lefttop_;
     delete righttop_;
     delete leftbottom_;
@@ -163,9 +184,16 @@ Rectangle::~Rectangle() {
 }
 
 const ::google::protobuf::Descriptor* Rectangle::descriptor() {
-  if (Rectangle_descriptor_ == NULL) proto_BuildDescriptors_structs_2eproto();
+  if (Rectangle_descriptor_ == NULL) protobuf_BuildDesc_structs_2eproto();
   return Rectangle_descriptor_;
 }
+
+const Rectangle& Rectangle::default_instance() {
+  if (default_instance_ == NULL) protobuf_BuildDesc_structs_2eproto();
+  return *default_instance_;
+}
+
+Rectangle* Rectangle::default_instance_ = NULL;
 
 Rectangle* Rectangle::New() const {
   return new Rectangle;
@@ -175,13 +203,9 @@ const ::google::protobuf::Descriptor* Rectangle::GetDescriptor() const {
   return descriptor();
 }
 
-const ::google::protobuf::Message::Reflection*
-Rectangle::GetReflection() const {
-  return &_reflection_;
+const ::google::protobuf::Reflection* Rectangle::GetReflection() const {
+  if (Rectangle_reflection_ == NULL) protobuf_BuildDesc_structs_2eproto();
+  return Rectangle_reflection_;
 }
 
-::google::protobuf::Message::Reflection* Rectangle::GetReflection() {
-  return &_reflection_;
-}
-
-}  // namespace man
+}  // namespace bites

@@ -11,7 +11,7 @@ from google.protobuf import descriptor_pb2
 
 _IMAGE_ENCODING = descriptor.EnumDescriptor(
   name='Encoding',
-  full_name='man.vision.Image.Encoding',
+  full_name='bites.vision.Image.Encoding',
   filename='Encoding',
   values=[
     descriptor.EnumValueDescriptor(
@@ -36,7 +36,7 @@ _IMAGE_ENCODING = descriptor.EnumDescriptor(
 
 _LANDMARK_ID = descriptor.EnumDescriptor(
   name='ID',
-  full_name='man.vision.Landmark.ID',
+  full_name='bites.vision.Landmark.ID',
   filename='ID',
   values=[
     descriptor.EnumValueDescriptor(
@@ -285,7 +285,7 @@ _LANDMARK_ID = descriptor.EnumDescriptor(
 
 _LANDMARK_IDCERTAINTY = descriptor.EnumDescriptor(
   name='IDCertainty',
-  full_name='man.vision.Landmark.IDCertainty',
+  full_name='bites.vision.Landmark.IDCertainty',
   filename='IDCertainty',
   values=[
     descriptor.EnumValueDescriptor(
@@ -306,7 +306,7 @@ _LANDMARK_IDCERTAINTY = descriptor.EnumDescriptor(
 
 _LANDMARK_DISTANCECERTAINTY = descriptor.EnumDescriptor(
   name='DistanceCertainty',
-  full_name='man.vision.Landmark.DistanceCertainty',
+  full_name='bites.vision.Landmark.DistanceCertainty',
   filename='DistanceCertainty',
   values=[
     descriptor.EnumValueDescriptor(
@@ -331,7 +331,7 @@ _LANDMARK_DISTANCECERTAINTY = descriptor.EnumDescriptor(
 
 _LINE_SCANDIRECTION = descriptor.EnumDescriptor(
   name='ScanDirection',
-  full_name='man.vision.Line.ScanDirection',
+  full_name='bites.vision.Line.ScanDirection',
   filename='ScanDirection',
   values=[
     descriptor.EnumValueDescriptor(
@@ -348,7 +348,7 @@ _LINE_SCANDIRECTION = descriptor.EnumDescriptor(
 
 _CORNER_SHAPE = descriptor.EnumDescriptor(
   name='Shape',
-  full_name='man.vision.Corner.Shape',
+  full_name='bites.vision.Corner.Shape',
   filename='Shape',
   values=[
     descriptor.EnumValueDescriptor(
@@ -378,33 +378,33 @@ _CORNER_SHAPE = descriptor.EnumDescriptor(
 
 _IMAGE = descriptor.Descriptor(
   name='Image',
-  full_name='man.vision.Image',
+  full_name='bites.vision.Image',
   filename='vision.proto',
   containing_type=None,
   fields=[
     descriptor.FieldDescriptor(
-      name='encoding', full_name='man.vision.Image.encoding', index=0,
+      name='encoding', full_name='bites.vision.Image.encoding', index=0,
       number=1, type=14, cpp_type=8, label=2,
       default_value=2,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='width', full_name='man.vision.Image.width', index=1,
+      name='width', full_name='bites.vision.Image.width', index=1,
       number=2, type=5, cpp_type=1, label=2,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='height', full_name='man.vision.Image.height', index=2,
+      name='height', full_name='bites.vision.Image.height', index=2,
       number=3, type=5, cpp_type=1, label=2,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='data', full_name='man.vision.Image.data', index=3,
+      name='data', full_name='bites.vision.Image.data', index=3,
       number=4, type=12, cpp_type=9, label=2,
       default_value="",
       message_type=None, enum_type=None, containing_type=None,
@@ -422,40 +422,40 @@ _IMAGE = descriptor.Descriptor(
 
 _LANDMARK = descriptor.Descriptor(
   name='Landmark',
-  full_name='man.vision.Landmark',
+  full_name='bites.vision.Landmark',
   filename='vision.proto',
   containing_type=None,
   fields=[
     descriptor.FieldDescriptor(
-      name='id', full_name='man.vision.Landmark.id', index=0,
+      name='id', full_name='bites.vision.Landmark.id', index=0,
       number=1, type=14, cpp_type=8, label=2,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='field_x', full_name='man.vision.Landmark.field_x', index=1,
+      name='field_x', full_name='bites.vision.Landmark.field_x', index=1,
       number=2, type=2, cpp_type=6, label=2,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='field_y', full_name='man.vision.Landmark.field_y', index=2,
+      name='field_y', full_name='bites.vision.Landmark.field_y', index=2,
       number=3, type=2, cpp_type=6, label=2,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='id_certainty', full_name='man.vision.Landmark.id_certainty', index=3,
+      name='id_certainty', full_name='bites.vision.Landmark.id_certainty', index=3,
       number=4, type=14, cpp_type=8, label=1,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='distance_certainty', full_name='man.vision.Landmark.distance_certainty', index=4,
+      name='distance_certainty', full_name='bites.vision.Landmark.distance_certainty', index=4,
       number=5, type=14, cpp_type=8, label=1,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -475,33 +475,33 @@ _LANDMARK = descriptor.Descriptor(
 
 _DISTANCEBEARING = descriptor.Descriptor(
   name='DistanceBearing',
-  full_name='man.vision.DistanceBearing',
+  full_name='bites.vision.DistanceBearing',
   filename='vision.proto',
   containing_type=None,
   fields=[
     descriptor.FieldDescriptor(
-      name='distance', full_name='man.vision.DistanceBearing.distance', index=0,
+      name='distance', full_name='bites.vision.DistanceBearing.distance', index=0,
       number=1, type=2, cpp_type=6, label=2,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='bearing', full_name='man.vision.DistanceBearing.bearing', index=1,
+      name='bearing', full_name='bites.vision.DistanceBearing.bearing', index=1,
       number=2, type=2, cpp_type=6, label=2,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='distance_sd', full_name='man.vision.DistanceBearing.distance_sd', index=2,
+      name='distance_sd', full_name='bites.vision.DistanceBearing.distance_sd', index=2,
       number=3, type=2, cpp_type=6, label=2,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='bearing_sd', full_name='man.vision.DistanceBearing.bearing_sd', index=3,
+      name='bearing_sd', full_name='bites.vision.DistanceBearing.bearing_sd', index=3,
       number=4, type=2, cpp_type=6, label=2,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -518,82 +518,82 @@ _DISTANCEBEARING = descriptor.Descriptor(
 
 _DETECTION = descriptor.Descriptor(
   name='Detection',
-  full_name='man.vision.Detection',
+  full_name='bites.vision.Detection',
   filename='vision.proto',
   containing_type=None,
   fields=[
     descriptor.FieldDescriptor(
-      name='x', full_name='man.vision.Detection.x', index=0,
+      name='x', full_name='bites.vision.Detection.x', index=0,
       number=1, type=5, cpp_type=1, label=2,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='y', full_name='man.vision.Detection.y', index=1,
+      name='y', full_name='bites.vision.Detection.y', index=1,
       number=2, type=5, cpp_type=1, label=2,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='width', full_name='man.vision.Detection.width', index=2,
+      name='width', full_name='bites.vision.Detection.width', index=2,
       number=3, type=2, cpp_type=6, label=2,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='height', full_name='man.vision.Detection.height', index=3,
+      name='height', full_name='bites.vision.Detection.height', index=3,
       number=4, type=2, cpp_type=6, label=2,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='center_x', full_name='man.vision.Detection.center_x', index=4,
+      name='center_x', full_name='bites.vision.Detection.center_x', index=4,
       number=5, type=5, cpp_type=1, label=2,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='center_y', full_name='man.vision.Detection.center_y', index=5,
+      name='center_y', full_name='bites.vision.Detection.center_y', index=5,
       number=6, type=5, cpp_type=1, label=2,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='angle_x', full_name='man.vision.Detection.angle_x', index=6,
+      name='angle_x', full_name='bites.vision.Detection.angle_x', index=6,
       number=7, type=2, cpp_type=6, label=2,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='angle_y', full_name='man.vision.Detection.angle_y', index=7,
+      name='angle_y', full_name='bites.vision.Detection.angle_y', index=7,
       number=8, type=2, cpp_type=6, label=2,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='foc_dist', full_name='man.vision.Detection.foc_dist', index=8,
+      name='foc_dist', full_name='bites.vision.Detection.foc_dist', index=8,
       number=9, type=2, cpp_type=6, label=2,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='elevation', full_name='man.vision.Detection.elevation', index=9,
+      name='elevation', full_name='bites.vision.Detection.elevation', index=9,
       number=10, type=2, cpp_type=6, label=2,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='db', full_name='man.vision.Detection.db', index=10,
+      name='db', full_name='bites.vision.Detection.db', index=10,
       number=11, type=11, cpp_type=10, label=2,
       default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -610,40 +610,40 @@ _DETECTION = descriptor.Descriptor(
 
 _LINE_LINEPOINT = descriptor.Descriptor(
   name='LinePoint',
-  full_name='man.vision.Line.LinePoint',
+  full_name='bites.vision.Line.LinePoint',
   filename='vision.proto',
   containing_type=None,
   fields=[
     descriptor.FieldDescriptor(
-      name='x', full_name='man.vision.Line.LinePoint.x', index=0,
+      name='x', full_name='bites.vision.Line.LinePoint.x', index=0,
       number=1, type=5, cpp_type=1, label=2,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='y', full_name='man.vision.Line.LinePoint.y', index=1,
+      name='y', full_name='bites.vision.Line.LinePoint.y', index=1,
       number=2, type=5, cpp_type=1, label=2,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='line_width', full_name='man.vision.Line.LinePoint.line_width', index=2,
+      name='line_width', full_name='bites.vision.Line.LinePoint.line_width', index=2,
       number=3, type=2, cpp_type=6, label=2,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='distance', full_name='man.vision.Line.LinePoint.distance', index=3,
+      name='distance', full_name='bites.vision.Line.LinePoint.distance', index=3,
       number=4, type=2, cpp_type=6, label=2,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='found_with_scan', full_name='man.vision.Line.LinePoint.found_with_scan', index=4,
+      name='found_with_scan', full_name='bites.vision.Line.LinePoint.found_with_scan', index=4,
       number=5, type=14, cpp_type=8, label=2,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -659,110 +659,110 @@ _LINE_LINEPOINT = descriptor.Descriptor(
 
 _LINE = descriptor.Descriptor(
   name='Line',
-  full_name='man.vision.Line',
+  full_name='bites.vision.Line',
   filename='vision.proto',
   containing_type=None,
   fields=[
     descriptor.FieldDescriptor(
-      name='self', full_name='man.vision.Line.self', index=0,
+      name='self', full_name='bites.vision.Line.self', index=0,
       number=1, type=11, cpp_type=10, label=2,
       default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='possibles', full_name='man.vision.Line.possibles', index=1,
+      name='possibles', full_name='bites.vision.Line.possibles', index=1,
       number=2, type=11, cpp_type=10, label=3,
       default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='points', full_name='man.vision.Line.points', index=2,
+      name='points', full_name='bites.vision.Line.points', index=2,
       number=3, type=11, cpp_type=10, label=3,
       default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='angle', full_name='man.vision.Line.angle', index=3,
+      name='angle', full_name='bites.vision.Line.angle', index=3,
       number=4, type=2, cpp_type=6, label=1,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='a', full_name='man.vision.Line.a', index=4,
+      name='a', full_name='bites.vision.Line.a', index=4,
       number=5, type=2, cpp_type=6, label=1,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='b', full_name='man.vision.Line.b', index=5,
+      name='b', full_name='bites.vision.Line.b', index=5,
       number=6, type=2, cpp_type=6, label=1,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='length', full_name='man.vision.Line.length', index=6,
+      name='length', full_name='bites.vision.Line.length', index=6,
       number=7, type=2, cpp_type=6, label=1,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='avg_vertical_width', full_name='man.vision.Line.avg_vertical_width', index=7,
+      name='avg_vertical_width', full_name='bites.vision.Line.avg_vertical_width', index=7,
       number=8, type=2, cpp_type=6, label=1,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='avg_horizontal_width', full_name='man.vision.Line.avg_horizontal_width', index=8,
+      name='avg_horizontal_width', full_name='bites.vision.Line.avg_horizontal_width', index=8,
       number=9, type=2, cpp_type=6, label=1,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='thinnest_hor_point', full_name='man.vision.Line.thinnest_hor_point', index=9,
+      name='thinnest_hor_point', full_name='bites.vision.Line.thinnest_hor_point', index=9,
       number=10, type=11, cpp_type=10, label=1,
       default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='thickest_hor_point', full_name='man.vision.Line.thickest_hor_point', index=10,
+      name='thickest_hor_point', full_name='bites.vision.Line.thickest_hor_point', index=10,
       number=11, type=11, cpp_type=10, label=1,
       default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='thinnest_vert_point', full_name='man.vision.Line.thinnest_vert_point', index=11,
+      name='thinnest_vert_point', full_name='bites.vision.Line.thinnest_vert_point', index=11,
       number=12, type=11, cpp_type=10, label=1,
       default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='thickest_vert_point', full_name='man.vision.Line.thickest_vert_point', index=12,
+      name='thickest_vert_point', full_name='bites.vision.Line.thickest_vert_point', index=12,
       number=13, type=11, cpp_type=10, label=1,
       default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='db', full_name='man.vision.Line.db', index=13,
+      name='db', full_name='bites.vision.Line.db', index=13,
       number=14, type=11, cpp_type=10, label=2,
       default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='cc_line', full_name='man.vision.Line.cc_line', index=14,
+      name='cc_line', full_name='bites.vision.Line.cc_line', index=14,
       number=15, type=8, cpp_type=7, label=2,
       default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -771,14 +771,14 @@ _LINE = descriptor.Descriptor(
   ],
   extensions=[
     descriptor.FieldDescriptor(
-      name='field_x2', full_name='man.vision.Line.field_x2', index=0,
+      name='field_x2', full_name='bites.vision.Line.field_x2', index=0,
       number=10, type=2, cpp_type=6, label=1,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=True, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='field_y2', full_name='man.vision.Line.field_y2', index=1,
+      name='field_y2', full_name='bites.vision.Line.field_y2', index=1,
       number=11, type=2, cpp_type=6, label=1,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -794,54 +794,54 @@ _LINE = descriptor.Descriptor(
 
 _CORNER = descriptor.Descriptor(
   name='Corner',
-  full_name='man.vision.Corner',
+  full_name='bites.vision.Corner',
   filename='vision.proto',
   containing_type=None,
   fields=[
     descriptor.FieldDescriptor(
-      name='self', full_name='man.vision.Corner.self', index=0,
+      name='self', full_name='bites.vision.Corner.self', index=0,
       number=1, type=11, cpp_type=10, label=2,
       default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='detect', full_name='man.vision.Corner.detect', index=1,
+      name='detect', full_name='bites.vision.Corner.detect', index=1,
       number=2, type=11, cpp_type=10, label=2,
       default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='possibles', full_name='man.vision.Corner.possibles', index=2,
+      name='possibles', full_name='bites.vision.Corner.possibles', index=2,
       number=3, type=11, cpp_type=10, label=3,
       default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='lines', full_name='man.vision.Corner.lines', index=3,
+      name='lines', full_name='bites.vision.Corner.lines', index=3,
       number=4, type=11, cpp_type=10, label=3,
       default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='dists', full_name='man.vision.Corner.dists', index=4,
+      name='dists', full_name='bites.vision.Corner.dists', index=4,
       number=5, type=2, cpp_type=6, label=3,
       default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='t_lines', full_name='man.vision.Corner.t_lines', index=5,
+      name='t_lines', full_name='bites.vision.Corner.t_lines', index=5,
       number=6, type=11, cpp_type=10, label=3,
       default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='angle_between_lines', full_name='man.vision.Corner.angle_between_lines', index=6,
+      name='angle_between_lines', full_name='bites.vision.Corner.angle_between_lines', index=6,
       number=7, type=2, cpp_type=6, label=2,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -850,14 +850,14 @@ _CORNER = descriptor.Descriptor(
   ],
   extensions=[
     descriptor.FieldDescriptor(
-      name='corner_type', full_name='man.vision.Corner.corner_type', index=0,
+      name='corner_type', full_name='bites.vision.Corner.corner_type', index=0,
       number=12, type=14, cpp_type=8, label=1,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=True, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='corner_lines', full_name='man.vision.Corner.corner_lines', index=1,
+      name='corner_lines', full_name='bites.vision.Corner.corner_lines', index=1,
       number=13, type=11, cpp_type=10, label=3,
       default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -873,33 +873,33 @@ _CORNER = descriptor.Descriptor(
 
 _CROSS = descriptor.Descriptor(
   name='Cross',
-  full_name='man.vision.Cross',
+  full_name='bites.vision.Cross',
   filename='vision.proto',
   containing_type=None,
   fields=[
     descriptor.FieldDescriptor(
-      name='self', full_name='man.vision.Cross.self', index=0,
+      name='self', full_name='bites.vision.Cross.self', index=0,
       number=1, type=11, cpp_type=10, label=2,
       default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='detect', full_name='man.vision.Cross.detect', index=1,
+      name='detect', full_name='bites.vision.Cross.detect', index=1,
       number=2, type=11, cpp_type=10, label=2,
       default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='possibles', full_name='man.vision.Cross.possibles', index=2,
+      name='possibles', full_name='bites.vision.Cross.possibles', index=2,
       number=3, type=11, cpp_type=10, label=3,
       default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='bounds', full_name='man.vision.Cross.bounds', index=3,
+      name='bounds', full_name='bites.vision.Cross.bounds', index=3,
       number=4, type=11, cpp_type=10, label=2,
       default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -916,19 +916,19 @@ _CROSS = descriptor.Descriptor(
 
 _CROSSBAR = descriptor.Descriptor(
   name='CrossBar',
-  full_name='man.vision.CrossBar',
+  full_name='bites.vision.CrossBar',
   filename='vision.proto',
   containing_type=None,
   fields=[
     descriptor.FieldDescriptor(
-      name='detect', full_name='man.vision.CrossBar.detect', index=0,
+      name='detect', full_name='bites.vision.CrossBar.detect', index=0,
       number=1, type=11, cpp_type=10, label=2,
       default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='bounds', full_name='man.vision.CrossBar.bounds', index=1,
+      name='bounds', full_name='bites.vision.CrossBar.bounds', index=1,
       number=2, type=11, cpp_type=10, label=2,
       default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -945,26 +945,26 @@ _CROSSBAR = descriptor.Descriptor(
 
 _FIELDOBJECT = descriptor.Descriptor(
   name='FieldObject',
-  full_name='man.vision.FieldObject',
+  full_name='bites.vision.FieldObject',
   filename='vision.proto',
   containing_type=None,
   fields=[
     descriptor.FieldDescriptor(
-      name='self', full_name='man.vision.FieldObject.self', index=0,
+      name='self', full_name='bites.vision.FieldObject.self', index=0,
       number=1, type=11, cpp_type=10, label=2,
       default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='possibles', full_name='man.vision.FieldObject.possibles', index=1,
+      name='possibles', full_name='bites.vision.FieldObject.possibles', index=1,
       number=2, type=11, cpp_type=10, label=2,
       default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='bounds', full_name='man.vision.FieldObject.bounds', index=2,
+      name='bounds', full_name='bites.vision.FieldObject.bounds', index=2,
       number=3, type=11, cpp_type=10, label=2,
       default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -981,40 +981,40 @@ _FIELDOBJECT = descriptor.Descriptor(
 
 _ROBOT = descriptor.Descriptor(
   name='Robot',
-  full_name='man.vision.Robot',
+  full_name='bites.vision.Robot',
   filename='vision.proto',
   containing_type=None,
   fields=[
     descriptor.FieldDescriptor(
-      name='detect', full_name='man.vision.Robot.detect', index=0,
+      name='detect', full_name='bites.vision.Robot.detect', index=0,
       number=1, type=11, cpp_type=10, label=2,
       default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='bounds', full_name='man.vision.Robot.bounds', index=1,
+      name='bounds', full_name='bites.vision.Robot.bounds', index=1,
       number=2, type=11, cpp_type=10, label=2,
       default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='back_left', full_name='man.vision.Robot.back_left', index=2,
+      name='back_left', full_name='bites.vision.Robot.back_left', index=2,
       number=3, type=5, cpp_type=1, label=2,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='back_right', full_name='man.vision.Robot.back_right', index=3,
+      name='back_right', full_name='bites.vision.Robot.back_right', index=3,
       number=4, type=5, cpp_type=1, label=2,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='back_dir', full_name='man.vision.Robot.back_dir', index=4,
+      name='back_dir', full_name='bites.vision.Robot.back_dir', index=4,
       number=5, type=5, cpp_type=1, label=2,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1031,26 +1031,26 @@ _ROBOT = descriptor.Descriptor(
 
 _BALL = descriptor.Descriptor(
   name='Ball',
-  full_name='man.vision.Ball',
+  full_name='bites.vision.Ball',
   filename='vision.proto',
   containing_type=None,
   fields=[
     descriptor.FieldDescriptor(
-      name='detect', full_name='man.vision.Ball.detect', index=0,
+      name='detect', full_name='bites.vision.Ball.detect', index=0,
       number=1, type=11, cpp_type=10, label=2,
       default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='radius', full_name='man.vision.Ball.radius', index=1,
+      name='radius', full_name='bites.vision.Ball.radius', index=1,
       number=2, type=2, cpp_type=6, label=2,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='confidence', full_name='man.vision.Ball.confidence', index=2,
+      name='confidence', full_name='bites.vision.Ball.confidence', index=2,
       number=3, type=5, cpp_type=1, label=2,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1067,47 +1067,47 @@ _BALL = descriptor.Descriptor(
 
 _FRAME = descriptor.Descriptor(
   name='Frame',
-  full_name='man.vision.Frame',
+  full_name='bites.vision.Frame',
   filename='vision.proto',
   containing_type=None,
   fields=[
     descriptor.FieldDescriptor(
-      name='image', full_name='man.vision.Frame.image', index=0,
+      name='image', full_name='bites.vision.Frame.image', index=0,
       number=1, type=11, cpp_type=10, label=1,
       default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='balls', full_name='man.vision.Frame.balls', index=1,
+      name='balls', full_name='bites.vision.Frame.balls', index=1,
       number=2, type=11, cpp_type=10, label=3,
       default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='objects', full_name='man.vision.Frame.objects', index=2,
+      name='objects', full_name='bites.vision.Frame.objects', index=2,
       number=3, type=11, cpp_type=10, label=3,
       default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='lines', full_name='man.vision.Frame.lines', index=3,
+      name='lines', full_name='bites.vision.Frame.lines', index=3,
       number=4, type=11, cpp_type=10, label=3,
       default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='corners', full_name='man.vision.Frame.corners', index=4,
+      name='corners', full_name='bites.vision.Frame.corners', index=4,
       number=5, type=11, cpp_type=10, label=3,
       default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='robots', full_name='man.vision.Frame.robots', index=5,
+      name='robots', full_name='bites.vision.Frame.robots', index=5,
       number=6, type=11, cpp_type=10, label=3,
       default_value=[],
       message_type=None, enum_type=None, containing_type=None,

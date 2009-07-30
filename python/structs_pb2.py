@@ -12,19 +12,19 @@ from google.protobuf import descriptor_pb2
 
 _POINT = descriptor.Descriptor(
   name='Point',
-  full_name='man.Point',
+  full_name='bites.Point',
   filename='structs.proto',
   containing_type=None,
   fields=[
     descriptor.FieldDescriptor(
-      name='x', full_name='man.Point.x', index=0,
+      name='x', full_name='bites.Point.x', index=0,
       number=1, type=5, cpp_type=1, label=2,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='y', full_name='man.Point.y', index=1,
+      name='y', full_name='bites.Point.y', index=1,
       number=2, type=5, cpp_type=1, label=2,
       default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -41,33 +41,33 @@ _POINT = descriptor.Descriptor(
 
 _RECTANGLE = descriptor.Descriptor(
   name='Rectangle',
-  full_name='man.Rectangle',
+  full_name='bites.Rectangle',
   filename='structs.proto',
   containing_type=None,
   fields=[
     descriptor.FieldDescriptor(
-      name='leftTop', full_name='man.Rectangle.leftTop', index=0,
+      name='leftTop', full_name='bites.Rectangle.leftTop', index=0,
       number=1, type=11, cpp_type=10, label=2,
       default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='rightTop', full_name='man.Rectangle.rightTop', index=1,
+      name='rightTop', full_name='bites.Rectangle.rightTop', index=1,
       number=2, type=11, cpp_type=10, label=2,
       default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='leftBottom', full_name='man.Rectangle.leftBottom', index=2,
+      name='leftBottom', full_name='bites.Rectangle.leftBottom', index=2,
       number=3, type=11, cpp_type=10, label=2,
       default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='rightBottom', full_name='man.Rectangle.rightBottom', index=3,
+      name='rightBottom', full_name='bites.Rectangle.rightBottom', index=3,
       number=4, type=11, cpp_type=10, label=2,
       default_value=None,
       message_type=None, enum_type=None, containing_type=None,
