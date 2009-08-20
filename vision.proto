@@ -243,4 +243,7 @@ message Frame {
   repeated Line lines = 4;
   repeated Corner corners = 5;
   repeated Robot robots = 6;
+
+  extensions 10 to 100;
 }
+
